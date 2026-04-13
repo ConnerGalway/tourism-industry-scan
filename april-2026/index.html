@@ -54,10 +54,10 @@ a:hover{text-decoration:underline}
 .video-section h2{font-size:28px;font-weight:700;color:var(--text);margin-bottom:32px;letter-spacing:-0.02em}
 .video-grid{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
 .video-container{background:var(--card);border-radius:16px;aspect-ratio:16/9;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);border:1px solid var(--border)}
-.video-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:var(--card);color:var(--text3)}
-.video-placeholder-icon{width:64px;height:64px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.video-placeholder-icon svg{width:28px;height:28px;fill:white;margin-left:4px}
-.video-placeholder-text{font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;color:var(--text3)}
+
+
+
+
 .video-sidebar{display:flex;flex-direction:column;gap:16px}
 .presenter-card,.topics-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
 .presenter-label{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);margin-bottom:6px}
@@ -202,8 +202,7 @@ a:hover{text-decoration:underline}
     <h2>Watch the monthly briefing</h2>
     <div class="video-grid">
       <div class="video-container">
-        <div class="video-placeholder">
-     <iframe title="vimeo-player" src="https://player.vimeo.com/video/1182782659?h=73a45ae025" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/1182782659?h=73a45ae025" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
       </div>
       <div class="video-sidebar">
         <div class="presenter-card">
