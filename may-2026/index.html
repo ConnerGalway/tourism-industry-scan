@@ -333,6 +333,44 @@ button{font-family:inherit}
 .toast svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+/* ============ WHAT'S NEW SPOTLIGHT ============ */
+.spotlight-overlay{position:fixed;inset:0;z-index:600;background:rgba(17,21,78,0.58);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity 0.4s ease;pointer-events:none}
+[data-theme="dark"] .spotlight-overlay{background:rgba(4,7,20,0.78)}
+.spotlight-overlay.show{opacity:1;pointer-events:auto}
+.spotlight-card{background:var(--card);border:1px solid var(--border2);border-radius:24px;width:100%;max-width:520px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.28);transform:translateY(20px) scale(0.97);transition:transform 0.45s cubic-bezier(0.22,0.61,0.36,1)}
+.spotlight-overlay.show .spotlight-card{transform:translateY(0) scale(1)}
+.spotlight-bar{height:3px;background:linear-gradient(90deg,var(--teal) 0%,var(--sage) 50%,var(--violet) 100%)}
+.spotlight-body{padding:34px 38px 30px;position:relative}
+.spotlight-close{position:absolute;top:16px;right:16px;width:30px;height:30px;border-radius:50%;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text3);transition:all 0.18s ease;flex-shrink:0}
+.spotlight-close:hover{border-color:var(--teal);color:var(--teal)}
+.spotlight-close svg{width:13px;height:13px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.spotlight-eyebrow{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.spotlight-eyebrow::before{content:'';width:20px;height:1px;background:var(--teal)}
+.spotlight-headline{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:var(--text);letter-spacing:-0.02em;line-height:1.25;margin-bottom:6px}
+.spotlight-sub{font-size:13.5px;color:var(--text2);line-height:1.65;margin-bottom:24px}
+.spotlight-features{display:flex;flex-direction:column;gap:2px;margin-bottom:24px}
+.spotlight-feature{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:11px 12px;border-radius:12px;transition:background 0.15s ease;align-items:flex-start;opacity:0;transform:translateY(8px);transition:opacity 0.35s ease,transform 0.35s ease,background 0.15s ease}
+.spotlight-overlay.show .spotlight-feature:nth-child(1){opacity:1;transform:translateY(0);transition-delay:0.18s}
+.spotlight-overlay.show .spotlight-feature:nth-child(2){opacity:1;transform:translateY(0);transition-delay:0.28s}
+.spotlight-overlay.show .spotlight-feature:nth-child(3){opacity:1;transform:translateY(0);transition-delay:0.38s}
+.spotlight-overlay.show .spotlight-feature:nth-child(4){opacity:1;transform:translateY(0);transition-delay:0.48s}
+.spotlight-feature:hover{background:var(--bg2)}
+.spotlight-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.spotlight-icon svg{width:17px;height:17px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.spotlight-fname{font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.spotlight-badge{font-family:'Poppins',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;background:var(--teal);color:#fff;padding:2px 6px;border-radius:4px}
+.spotlight-fdesc{font-size:12.5px;color:var(--text2);line-height:1.55}
+.spotlight-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--text);color:var(--card);border:none;border-radius:12px;padding:14px 24px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:-0.01em;transition:all 0.22s ease;opacity:0;transform:translateY(6px)}
+.spotlight-overlay.show .spotlight-cta{opacity:1;transform:translateY(0);transition:opacity 0.35s ease 0.56s,transform 0.35s ease 0.56s,background 0.2s ease,box-shadow 0.2s ease}
+.spotlight-cta:hover{background:var(--teal);box-shadow:0 8px 28px rgba(14,123,140,0.35)}
+.spotlight-cta svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* Pulsing new-feature dot on the search button */
+.has-new-pulse{position:relative}
+.has-new-pulse::after{content:'';position:absolute;top:-3px;right:-3px;width:9px;height:9px;border-radius:50%;background:var(--teal);animation:newFeaturePulse 2.4s ease-in-out infinite}
+@keyframes newFeaturePulse{0%{box-shadow:0 0 0 0 rgba(14,123,140,0.55)}65%{box-shadow:0 0 0 9px rgba(14,123,140,0)}100%{box-shadow:0 0 0 0 rgba(14,123,140,0)}}
+[data-theme="dark"] .has-new-pulse::after{background:var(--teal)}
+
 /* ============ FOOTER ============ */
 .footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px;margin-top:0}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
@@ -394,7 +432,7 @@ button{font-family:inherit}
     </a>
   </div>
   <div class="header-right">
-    <button class="header-icon-btn" onclick="openSearch()" aria-label="Search this report">
+    <button class="header-icon-btn has-new-pulse" id="searchBtn" onclick="openSearch()" aria-label="Search this report">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       <span>Search</span>
       <span class="kbd-hint">⌘K</span>
@@ -1026,6 +1064,62 @@ button{font-family:inherit}
   </div>
 </div>
 
+<!-- What's New Spotlight -->
+<div class="spotlight-overlay" id="spotlightOverlay" role="dialog" aria-modal="true" aria-label="What's new in May 2026" onclick="handleSpotlightClick(event)">
+  <div class="spotlight-card">
+    <div class="spotlight-bar"></div>
+    <div class="spotlight-body">
+      <button class="spotlight-close" onclick="dismissSpotlight()" aria-label="Close">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <p class="spotlight-eyebrow">What's new · May 2026</p>
+      <h2 class="spotlight-headline">Four new features in this month's report</h2>
+      <p class="spotlight-sub">This edition was rebuilt based on reader feedback. Here's what changed since April.</p>
+      <div class="spotlight-features">
+        <div class="spotlight-feature">
+          <div class="spotlight-icon" style="background:var(--teal-dim);color:var(--teal)">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </div>
+          <div>
+            <p class="spotlight-fname">Full-report search <span class="spotlight-badge">New</span></p>
+            <p class="spotlight-fdesc">Press <strong>⌘K</strong> to instantly find any trend, stat, action, or source across the entire report — without leaving the page.</p>
+          </div>
+        </div>
+        <div class="spotlight-feature">
+          <div class="spotlight-icon" style="background:var(--violet-dim);color:var(--violet)">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <p class="spotlight-fname">Source confidence ratings <span class="spotlight-badge">New</span></p>
+            <p class="spotlight-fdesc">Every finding now shows how strong the source evidence is — so you know which numbers to lead with at your next board meeting.</p>
+          </div>
+        </div>
+        <div class="spotlight-feature">
+          <div class="spotlight-icon" style="background:var(--amber-dim);color:var(--amber)">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div>
+            <p class="spotlight-fname">Compare 2025 on charts <span class="spotlight-badge">New</span></p>
+            <p class="spotlight-fdesc">Toggle prior-year data on the Industry Stats charts to see exactly how much has shifted in 12 months.</p>
+          </div>
+        </div>
+        <div class="spotlight-feature">
+          <div class="spotlight-icon" style="background:var(--green-dim);color:var(--green)">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <p class="spotlight-fname">Evidence + Action framework <span class="spotlight-badge">New</span></p>
+            <p class="spotlight-fdesc">Every recommended action now shows the supporting evidence and a specific move for your week — brief your team in minutes.</p>
+          </div>
+        </div>
+      </div>
+      <button class="spotlight-cta" onclick="dismissSpotlight()">
+        Start reading <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- Toast -->
 <div class="toast" id="toast">
   <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1556,6 +1650,11 @@ function goToResult(e,tab,id){
 
 /* ============ KEYBOARD ============ */
 document.addEventListener('keydown',function(e){
+  // ESC closes spotlight if open (takes priority)
+  var spotlight=document.getElementById('spotlightOverlay');
+  if(spotlight && spotlight.classList.contains('show')){
+    if(e.key==='Escape'){e.preventDefault();dismissSpotlight();return;}
+  }
   // Cmd/Ctrl + K opens search
   if((e.metaKey||e.ctrlKey) && e.key.toLowerCase()==='k'){
     e.preventDefault();
@@ -1593,6 +1692,25 @@ document.addEventListener('click',function(e){
     closeSearch();
   }
 });
+
+/* ============ WHAT'S NEW SPOTLIGHT ============ */
+function showSpotlight(){
+  if(sessionStorage.getItem('whatsNew_may2026'))return;
+  setTimeout(function(){
+    var el=document.getElementById('spotlightOverlay');
+    if(el)el.classList.add('show');
+  },1300);
+}
+function dismissSpotlight(){
+  sessionStorage.setItem('whatsNew_may2026','1');
+  var el=document.getElementById('spotlightOverlay');
+  if(el)el.classList.remove('show');
+  var sb=document.getElementById('searchBtn');
+  if(sb)sb.classList.remove('has-new-pulse');
+}
+function handleSpotlightClick(e){
+  if(e.target===document.getElementById('spotlightOverlay'))dismissSpotlight();
+}
 
 /* ============ HASH ON LOAD + ITEM SCROLL ============ */
 function initFromHash(){
@@ -1642,6 +1760,8 @@ document.addEventListener('DOMContentLoaded',function(){
   if(document.documentElement.getAttribute('data-theme')!=='dark'){
     document.documentElement.setAttribute('data-theme','light');
   }
+  // What's new spotlight
+  showSpotlight();
 });
 </script>
 </body>
