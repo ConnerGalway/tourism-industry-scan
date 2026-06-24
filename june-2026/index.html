@@ -1010,7 +1010,7 @@ button{font-family:inherit}
       </button>
       <p class="spotlight-eyebrow">What's new · June 2026</p>
       <h2 class="spotlight-headline">Four new features in this month's report</h2>
-      <p class="spotlight-sub">This edition was rebuilt based on reader feedback. Here's what changed since April.</p>
+      <p class="spotlight-sub">This edition was rebuilt based on reader feedback. Here's what changed since May.</p>
       <div class="spotlight-features">
         <div class="spotlight-feature">
           <div class="spotlight-icon" style="background:var(--teal-dim);color:var(--teal)">
@@ -1067,7 +1067,7 @@ button{font-family:inherit}
   <div class="footer-inner">
     <div class="footer-left">
       Produced by eLearningU for Canadian DMO Leaders · June 2026 · <a href="https://www.elearningu.com" target="_blank" rel="noopener">elearningu.com</a>
-      <a class="footer-prev" href="../april-2026/index.html"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>April 2026 Scan</a>
+      <a class="footer-prev" href="../may-2026/index.html"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>May 2026 Scan</a>
     </div>
     <div class="footer-right"><span class="logo-dot"></span>eLearningU</div>
   </div>
@@ -1637,14 +1637,14 @@ document.addEventListener('click',function(e){
 
 /* ============ WHAT'S NEW SPOTLIGHT ============ */
 function showSpotlight(){
-  if(sessionStorage.getItem('whatsNew_may2026'))return;
+  if(sessionStorage.getItem('whatsNew_june2026'))return;
   setTimeout(function(){
     var el=document.getElementById('spotlightOverlay');
     if(el)el.classList.add('show');
   },1300);
 }
 function dismissSpotlight(){
-  sessionStorage.setItem('whatsNew_may2026','1');
+  sessionStorage.setItem('whatsNew_june2026','1');
   var el=document.getElementById('spotlightOverlay');
   if(el)el.classList.remove('show');
   var sb=document.getElementById('searchBtn');
