@@ -8,10 +8,10 @@
 
 ## Slide 1: Cover
 
-**Visual:** Navy/cream palette with oversized "TOURISM INDUSTRY SCAN" headline. Vol. 5 badge. eLearningU logo. Consider imagery showing a triumphant Canadian summer scene — perhaps Montreal festival crowds or wilderness ecotourism — to signal the month's "record-breaking summer" theme.
+**Visual:** Navy/cream palette with oversized "TOURISM INDUSTRY SCAN" headline. Vol. 5 badge. eLearningU logo. Consider imagery showing Montreal festival energy or short-form video/creator aesthetic to signal the month's marketing focus.
 
 **Conner (cold open):**
-> "Canada is having the best tourism summer in its history. Montreal is on track for 12.5 million visitors. Q1 spending hit $29.5 billion. And here's the twist: the U.S. tariff war might be the best thing that ever happened to Canadian tourism. Canadians stayed home. Americans came north. And AI is now booking hotel rooms. This is the August Tourism Industry Scan."
+> "A 15-second behind-the-scenes reel outperformed a professionally shot property tour by 340 percent. Micro-influencers are generating six dollars for every dollar spent. And 94 percent of social messages from travelers go completely unanswered. This month's scan is about marketing — what's actually working and what most DMOs are still getting wrong. This is the August Tourism Industry Scan."
 
 **Runtime:** ~20 seconds
 
@@ -23,126 +23,123 @@
 
 | Card | Headline | Data Point |
 |------|----------|------------|
-| 1 | **Record-Breaking Summer** | $29.5B Q1 spending, up 5.6% YoY |
-| 2 | **Montreal Leads the Pack** | 82% occupancy, on track for 12.5M visitors |
-| 3 | **The Boycott Worked Both Ways** | Canadian US travel -42%, American visits to Canada +6.1% |
-| 4 | **AI Moves from Planning to Booking** | 1 in 3 trip planning sessions now start with AI |
+| 1 | **Short-Form Video Won** | 70% of Gen Z/Millennials find destinations through TikTok/Reels |
+| 2 | **DMOs Shift to Performance** | Awareness focus dropped from 59% to 25% in one year |
+| 3 | **Micro-Influencers Outperform** | $5-6.50 ROI per $1 spent, 3-7% booking conversion |
+| 4 | **Montreal Wrote the Playbook** | "Reality TV" campaign drove record 12.5M visitors |
 
 **Conner:**
-> "Four defining themes for August. First, Canada is having its strongest tourism summer on record, driven by domestic demand and favourable exchange rates. Second, Montreal is emerging as the national success story, blending business events, festivals, and sports into a formula other cities should study. Third, the U.S. boycott reshaped travel patterns in ways that benefit Canadian operators. And fourth, AI has crossed from trip planning into actual bookings. Major hotel chains are now integrated with ChatGPT. Let's break each down."
+> "Four themes define August. First, short-form video isn't an add-on anymore — it's the primary discovery channel for younger travelers. Second, DMO marketing strategy has shifted dramatically toward performance and ROI. Third, micro-influencer partnerships are outperforming every other paid channel. And fourth, Montreal's summer campaign shows what happens when creative strategy, event calendar, and marketing execution all align. Let's break each down."
 
 **Runtime:** ~45 seconds
 
 ---
 
-## Slide 3: Trend 1 — Record-Breaking Summer
+## Slide 3: Trend 1 — Short-Form Video is the New Discovery Channel
 
-**Visual:** Upward trending chart showing Q1 2026 tourism spending. Canada map with key statistics. Progress tracker pill bar shows "1" filled.
+**Visual:** TikTok/Reels-style phone interface mockups showing travel content. Key statistics in bordered cards. Progress tracker pill bar shows "1" filled.
 
 **Content blocks:**
-- **Q1 2026 tourism spending:** $29.5 billion, up 5.6% YoY
-- **Domestic spending:** $23.5 billion (80% of total)
-- **International share:** 25.4% of spending, up from 25.2%
-- **Daily economic injection:** $364 million into Canadian communities
-- **2026 forecast:** $140.9 billion total visitor spending, up 6.0%
+- **70%** of Gen Z and Millennials find their next destination through short-form video
+- **2.8x** higher engagement than static travel ads
+- **340%** — a 15-second BTS reel outperformed a professional property tour
+- **TikTok Travel Ads** launched September 2025 — now a full-funnel conversion tool
+- **YouTube Shorts** achieves 5.91% engagement rate (highest of all platforms)
 
 **Conner:**
-> "Let's start with the numbers. Canada recorded $29.5 billion in tourism spending in the first quarter alone — up 5.6 percent year over year. Domestic spending accounted for $23.5 billion of that, as Canadians chose to explore their own country. International visitors now represent over 25 percent of all tourism spending, and that share is growing. The sector continues to inject $364 million daily into communities across Canada, supporting one in ten Canadian jobs. Destination Canada now forecasts total 2026 visitor spending at $140.9 billion — the strongest year on record."
+> "In June we talked about set-jetting — travelers inspired by what they see on screen. This month we're seeing the channel shift that makes that happen. 70 percent of Gen Z and Millennials now find destinations through short-form video. Not as a complement to their research — as the starting point. TikTok's own data shows 60 percent of users visit new destinations after discovering them on the platform. And here's what's changed: TikTok launched Travel Ads in late 2025. It's now a full-funnel conversion tool, not just awareness. The brands seeing results prioritize authenticity over production value. A behind-the-scenes reel outperformed a polished tour by 340 percent. That's not a rounding error. That's a fundamental shift in what travelers respond to."
 
-**Pause point:** "This isn't a bounce-back. This is growth beyond pre-pandemic peaks."
+**Pause point:** "Authenticity beats production value — by a factor of three."
 
-**Source:** Statistics Canada, Destination Canada Tourism Outlook 2026-2035
+**Source:** TikTok Business Insights, Miles Partnership, Dash Social
+
+**Runtime:** ~60 seconds
+
+---
+
+## Slide 4: Trend 2 — DMOs Shift from Brand to Performance
+
+**Visual:** Two contrasting pie charts showing the 59% → 25% awareness shift. Bar chart showing ROI priorities. Progress tracker shows "2" filled.
+
+**Content blocks:**
+- **2025:** 59% of DMOs focused on top-of-funnel awareness
+- **2026:** Only 25% prioritize awareness — a 34-point drop in one year
+- **79%** of North American DMOs now prioritize ROI and economic impact
+- **Conversions** as main goal jumped from 15% to 31% YoY
+- **47%** of DMOs now running full-funnel campaigns
+
+**Conner:**
+> "Something significant happened in DMO marketing strategy this year. In 2025, 59 percent of DMOs globally said top-of-funnel awareness was their primary focus. In 2026, that number dropped to 25 percent. That's not a trend — that's a strategic pivot. What drove it? Tightening budgets, stakeholder pressure, and a performance-first mandate. Nearly 80 percent of North American DMOs now say ROI and economic impact are their top reporting priorities. Conversions as a campaign goal doubled year-over-year. The DMOs performing best aren't choosing between brand and performance. They're running full-funnel campaigns that guide travelers from awareness through to booking. If your marketing plan still separates 'awareness' from 'conversion' into different budgets with different teams, you're working against the direction of the industry."
+
+**Pause point:** "The DMOs winning aren't choosing brand or performance — they're doing both."
+
+**Source:** Sojern State of Destination Marketing 2026
 
 **Runtime:** ~55 seconds
 
 ---
 
-## Slide 4: Trend 2 — Montreal: The Playbook
+## Slide 5: Trend 3 — Micro-Influencers Outperform Every Paid Channel
 
-**Visual:** Montreal skyline with festival imagery. Key statistics in bordered cards. Progress tracker shows "2" filled.
+**Visual:** Comparison chart showing micro-influencer ROI vs other channels. Engagement rate comparison by influencer tier. Progress tracker shows "3" filled.
 
 **Content blocks:**
-| Metric | Performance |
-|--------|-------------|
-| Projected 2026 visitors | 12.5 million (record) |
-| Hotel occupancy (May-Jul) | 82%, up 7 percentage points |
-| July occupancy | 86% |
-| Hotel demand growth | +12% (May-Jul), +14% (July) |
-| Business delegates (Jun-Jul) | 50,000+ across 70 groups |
+- **Micro-influencers** (10K-250K followers) generate **$5-6.50 per $1 spent**
+- **6.15-6.76%** engagement rate vs 1-2% for larger accounts
+- **82%** of travelers trust creator recommendations over traditional advertising
+- **Booking conversion:** 3-7% for influencer content vs 0.5-1% for display ads
+- **92%** of DMOs increasing or maintaining influencer budget in 2026
 
 **Conner:**
-> "Montreal is writing the playbook this summer. The city is on track for 12.5 million visitors — shattering its previous record of 11 million set in 2019. Hotel occupancy hit 82 percent from May through July, seven points higher than last year. July alone saw 86 percent occupancy with demand up 14 percent. What's driving it? A deliberate mix of business events, festivals, and sports. The Jazz Festival recorded its highest attendance ever. Osheaga drew massive crowds. And 50,000 business delegates came through in June and July alone. As Tourisme Montreal's CEO put it: 'Toronto is the downtown of Canada. Montreal is the playground.' That positioning is paying off."
+> "Here's the ROI story of 2026. Micro-influencers — creators with 10,000 to 250,000 followers — are generating five to six dollars for every dollar spent. That's outperforming macro-influencers, traditional paid social, and display advertising. Why? Engagement rates of 6 percent versus 1-2 percent for larger accounts. 82 percent of travelers say they trust creator recommendations more than traditional ads. And booking conversion rates of 3-7 percent versus less than 1 percent for display. The destinations seeing the best results have moved past transactional campaign-by-campaign relationships to long-term partnerships with creators genuinely connected to the destination. If you're still running one-off influencer trips, you're leaving most of the value on the table."
 
-**Pause point:** "The lesson: diversify your demand generators."
+**Pause point:** "Long-term creator relationships outperform one-off campaigns."
 
-**Source:** Tourisme Montreal Mid-Season Report, Retail Insider
+**Source:** Evok Destination Influencer Marketing Guide 2026, Steller State of Travel Influencer Marketing
+
+**Runtime:** ~55 seconds
+
+---
+
+## Slide 6: Trend 4 — Montreal's Marketing Playbook
+
+**Visual:** Montreal campaign imagery — "Reality TV" creative concept. Penn Station activation photo if available. Key performance metrics. Progress tracker shows "4" filled.
+
+**Content blocks:**
+- **Campaign concept:** "One island, six challengers" — positions Montreal as reality TV stage
+- **Agency:** Cossette
+- **Key activation:** Penn Station NYC targeting American commuters
+- **Results:** On track for 12.5M visitors (record), 82% hotel occupancy
+- **Quote:** "Toronto is the downtown of Canada. Montreal is the playground." — Yves Lalumiere, CEO
+
+**Conner:**
+> "Montreal is having its best tourism year ever, and the marketing strategy deserves attention. Tourisme Montreal's summer campaign, developed with Cossette, positions the city as a reality TV stage where visitors become stars of their own adventure. The 60-second hero video uses the trope of 'one island, six challengers' competing through cultural and gastronomic experiences. It's bold. It's differentiated. And it's activating in the places that matter — including Penn Station in New York, targeting American commuters. The results: on track for 12.5 million visitors, shattering the previous record of 11 million. Hotel occupancy at 82 percent. The Jazz Festival hit record attendance. 50,000 business delegates in June and July alone. As their CEO put it: 'Toronto is the downtown of Canada. Montreal is the playground.' That positioning — clear, distinctive, ownable — is what great destination marketing looks like."
+
+**Pause point:** "Clear, distinctive, ownable positioning drives results."
+
+**Source:** Tourisme Montreal, Strategy Magazine, Canadian Press
 
 **Runtime:** ~60 seconds
 
 ---
 
-## Slide 5: Trend 3 — The Boycott Effect
+## Slide 7: Trend 5 — The Response Gap: 94% of Messages Go Unanswered
 
-**Visual:** Split visual showing declining US-bound travel and increasing Canada-bound American visitors. Map showing cross-border flow reversal. Progress tracker shows "3" filled.
-
-**Content blocks:**
-- **Canadian travel to US:** Down 42% (April 2025 - March 2026)
-- **Air travel to US:** Down 19.3% in November 2025
-- **Auto travel to US:** Down 28.6% (11 consecutive months of decline)
-- **American travel to Canada:** Up 6.1% (February 2026)
-- **Canadians boycotting US travel:** ~70%
-
-**Conner:**
-> "The tariff war created an unexpected windfall. Nearly 70 percent of Canadians are now actively boycotting the United States as a travel destination. Cell phone data shows Canadian travel to the US dropped 42 percent over the past year. Air travel down 19 percent. Auto travel down nearly 29 percent for 11 consecutive months. But here's the flip side: American visits to Canada are up 6.1 percent. They're taking advantage of the exchange rate while Canadians stay home. The U.S. Travel Association estimates they've lost $5.7 billion in Canadian visitor spending. That money didn't disappear — much of it stayed in Canada. If your marketing hasn't pivoted to capture domestic demand and American visitors, you're leaving money on the table."
-
-**Pause point:** "The boycott created a market shift. Are you capturing it?"
-
-**Source:** Statistics Canada, CBC News, U.S. Travel Association
-
-**Runtime:** ~60 seconds
-
----
-
-## Slide 6: Trend 4 — AI Crosses the Booking Threshold
-
-**Visual:** AI interface imagery with hotel booking context. Logos of IHG, Radisson, Booking.com, Expedia. Progress tracker shows "4" filled.
+**Visual:** Stark statistic visualization showing 94% unanswered. Contrast with engagement opportunity. Progress tracker shows "5" filled.
 
 **Content blocks:**
-- **1 in 3** trip planning sessions now start with AI
-- **IHG:** Launched ChatGPT integration across 7,000+ hotels in 100+ countries
-- **Radisson:** @RadissonHotels app in ChatGPT for 1,000+ properties
-- **ChatGPT integrations:** Booking.com, Expedia, Uber, Rome2Rio
-- **72%** of Criteo travel clients recorded bookings influenced by ChatGPT
-- **AI share vs. search:** ChatGPT drove 13 percentage points more product page landings than traditional search
+- **94%** of social media messages to travel brands go unanswered
+- **73%** of travelers say influencer recommendations led to a booking
+- **64%** are comfortable booking directly through social platforms
+- **87%** of Gen Z use social media to research trips
+- The gap: High intent travelers reaching out, no one responding
 
 **Conner:**
-> "Last month we talked about AI transforming trip planning. This month, AI is booking hotel rooms. IHG launched hotel discovery through ChatGPT across 7,000 properties. Radisson built a dedicated ChatGPT app. ChatGPT now integrates directly with Booking.com, Expedia, and transportation platforms. One in three trip planning sessions now starts with AI. And here's the number that should get your attention: 72 percent of Criteo's travel clients recorded at least one booking influenced by ChatGPT. In March, ChatGPT drove 13 percentage points more product page landings than traditional search. This isn't future speculation. This is current booking behaviour. The term you need to know is Generative Engine Optimization — making sure your destination appears in AI-generated answers, not just search results."
+> "Here's the marketing failure hiding in plain sight. Travel brands respond to only 6 percent of incoming social messages. That means 94 percent of social interactions — many from high-intent travelers actively considering your destination — go completely unanswered. Meanwhile, 73 percent of travelers say influencer recommendations have led to a booking. 64 percent are comfortable booking directly through social platforms. The intent is there. The infrastructure to convert is there. The basic responsiveness isn't. Before you optimize your paid strategy or launch another influencer campaign, audit your response rates. If someone asks a question about your destination and gets silence, you've lost them. This is the lowest-hanging fruit in destination marketing, and almost no one is picking it."
 
-**Pause point:** "If you're not in the AI answer, you're not in the consideration set."
+**Pause point:** "Before you launch another campaign, answer the messages you already have."
 
-**Source:** IHG, Radisson/Accenture, Criteo, Captain Book
-
-**Runtime:** ~65 seconds
-
----
-
-## Slide 7: Trend 5 — Overtourism Reshapes Demand
-
-**Visual:** Contrast between crowded destination and peaceful Canadian wilderness. Statistics on traveler behaviour change. Progress tracker shows "5" filled.
-
-**Content blocks:**
-- **93%** of Canadians will change travel habits due to overtourism awareness
-- **71%** willing to pay tourism fees (up from 57% in 2025)
-- **Canada now #1** ecotourism destination, overtaking Mexico, Iceland, Costa Rica
-- **Gros Morne National Park** emerging as top North American eco destination
-- Travelers evaluating: crowd density, seasonal pressure, destination sustainability
-
-**Conner:**
-> "Overtourism awareness is fundamentally reshaping how Canadians plan travel. 93 percent say overtourism concerns will shape their 2026 plans. Willingness to pay tourism fees has jumped from 57 percent last year to 71 percent this year. Travelers are now actively evaluating crowd density, seasonal pressure, and destination sustainability before booking. Here's the opportunity: Canada has overtaken Mexico, Iceland, and Costa Rica as the world's top ecotourism destination. Gros Morne National Park is emerging as one of North America's strongest eco-tourism draws. If your destination isn't capacity-constrained, that's not a weakness — it's your competitive advantage. Position yourself as the antidote to overtourism."
-
-**Pause point:** "Overtourism elsewhere is opportunity here."
-
-**Source:** Intrepid Travel Meaningful Travel Index, Flight Centre Canada/YouGov, Travel and Tour World
+**Source:** Vamoos Social Media Marketing Guide 2026, CuFinder Tourism Benchmarks
 
 **Runtime:** ~55 seconds
 
@@ -153,15 +150,15 @@
 **Visual:** Six numbered single-line action statements. Clean layout, generous spacing.
 
 **Actions:**
-1. **Study the Montreal model** — diversify demand with business events, festivals, and sports
-2. **Capture the boycott dividend** — target domestic travelers and Americans seeking value
-3. **Optimize for AI discovery** — test ChatGPT, ensure your content appears in AI answers
-4. **Position as an overtourism alternative** — market uncrowded experiences as features
-5. **Build shoulder-season campaigns** — travelers are shifting to off-peak to avoid crowds
-6. **Explore tourism fee models** — 71% of Canadians now support destination levies
+1. **Shift to short-form video as primary content format** — authenticity beats production value
+2. **Test micro-influencer partnerships** — aim for long-term relationships, not one-off trips
+3. **Audit your social response rate** — set a 24-hour reply target for DMs and comments
+4. **Run full-funnel campaigns** — connect awareness spending to booking outcomes
+5. **Test TikTok Travel Ads** — the platform now supports full conversion tracking
+6. **Study the Montreal model** — bold, differentiated creative that owns a clear position
 
 **Conner:**
-> "Six actions for August. One — study what Montreal is doing right: the deliberate mix of business, festivals, and sports creates resilient, diversified demand. Two — if you haven't pivoted marketing to capture domestic travelers and value-seeking Americans, do it now. Three — test how AI assistants describe your destination and optimize your content for generative search. Four — if you're not fighting capacity constraints, market that as a feature to overtourism-weary travelers. Five — build shoulder-season campaigns, because travelers are actively seeking off-peak alternatives. And six — consider tourism fee models. The willingness to pay has never been higher, and these fees can fund sustainability initiatives that strengthen your destination long-term."
+> "Six actions for August, all marketing-focused. One — prioritize short-form video. Reallocate production budget from polished long-form to high-volume authentic content. Two — test micro-influencer partnerships, but think long-term relationships, not one-off trips. Three — audit your social response rate this week. If you're not replying within 24 hours, fix that before spending another dollar on paid media. Four — restructure campaigns to connect awareness metrics to booking outcomes. Five — if you haven't tested TikTok Travel Ads, allocate budget this quarter. Six — study Montreal's positioning strategy. They didn't try to be everything. They owned 'playground' — and it's working."
 
 **Runtime:** ~50 seconds
 
@@ -173,12 +170,12 @@
 
 | Icon | Label |
 |------|-------|
-| Calendar / festival | **Study the Montreal model** |
-| AI / chat bubble | **Optimize for AI discovery** |
-| Leaf / wilderness | **Position as the uncrowded alternative** |
+| Video play / phone | **Shift to short-form video** |
+| Message bubble / checkmark | **Answer your social messages** |
+| Creator / handshake | **Test micro-influencer ROI** |
 
 **Conner:**
-> "If you do nothing else this month: look at what Montreal achieved — diversified demand generators that don't depend on any single segment. Test what happens when someone asks ChatGPT about your destination — if you're not in that answer, you're invisible to a growing segment of travelers. And if your destination offers authentic experiences without crowds, stop apologizing for being small and start marketing it as the reason to visit. That's the August scan."
+> "If you do nothing else this month: recognize that short-form video is now the primary discovery channel for younger travelers and adjust your content strategy accordingly. Audit your social response rate and commit to answering every DM and comment within 24 hours. And test a micro-influencer partnership with clear ROI measurement before your next major campaign. That's the August scan."
 
 **Runtime:** ~25 seconds
 
@@ -200,21 +197,21 @@
 |---------|----------|
 | Cover | ~20 sec |
 | Big Picture | ~45 sec |
-| Trends 1-5 | ~4:55 (55-65 sec each) |
+| Trends 1-5 | ~4:45 (55-60 sec each) |
 | Actions | ~50 sec |
 | If You Do Nothing Else | ~25 sec |
 | Closing | ~5 sec |
-| **Total** | **~9:00** |
+| **Total** | **~8:50** |
 
-Buffer of ~60 seconds allows for natural pacing variation.
+Buffer of ~70 seconds allows for natural pacing variation.
 
 ---
 
 ## Flexibility Notes
 
-- **Trend 3 (Boycott Effect)** is politically sensitive — maintain neutral, data-driven framing focused on market opportunity rather than political commentary
-- **Trend 4 (AI Booking)** could benefit from a live demo showing actual ChatGPT hotel search if time allows
-- **Trend 2 (Montreal)** can compress to 50 seconds if earlier trends run long — the data is straightforward
+- **Trend 4 (Montreal)** can expand with more campaign detail if earlier trends run short
+- **Trend 5 (Response Gap)** is the most actionable — emphasize if audience seems engaged
+- **Trend 3 (Micro-Influencers)** may need local examples if audience is skeptical of ROI claims
 
 ---
 
@@ -223,23 +220,34 @@ Buffer of ~60 seconds allows for natural pacing variation.
 **Carried forward:** Navy/cream/teal palette, bordered cards, oversized cover typography, progress tracker pill bar
 
 **New considerations:**
-- Cover should convey "record summer" energy — consider festival crowds, busy harbours, or summer wilderness scenes
-- Slide 5 needs a clear visual showing the cross-border flow reversal — perhaps animated arrows showing decreased southbound, increased northbound travel
-- Slide 6 should show AI interface mockups with hotel booking context — make it tangible
-- Slide 7 benefits from wilderness/uncrowded Canadian landscape imagery — Gros Morne would be ideal
+- Cover could feature TikTok/Reels-style phone mockup to signal marketing focus
+- Slide 3 benefits from actual short-form video frame grabs showing travel content
+- Slide 4 needs clear before/after visualization of the 59% → 25% shift
+- Slide 6 should include Montreal campaign creative if accessible
+- Slide 7 needs stark, impossible-to-ignore visualization of the 94% gap
 
 ---
 
 ## Key Narrative Throughline
 
-This month's scan centers on a question: **How do we sustain this momentum?**
+This month's scan centers on a question: **Are you marketing the way travelers actually discover?**
 
-Canada is experiencing its strongest tourism summer in history, driven by a perfect storm of factors: domestic patriotism, exchange rate advantages, AI-enabled discovery, and growing global interest in sustainable alternatives to overtouristed destinations.
+The data is clear: short-form video is the primary discovery channel for younger travelers. Micro-influencers outperform every other paid channel. And the basics — like responding to social messages — are being neglected industry-wide.
 
-The challenge now is ensuring this isn't a one-time bounce but a structural shift. That requires:
-- Learning from success stories like Montreal's diversified demand strategy
-- Capitalizing on the market shifts created by geopolitical tensions
-- Adapting to AI-mediated discovery before competitors do
-- Positioning Canadian destinations as the sustainable, uncrowded alternative
+Meanwhile, Montreal demonstrates what happens when positioning, creative, and execution align: record-breaking results.
 
-The tone should be optimistic but action-oriented: we're winning, but the game isn't over.
+The tone should be practical and actionable: these aren't future predictions, they're current best practices that most destinations haven't adopted yet.
+
+---
+
+## How August Builds on Previous Months
+
+| Month | Theme | August Connection |
+|-------|-------|-------------------|
+| June | Set-jetting, sustainability compliance, World Cup surge | August explains the *channel* behind set-jetting (short-form video) |
+| July | World Cup lessons, AI trip planning, boutique events | August focuses on marketing execution, not just macro trends |
+
+**Key differentiators from July:**
+- July covered AI trip planning basics; August doesn't repeat this (TikTok Travel Ads is mentioned as a new feature, not the AI-planning story)
+- July covered boutique event performance; August explains how Montreal's *marketing* (not just events) drove results
+- July was diagnostic ("what happened"); August is prescriptive ("what to do")
