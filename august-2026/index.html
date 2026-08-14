@@ -769,7 +769,7 @@ button{font-family:inherit}
       <div class="chart-card">
         <div class="chart-card-head">
           <h3 class="chart-title">Platform Engagement Rates 2026</h3>
-          <button class="chart-toggle" id="compareToggle" onclick="toggleCompare(this)"><span class="chart-toggle-dot"></span>Compare Conversion</button>
+          <button class="chart-toggle" id="compareToggle" onclick="toggleCompare(this)"><span class="chart-toggle-dot"></span>Compare 2025</button>
         </div>
         <p class="chart-subtitle">Average engagement rates by platform. YouTube Shorts leads at 5.91%, followed by TikTok at 3.73%. Travel brands should aim for 3.0-3.5% on TikTok, 2.0-2.5% on Instagram. <em>Dash Social, ShortsIntel.</em></p>
         <div style="position:relative;height:280px;width:100%"><canvas id="channelChart"></canvas></div>
@@ -1337,14 +1337,14 @@ function buildCharts(){
   var greenColor=getCSSVar('--green');
   var text2=getCSSVar('--text2');
 
-  // ---- Chart 1: Provincial ADR Growth in June 2026 (horizontal bar, with optional occupancy compare) ----
+  // ---- Chart 1: Platform Engagement Rates 2026 (horizontal bar, with optional conversion compare) ----
   var c1=freshCanvas('channelChart');
   if(c1){
-    var labels=['Nova Scotia','Vancouver','Toronto','Newfoundland','Ontario','National Average'];
-    var data2026=[15.7,21.3,19.0,13.8,8.2,7.5];
-    var data2025=[4.5,-15.8,1.2,4.6,-0.8,-1.2]; // Occupancy change YoY for comparison
+    var labels=['YouTube Shorts','TikTok','Instagram Reels','Facebook','LinkedIn','Display Ads'];
+    var data2026=[5.91,3.73,2.65,1.48,1.22,0.35];
+    var data2025=[4.8,3.2,2.3,1.6,1.0,0.4]; // 2025 rates for comparison
     var datasets=[{
-      label:'ADR Growth %',
+      label:'Engagement Rate 2026',
       data:data2026,
       backgroundColor:[tealColor,blueColor,violetColor,amberColor,coralColor,greenColor],
       borderRadius:6,
@@ -1354,7 +1354,7 @@ function buildCharts(){
     }];
     if(showCompare){
       datasets.unshift({
-        label:'Occupancy Change %',
+        label:'Engagement Rate 2025',
         data:data2025,
         backgroundColor:isDark?'rgba(255,255,255,0.10)':'rgba(17,21,78,0.10)',
         borderColor:isDark?'rgba(255,255,255,0.20)':'rgba(17,21,78,0.20)',
@@ -1392,7 +1392,7 @@ function buildCharts(){
           }
         },
         scales:{
-          x:{min:0,max:100,grid:{color:gridColor},ticks:{color:tickColor,font:{family:'DM Sans',size:11},callback:function(v){return v+'%';}},border:{display:false}},
+          x:{min:0,max:7,grid:{color:gridColor},ticks:{color:tickColor,font:{family:'DM Sans',size:11},callback:function(v){return v+'%';}},border:{display:false}},
           y:{grid:{display:false},ticks:{color:textColor,font:{family:'Poppins',size:12,weight:'600'}},border:{display:false}}
         },
         onHover:function(evt,active){
@@ -1402,27 +1402,27 @@ function buildCharts(){
     });
   }
 
-  // ---- Chart 2: Event-Driven Market Performance (grouped bar chart) ----
+  // ---- Chart 2: Influencer ROI by Tier ----
   var c2=freshCanvas('revenueChart');
   if(c2){
-    var cityLabels=['Halifax SailGP','Iceberg Festival NL','Toronto WC','Vancouver WC'];
-    var adrData=[15.7,13.8,19.0,21.3];
-    var revparData=[20.2,19.0,10.4,1.8];
+    var tierLabels=['Nano\n(1K-10K)','Micro\n(10K-250K)','Mid-Tier\n(250K-500K)','Macro\n(500K-1M)','Mega\n(1M+)'];
+    var roiData=[4.2,6.0,3.5,2.5,2.0];
+    var conversionData=[5.5,5.0,2.8,1.5,0.8];
     revenueChartInst=new Chart(c2,{
       type:'bar',
       data:{
-        labels:cityLabels,
+        labels:tierLabels,
         datasets:[{
-          label:'ADR Lift %',
-          data:adrData,
+          label:'ROI per $1',
+          data:roiData,
           backgroundColor:tealColor,
           borderRadius:6,
           borderSkipped:false,
           barPercentage:0.65,
           categoryPercentage:0.65
         },{
-          label:'RevPAR Lift %',
-          data:revparData,
+          label:'Booking Conv. %',
+          data:conversionData,
           backgroundColor:violetColor,
           borderRadius:6,
           borderSkipped:false,
@@ -1449,13 +1449,16 @@ function buildCharts(){
             padding:10,
             cornerRadius:6,
             callbacks:{
-              label:function(ctx){return ' '+ctx.dataset.label+': +'+ctx.parsed.y+'%';}
+              label:function(ctx){
+                if(ctx.dataset.label==='ROI per $1') return ' '+ctx.dataset.label+': $'+ctx.parsed.y.toFixed(2);
+                return ' '+ctx.dataset.label+': '+ctx.parsed.y+'%';
+              }
             }
           }
         },
         scales:{
-          x:{grid:{display:false},ticks:{color:textColor,font:{family:'Poppins',size:12,weight:'600'}},border:{display:false}},
-          y:{min:0,max:25,grid:{color:gridColor},ticks:{color:tickColor,font:{family:'DM Sans',size:11},callback:function(v){return '+'+v+'%';}},border:{display:false}}
+          x:{grid:{display:false},ticks:{color:textColor,font:{family:'Poppins',size:11,weight:'600'}},border:{display:false}},
+          y:{min:0,max:8,grid:{color:gridColor},ticks:{color:tickColor,font:{family:'DM Sans',size:11},callback:function(v){return v;}},border:{display:false}}
         }
       },
       plugins:[{
