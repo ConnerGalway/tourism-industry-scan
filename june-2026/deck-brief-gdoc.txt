@@ -1,0 +1,576 @@
+JUNE 2026 TOURISM INDUSTRY SCAN — DESIGNER DECK BRIEF
+
+Volume: 3 (June 2026)
+Runtime: ~10 minutes
+Presenter: Conner Galway
+Slide Count: 10
+Aspect Ratio: 16:9
+
+
+════════════════════════════════════════════════════════════════════════════════
+DESIGN SYSTEM REFERENCE
+════════════════════════════════════════════════════════════════════════════════
+
+COLOR PALETTE
+
+Primary (Navy) — #11154e
+	Dark navy blue, used for headlines and key text
+
+Background (Cream) — #f9f7f4
+	Warm off-white, main slide background
+
+Accent 1 (Teal) — #0e7b8c
+	Primary accent for numbers, icons, highlights
+
+Accent 2 (Sage) — #8fbc9f
+	Secondary accent, used in gradients and sustainability content
+
+Gradient — #0e7b8c → #8fbc9f
+	Teal to sage, used for accent bars and progress indicators
+
+Text Secondary — #3d4270
+	Muted navy for body text and descriptions
+
+Text Tertiary — #9499bb
+	Light gray-blue for captions and source citations
+
+Card Border — #e8e0d6
+	Warm gray for card borders
+
+
+TYPOGRAPHY
+
+Cover headline: Poppins, 700 weight, 72–96pt
+Slide titles: Poppins, 700 weight, 36–42pt
+Card headlines: Poppins, 600 weight, 24–28pt
+Body text: DM Sans, 400 weight, 18–20pt
+Stats/numbers: Barlow Condensed, 700 weight, 48–72pt
+Labels/captions: Poppins, 600 weight, 12–14pt, uppercase, tracked
+Source citations: DM Sans, 400 weight, 12pt, Text Tertiary color
+
+
+RECURRING ELEMENTS
+
+Card style: White background, 1px border (#e8e0d6), 16px border-radius, subtle shadow
+
+Gradient accent bar: 3px height, teal→sage gradient, used as top border on cards or section dividers
+
+Progress tracker: Horizontal pill bar showing trend position (1-5), active state filled with teal
+
+eLearningU logo: Bottom-right corner on cover/closing slides
+
+
+════════════════════════════════════════════════════════════════════════════════
+SLIDE 1: COVER
+════════════════════════════════════════════════════════════════════════════════
+
+Layout: Full-bleed with overlay
+
+BACKGROUND
+• Rotated Canadian landscape image (suggest: summer mountain scene, Vancouver harbor with stadium visible, or aerial of Montreal circuit area)
+• Image rotated 5–8° clockwise, cropped to bleed off right edge
+• Navy overlay at 65% opacity on left 60% of slide for text legibility
+
+TEXT ELEMENTS
+
+Eyebrow: "MONTHLY INTELLIGENCE REPORT"
+	Position: Top-left, 80px from edges
+	Style: Poppins 600, 12pt, uppercase, tracked 0.14em, teal color
+
+Headline: TOURISM / INDUSTRY / SCAN (stacked, three lines)
+	Position: Left-aligned, vertically centered
+	Style: Poppins 700, 84pt, cream color, line-height 0.95
+
+Volume badge: "VOL. 3 · JUNE 2026"
+	Position: Below headline, 24px gap
+	Style: Poppins 600, 14pt, uppercase, cream with 60% opacity
+
+Logo: eLearningU logo
+	Position: Bottom-right, 48px from edges
+	Style: White/cream version
+
+VISUAL NOTES
+• Consider subtle teal glow/gradient bleeding from left edge
+• Headline can have slight letter-spacing tightening (-0.02em)
+
+
+════════════════════════════════════════════════════════════════════════════════
+SLIDE 2: THE BIG PICTURE
+════════════════════════════════════════════════════════════════════════════════
+
+Layout: 2×2 card grid with section header
+
+HEADER AREA
+
+Section label: "THE BIG PICTURE"
+	Style: Poppins 600, 11pt, uppercase, tracked, teal
+
+Divider: Horizontal line
+	Style: 40px wide, 3px height, teal→sage gradient
+
+CARD GRID (4 equal cards, 2×2, 24px gap)
+
+Card 1 — Top-left
+	Icon: Trophy or stadium icon
+	Headline: Mega-Event Revenue Surge
+	Data: Vancouver ADR +54% / Toronto ADR +47.6%
+
+Card 2 — Top-right
+	Icon: Chart trending up
+	Headline: Rate Growth > Occupancy
+	Data: National ADR +9.5% / Occupancy +0.9%
+
+Card 3 — Bottom-left
+	Icon: Film/screen icon
+	Headline: Set-Jetting Mainstream
+	Data: 81% of Gen Z/Millennials cite screen as influence
+
+Card 4 — Bottom-right
+	Icon: Globe with checkmark
+	Headline: Sustainability = Access
+	Data: EU regs require supplier verification for bookings
+
+CARD SPECIFICATIONS
+• White background
+• 1px border with gradient top accent (3px teal→sage)
+• 24px internal padding
+• Icon: 32px, teal color, top-left of card
+• Headline: Poppins 600, 18pt, navy
+• Data: DM Sans 400, 15pt, Text Secondary, 8px below headline
+• Large number (if shown): Barlow Condensed 700, 36pt, teal
+
+
+════════════════════════════════════════════════════════════════════════════════
+SLIDE 3: TREND 1 — WORLD CUP REVENUE SURGE
+════════════════════════════════════════════════════════════════════════════════
+
+Layout: Map visualization with data callouts
+
+HEADER AREA
+
+Progress tracker: 5 pills, position 1 filled (teal), others outline only
+
+Trend number: "TREND 01"
+	Style: Poppins 600, 11pt, uppercase, teal
+
+Headline: "World Cup Revenue Surge Hits Host Cities"
+	Style: Poppins 700, 32pt, navy
+
+MAIN VISUAL
+• Simplified map of Canada (or just BC/Ontario region)
+• Toronto and Vancouver marked with location pins
+• Connection lines from pins to data callout cards
+
+DATA CALLOUT CARDS
+
+Vancouver (left side)
+	ADR: +54.0%
+	RevPAR: +30.4%
+	Note: June 13 match
+
+Toronto (right side)
+	ADR: +47.6%
+	RevPAR: +36.2%
+	Note: June 12 match
+
+CARD STYLE
+• White card with teal left border (3px)
+• City name: Poppins 600, 14pt, navy
+• Percentage: Barlow Condensed 700, 42pt, teal
+• Label (ADR/RevPAR): Poppins 500, 11pt, Text Tertiary
+• Date note: DM Sans 400 italic, 12pt, Text Tertiary
+
+CAUTION CALLOUT (bottom)
+• Amber/yellow accent instead of teal
+• Icon: Warning triangle or info icon
+• Text: "Vancouver June 24 showing 64% occupancy (−8.6% YoY) — later matches may face pricing resistance"
+• Style: DM Sans 400, 14pt, amber-tinted card background
+
+SOURCE FOOTER
+"Source: STR via Hospitality Net, June 2026"
+Style: DM Sans 400, 12pt, Text Tertiary, bottom-left
+
+
+════════════════════════════════════════════════════════════════════════════════
+SLIDE 4: TREND 2 — GRAND PRIX CALENDAR SHIFT
+════════════════════════════════════════════════════════════════════════════════
+
+Layout: Hero stat with supporting data table
+
+HEADER AREA
+
+Progress tracker: Position 2 filled
+Trend number: "TREND 02"
+Headline: "Grand Prix Calendar Shift Reshapes Quebec"
+
+HERO STAT (center-left, prominent)
+
+Number: +36.9%
+	Style: Barlow Condensed 700, 96pt, teal
+
+Label: Montreal RevPAR
+	Style: Poppins 500, 16pt, Text Secondary
+
+Subtext: "Strongest monthly performance in Canadian major markets"
+	Style: DM Sans 400, 14pt
+
+DATA TABLE (right side)
+
+Headers: Metric | Montreal | Quebec Province
+
+Row 1 — Occupancy
+	Montreal: 78.0% (+8.1%)
+	Quebec: 72.1% (+5.9%)
+
+Row 2 — ADR
+	Montreal: $313.08 (+26.7%)
+	Quebec: $276.62 (+20.0%)
+
+Row 3 — RevPAR
+	Montreal: $244.09 (+36.9%)
+	Quebec: $199.49 (+27.1%)
+
+TABLE STYLE
+• Header row: Poppins 600, 12pt, navy background, cream text
+• Data cells: DM Sans 400, 16pt
+• Primary number: Navy
+• Change percentage: Teal, parenthetical
+• Alternating row backgrounds (cream / white)
+• 1px border, 12px cell padding
+
+VISUAL ACCENT
+• Montreal skyline silhouette or F1 checkered flag motif as subtle background element (10% opacity)
+
+SOURCE FOOTER
+"Source: STR via Hospitality Net, June 2026"
+
+
+════════════════════════════════════════════════════════════════════════════════
+SLIDE 5: TREND 3 — SET-JETTING GOES MAINSTREAM
+════════════════════════════════════════════════════════════════════════════════
+
+Layout: Three editorial image cards with stats overlay
+
+HEADER AREA
+
+Progress tracker: Position 3 filled
+Trend number: "TREND 03"
+Headline: "Set-Jetting Goes Mainstream"
+
+HERO STATS (top, horizontal arrangement)
+
+Stat 1: 53%
+	Label: of travelers interested in screen-inspired travel
+
+Stat 2: 81%
+	Label: of Gen Z/Millennials cite entertainment as destination influence
+
+Style for numbers: Barlow Condensed 700, 56pt, teal
+Style for labels: DM Sans 400, 14pt, Text Secondary, max-width for wrapping
+
+IMAGE CARDS (3 across, below stats)
+
+Card 1
+	Image: Luxury resort pool/terrace (White Lotus aesthetic)
+	Label: "The White Lotus"
+
+Card 2
+	Image: Parisian street/café scene
+	Label: "Emily in Paris"
+
+Card 3
+	Image: Dramatic landscape/castle
+	Label: "Game of Thrones"
+
+IMAGE CARD STYLE
+• 16:9 or 4:3 aspect ratio
+• 12px border-radius
+• Image covers full card
+• Label overlay at bottom: Semi-transparent navy gradient, Poppins 600, 14pt, cream text
+
+DESIGN NOTE
+Use editorial-quality images that feel cinematic, not stock photography. These should evoke the actual shows. If licensing is an issue, use stylistically similar destination imagery without explicit show branding.
+
+SOURCE FOOTER
+"Source: Expedia Unpack '26 via Hospitality Net"
+
+
+════════════════════════════════════════════════════════════════════════════════
+SLIDE 6: TREND 4 — SUSTAINABILITY = MARKET ACCESS
+════════════════════════════════════════════════════════════════════════════════
+
+Layout: Two-tier explanation with flow diagram
+
+HEADER AREA
+
+Progress tracker: Position 4 filled
+Trend number: "TREND 04"
+Headline: "Sustainable Procurement Becomes Mandatory"
+Subhead: "— And It Affects Canadian Exports"
+	Style: DM Sans 400, 18pt, Text Secondary
+
+REGULATION CARDS (top row, 3 cards)
+
+Card 1 — EU
+	Regulation: CSRD
+	Requirement: Supply chain environmental reporting
+
+Card 2 — EU
+	Regulation: CSDDD
+	Requirement: Identify adverse impacts in supplier networks
+
+Card 3 — France
+	Regulation: AGEC Law
+	Requirement: Restricts single-use plastics in hospitality
+
+CARD STYLE
+• Small cards (equal width, 3-up)
+• Flag or region icon at top
+• Regulation name: Poppins 700, 16pt, navy
+• Requirement: DM Sans 400, 13pt, Text Secondary
+
+FLOW DIAGRAM (bottom half)
+
+Visual showing verification chain:
+
+[EU/Asia Travel Trade Partner] → verifies → [Canadian Operator] → needs → [Documentation]
+
+Node 1: Tour operators, OTAs, Travel agencies
+Node 2: Hotels, experiences
+Node 3: Certifications, Sustainability data
+
+DIAGRAM STYLE
+• Horizontal flow, left to right
+• Three nodes connected by arrows
+• Each node: Rounded rectangle, icon + label
+• Arrows: Teal, with small label above ("must verify", "requires")
+• Use dotted line or X mark to show "excluded" path for operators without documentation
+
+"WHY IT MATTERS" CALLOUT BOX
+
+Position: Bottom or right side
+Style: Teal background at 10% opacity, teal left border (4px)
+Headline: "Why It Matters for Canadian DMOs" — Poppins 600, 14pt
+Body: "This is no longer about guest preferences — it's about market access. Operators without documentation risk exclusion from international distribution." — DM Sans 400, 14pt
+
+SOURCE FOOTER
+"Source: Hospitality Net, June 2026"
+
+
+════════════════════════════════════════════════════════════════════════════════
+SLIDE 7: TREND 5 — RESPONSIBLE TOURISM INNOVATION
+════════════════════════════════════════════════════════════════════════════════
+
+Layout: Location showcase with program cards
+
+HEADER AREA
+
+Progress tracker: Position 5 filled
+Trend number: "TREND 05"
+Headline: "Responsible Tourism Innovation in Mountain Destinations"
+
+LOCATION BADGE
+Text: "BANFF & LAKE LOUISE"
+	Style: Poppins 700, 14pt, uppercase, tracked
+	Small mountain icon or Banff logo mark
+	Position: Below headline, left-aligned
+
+PROGRAM CARDS (3 cards, horizontal)
+
+Card 1 — Park Mode
+	Icon: Reward/badge icon
+	Description: Encourages responsible behavior through activation events and rewards
+
+Card 2 — Trip Builder
+	Icon: Calendar/planning icon
+	Description: Digital tool managing expectations and distributing visitor traffic
+
+Card 3 — Cool 2 Carpool
+	Icon: Car with people icon
+	Description: Discounted lift tickets for visitors who share rides
+
+CARD STYLE
+• Equal-width cards
+• Sage/green accent (this slide uses green tones to signal sustainability)
+• Icon: 40px, sage color, centered top
+• Program name: Poppins 700, 18pt, navy
+• Description: DM Sans 400, 14pt, Text Secondary, centered
+
+RESULTS CALLOUT (bottom)
+
+Stat 1: 37,357
+	Context: single-use items diverted at 2025 Christmas Market
+
+Stat 2: $350K
+	Context: invested in energy efficiency by Pursuit Hotels
+
+Style: Large number (Barlow Condensed 700, 48pt, sage), label below (DM Sans 400, 14pt)
+Arranged horizontally with divider between
+
+BACKGROUND VISUAL
+• Subtle Banff mountain photography at 8-10% opacity
+• Or: Topographic line pattern in sage at low opacity
+
+SOURCE FOOTER
+"Source: Banff Lake Louise Tourism"
+
+
+════════════════════════════════════════════════════════════════════════════════
+SLIDE 8: RECOMMENDED ACTIONS
+════════════════════════════════════════════════════════════════════════════════
+
+Layout: Numbered list with clean typography
+
+HEADER AREA
+
+Section label: "RECOMMENDED ACTIONS"
+	Style: Poppins 600, 11pt, uppercase, teal
+
+Headline: "Six Moves for This Quarter"
+	Style: Poppins 700, 32pt, navy
+
+ACTION LIST
+
+01	Document World Cup premiums for future mega-event business cases
+
+02	Audit your destination's screen presence and develop set-jetting content
+
+03	Help operators get export-ready on sustainability credentials
+
+04	Study visitor management innovations from capacity-constrained destinations
+
+05	Model the revenue impact of event calendar changes on your market
+
+06	Position for rate growth, not just occupancy recovery
+
+TYPOGRAPHY
+• Number: Barlow Condensed 700, 24pt, teal
+• Bold portion (first phrase): Poppins 600, 18pt, navy
+• Regular portion: DM Sans 400, 18pt, Text Secondary
+• Line spacing: 48px between items
+• Left margin for numbers: Fixed width (48px) to align text
+
+LAYOUT OPTION
+• Single column, left-aligned
+• Or: Two columns (1-3 left, 4-6 right) if vertical space is tight
+
+VISUAL ACCENT
+• Small teal arrow or bullet before each number
+• Thin horizontal divider lines between items (optional, 1px, #e8e0d6)
+
+No source footer needed
+
+
+════════════════════════════════════════════════════════════════════════════════
+SLIDE 9: IF YOU DO NOTHING ELSE
+════════════════════════════════════════════════════════════════════════════════
+
+Layout: Three centered icons with minimal text
+
+HEADER AREA
+
+Section label: "IF YOU DO NOTHING ELSE"
+	Style: Poppins 600, 12pt, uppercase, tracked, teal
+
+ICON BLOCKS (3, horizontally centered)
+
+Block 1
+	Icon: Film reel / clapperboard
+	Label: "Audit Screen Presence"
+	Subtext: Before younger travelers discover you without your involvement
+
+Block 2
+	Icon: Document with checkmark
+	Label: "Get Operators Export-Ready"
+	Subtext: Sustainability documentation is now a market access requirement
+
+Block 3
+	Icon: Chart trending up with $
+	Label: "Position for Rate"
+	Subtext: The story has shifted from heads in beds to value capture
+
+SPECIFICATIONS
+• Icons: 64px, teal color, line-style (not filled)
+• Label: Poppins 700, 20pt, navy, centered below icon
+• Subtext: DM Sans 400, 14pt, Text Secondary, centered, max-width 200px
+• Spacing: Equal distribution across slide width, 80px between icon blocks
+• Vertical position: Centered in slide
+
+DESIGN NOTES
+• Generous white space — this slide should feel like a breath
+• Consider subtle teal→sage gradient line below header
+• No cards or borders — icons and text float on cream background
+
+No source footer needed
+
+
+════════════════════════════════════════════════════════════════════════════════
+SLIDE 10: CLOSING
+════════════════════════════════════════════════════════════════════════════════
+
+Layout: Mirrored cover design
+
+BACKGROUND
+• Same rotated landscape image as Slide 1 (or complementary image from same shoot)
+• Rotation mirrored (counter-clockwise) or positioned on opposite side
+• Navy overlay on text area
+
+TEXT ELEMENTS
+
+Headline: TOURISM / INDUSTRY / SCAN (stacked)
+	Position: Centered or right-aligned
+
+Volume badge: "VOL. 3 · JUNE 2026"
+	Position: Below headline
+
+Logo: eLearningU logo
+	Position: Bottom-center or bottom-right
+
+Tagline (optional): "Monthly intelligence for Canadian DMO leaders"
+	Position: Small, below logo
+
+DESIGN NOTES
+• This slide holds for ~5 seconds with no voiceover
+• Should feel like a "closing credits" moment
+• Consider subtle animation: Logo fades in, or gradient sweep
+
+
+════════════════════════════════════════════════════════════════════════════════
+ANIMATION GUIDANCE (if animated/video)
+════════════════════════════════════════════════════════════════════════════════
+
+Cover: Headline words stagger in (0.2s delay each); image subtle Ken Burns
+
+Big Picture: Cards fade in sequentially (0.15s stagger)
+
+Trend slides: Progress tracker fills; main content fades in; callouts pop
+
+Actions: Numbers count up or items stagger in from left
+
+Nothing Else: Icons scale up from 0 with slight bounce
+
+Closing: Fade in from black; logo last
+
+TIMING: Keep animations subtle and fast (0.3-0.5s). This is a professional briefing, not a motion graphics piece.
+
+
+════════════════════════════════════════════════════════════════════════════════
+ASSET CHECKLIST
+════════════════════════════════════════════════════════════════════════════════
+
+☐ eLearningU logo (cream/white version for dark backgrounds)
+☐ Canada map outline (simplified, for Slide 3)
+☐ Icon set: Trophy, chart-up, film reel, globe-check, warning, reward badge, calendar, car-people, document-check, dollar-chart
+☐ Editorial photography: White Lotus-style resort, Paris street, dramatic landscape (for Slide 5)
+☐ Banff/Lake Louise mountain photography
+☐ World Cup / stadium imagery OR summer Canadian landscape (for cover/closing)
+☐ Montréal skyline or F1 motif (optional, for Slide 4 background)
+
+
+════════════════════════════════════════════════════════════════════════════════
+FILE DELIVERY
+════════════════════════════════════════════════════════════════════════════════
+
+Format: Google Slides, Keynote, or PowerPoint (confirm preference)
+Aspect ratio: 16:9
+Export: PDF for review, video render for final (if animated)
