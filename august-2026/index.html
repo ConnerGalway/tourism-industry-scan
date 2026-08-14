@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tourism Industry Scan | August 2026 | eLearningU</title>
+<meta name="description" content="Monthly intelligence report for Canadian DMO leaders, August 2026. Record-breaking summer, Montreal's playbook, the boycott dividend, AI booking integration, and overtourism opportunities.">
+<link rel="icon" type="image/png" href="elearningu favicon.png">
+<link rel="shortcut icon" href="elearningu favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#f9f7f4;--bg2:#f5efe6;--card:#ffffff;--card2:#faf8f5;
+  --border:#e8e0d6;--border2:#d4c9b8;
+  --shadow:0 1px 3px rgba(17,21,78,0.06),0 4px 16px rgba(17,21,78,0.05);
+  --shadow-lg:0 4px 24px rgba(17,21,78,0.12);
+  --text:#11154e;--text2:#3d4270;--text3:#9499bb;
+  --teal:#0e7b8c;--teal-dim:rgba(14,123,140,0.08);--teal-mid:rgba(14,123,140,0.20);
+  --blue:#11154e;--blue-dim:rgba(17,21,78,0.08);
+  --violet:#5c5fa8;--violet-dim:rgba(92,95,168,0.10);
+  --amber:#c47b2b;--amber-dim:rgba(196,123,43,0.10);
+  --coral:#b84c4c;--coral-dim:rgba(184,76,76,0.10);
+  --green:#4e8b6e;--green-dim:rgba(78,139,110,0.10);
+  --hero-bg:linear-gradient(135deg,#ffffff 0%,#f5efe6 60%,#edf5f0 100%);
+  --tab-active-text:#11154e;
+  --logo-filter:none;
+  --sage:#8fbc9f;--sage-dim:rgba(143,188,159,0.15);
+  --navy:#11154e;
+  --overlay:rgba(17,21,78,0.55);
+  --kbd-bg:#ffffff;--kbd-border:#d4c9b8;
+}
+[data-theme="dark"]{
+  --bg:#0a1024;--bg2:#0d1430;--card:#131a3a;--card2:#172044;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.16);
+  --shadow:0 1px 3px rgba(0,0,0,0.35),0 6px 22px rgba(0,0,0,0.28);
+  --shadow-lg:0 8px 38px rgba(0,0,0,0.55);
+  --text:#f3f1ec;--text2:#b7bce0;--text3:#7479b5;
+  --teal:#5fe3d4;--teal-dim:rgba(95,227,212,0.12);--teal-mid:rgba(95,227,212,0.26);
+  --blue:#8d92ea;--blue-dim:rgba(141,146,234,0.14);
+  --violet:#b8b0f0;--violet-dim:rgba(184,176,240,0.14);
+  --amber:#f0b070;--amber-dim:rgba(240,176,112,0.14);
+  --coral:#ed8484;--coral-dim:rgba(237,132,132,0.14);
+  --green:#7dd4a3;--green-dim:rgba(125,212,163,0.14);
+  --hero-bg:radial-gradient(circle at 18% 22%,rgba(95,227,212,0.10) 0%,transparent 55%),radial-gradient(circle at 82% 78%,rgba(141,146,234,0.12) 0%,transparent 50%),linear-gradient(135deg,#0d1430 0%,#0a1024 60%,#0c1230 100%);
+  --tab-active-text:#f3f1ec;
+  --logo-filter:brightness(0) invert(1);
+  --sage:#7dd4a3;--sage-dim:rgba(125,212,163,0.15);
+  --navy:#8d92ea;
+  --overlay:rgba(4,7,20,0.78);
+  --kbd-bg:#172044;--kbd-border:rgba(255,255,255,0.18);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:128px}
+body{font-family:'DM Sans',sans-serif;font-weight:400;background:var(--bg);color:var(--text);line-height:1.65;transition:background 0.3s ease,color 0.3s ease;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:'Poppins',sans-serif;line-height:1.2}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font-family:inherit}
+::selection{background:var(--teal-mid);color:var(--text)}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+}
+
+/* ============ READING PROGRESS BAR ============ */
+.reading-progress{position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:300;pointer-events:none}
+.reading-progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--sage));transition:width 0.08s linear;box-shadow:0 0 12px var(--teal-mid)}
+
+/* ============ TAGS ============ */
+.tag{display:inline-block;font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:3px 9px;border-radius:20px;white-space:nowrap}
+.tag-social{background:var(--violet-dim);color:var(--violet);border:1px solid var(--violet)}
+.tag-consumer{background:var(--teal-dim);color:var(--teal);border:1px solid var(--teal)}
+.tag-ai{background:var(--blue-dim);color:var(--blue);border:1px solid var(--blue)}
+.tag-economics{background:var(--amber-dim);color:var(--amber);border:1px solid var(--amber)}
+.tag-sustainability{background:var(--green-dim);color:var(--green);border:1px solid var(--green)}
+.tag-seo{background:var(--coral-dim);color:var(--coral);border:1px solid var(--coral)}
+.tag-demand{background:var(--teal-dim);color:var(--teal);border:1px solid var(--teal)}
+.tag-paid{background:var(--blue-dim);color:var(--blue);border:1px solid var(--blue)}
+.tag-policy{background:var(--coral-dim);color:var(--coral);border:1px solid var(--coral)}
+
+/* ============ HEADER ============ */
+.site-header{position:sticky;top:0;z-index:200;height:64px;background:rgba(249,247,244,0.88);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;transition:background 0.3s ease,border-color 0.3s ease}
+[data-theme="dark"] .site-header{background:rgba(10,16,36,0.82)}
+.header-logo{font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;color:var(--text);letter-spacing:-0.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.header-logo:hover{text-decoration:none}
+.header-logo .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px var(--teal-dim)}
+
+.header-center{display:flex;align-items:center;gap:10px}
+.header-badge{font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);border:1px solid var(--border2);padding:4px 12px;border-radius:20px}
+.header-month{font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--text2)}
+.header-archive{font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text2);background:var(--card);border:1px solid var(--border);padding:4px 10px 4px 8px;border-radius:20px;display:inline-flex;align-items:center;gap:4px;transition:all 0.2s ease;text-decoration:none}
+.header-archive:hover{border-color:var(--teal);color:var(--teal);text-decoration:none;transform:translateX(-1px)}
+.header-archive svg{width:11px;height:11px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+.header-right{display:flex;align-items:center;gap:8px}
+.header-icon-btn{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:6px 12px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:var(--text2);transition:all 0.2s ease}
+.header-icon-btn:hover{border-color:var(--teal);color:var(--teal)}
+.header-icon-btn svg{width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.kbd-hint{font-family:'Poppins',sans-serif;font-size:10px;font-weight:600;padding:1px 5px;border:1px solid var(--border2);border-radius:4px;background:var(--kbd-bg);color:var(--text3);margin-left:2px}
+.theme-toggle{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:6px 14px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:var(--text2);transition:all 0.2s ease}
+.theme-toggle:hover{border-color:var(--teal);color:var(--teal)}
+.theme-toggle svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ============ HERO ============ */
+.hero{background:var(--hero-bg);padding:72px 32px 56px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-40%;right:-10%;width:560px;height:560px;background:radial-gradient(circle,var(--teal-dim) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative}
+.hero-label{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.hero-label::before{content:"";width:24px;height:1px;background:var(--teal)}
+.hero h1{font-size:clamp(38px,5.5vw,68px);font-weight:700;letter-spacing:-0.02em;color:var(--text);line-height:1.05;margin-bottom:20px}
+.hero h1 .accent{color:var(--teal);display:block}
+.hero-sub{font-family:'DM Sans',sans-serif;font-size:17px;color:var(--text2);max-width:580px;line-height:1.7;margin-bottom:32px}
+
+/* Three-things-to-know block */
+.three-things{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 24px;margin-bottom:36px;max-width:760px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.three-things::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--teal),var(--sage))}
+.three-things-label{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.three-things-label svg{width:12px;height:12px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.three-things ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.three-things li{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);line-height:1.55;display:flex;align-items:flex-start;gap:10px;font-weight:500}
+.three-things li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:7px}
+.three-things li strong{color:var(--text);font-weight:700}
+
+.hero-pills{display:flex;flex-wrap:wrap;gap:12px}
+.hero-pill{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:10px 20px;box-shadow:var(--shadow);transition:transform 0.2s ease,box-shadow 0.2s ease}
+.hero-pill:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.hero-pill-num{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:var(--teal);line-height:1}
+.hero-pill-label{font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;max-width:90px;line-height:1.3}
+
+/* ============ VIDEO ============ */
+.video-section{background:var(--bg2);border-bottom:1px solid var(--border);padding:56px 32px;position:relative}
+.video-section::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal),var(--sage))}
+.video-inner{max-width:1200px;margin:0 auto}
+.section-eyebrow{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal);margin-bottom:10px}
+.video-section h2{font-size:28px;font-weight:700;color:var(--text);margin-bottom:32px;letter-spacing:-0.02em}
+.video-grid{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
+.video-container{background:var(--card);border-radius:16px;aspect-ratio:16/9;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);border:1px solid var(--border)}
+.video-container iframe{width:100%;height:100%;border:0}
+.video-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:var(--card);color:var(--text3)}
+.video-placeholder-icon{width:64px;height:64px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 8px var(--teal-dim)}
+.video-placeholder-icon svg{width:28px;height:28px;fill:white;margin-left:4px}
+.video-placeholder-text{font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;color:var(--text3)}
+.video-sidebar{display:flex;flex-direction:column;gap:16px}
+.presenter-card,.topics-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.presenter-label{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);margin-bottom:6px}
+.presenter-name{font-family:'Poppins',sans-serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:2px}
+.presenter-title{font-size:12px;color:var(--teal);font-weight:600;margin-bottom:10px}
+.presenter-bio{font-size:13px;color:var(--text2);line-height:1.6}
+.topics-heading{font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px}
+.topics-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.topics-list li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text2);line-height:1.5}
+.topics-list li::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;flex-shrink:0;margin-top:6px}
+
+/* ============ TAB BAR ============ */
+.tab-bar{position:sticky;top:64px;z-index:100;background:rgba(249,247,244,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:background 0.3s ease}
+[data-theme="dark"] .tab-bar{background:rgba(10,16,36,0.88)}
+.tab-bar-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;overflow-x:auto;scrollbar-width:none;position:relative}
+.tab-bar-inner::-webkit-scrollbar{display:none}
+.tab-btn{position:relative;background:none;border:none;padding:18px 18px 16px;display:flex;align-items:center;gap:9px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--text3);transition:color 0.18s ease;white-space:nowrap;border-bottom:2px solid transparent}
+.tab-btn:hover{color:var(--text2)}
+.tab-btn.active{color:var(--tab-active-text);border-bottom-color:var(--teal)}
+.tab-num{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.05em;padding:2px 6px;border-radius:4px;background:var(--bg2);border:1px solid var(--border);color:var(--text3);transition:all 0.18s ease}
+.tab-btn.active .tab-num{background:var(--teal-dim);border-color:var(--teal-mid);color:var(--teal)}
+.tab-time{font-family:'Poppins',sans-serif;font-size:10px;font-weight:600;color:var(--text3);background:transparent;border:1px solid var(--border);padding:1px 6px;border-radius:10px;letter-spacing:0.02em}
+.tab-btn.active .tab-time{border-color:var(--teal-mid);color:var(--teal)}
+/* per-tab progress fill inside the bottom border */
+.tab-btn::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0%;background:var(--teal);opacity:0;transition:width 0.15s linear,opacity 0.2s ease}
+.tab-btn.active::after{opacity:1}
+
+/* ============ PANELS ============ */
+.panels-wrapper{max-width:1200px;margin:0 auto;padding:0 32px}
+.tab-panel{display:none;padding-top:48px;padding-bottom:96px;animation:fadeIn 0.35s ease}
+.tab-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+.section-header{margin-bottom:40px}
+.section-header-top{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.section-num{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.1em;color:var(--text3);text-transform:uppercase}
+.section-divider{height:3px;width:40px;border-radius:2px;flex-shrink:0}
+.section-header h2{font-size:28px;font-weight:700;color:var(--text);letter-spacing:-0.02em;margin-bottom:8px}
+.section-header p{font-size:15px;color:var(--text2);max-width:620px}
+
+/* ============ TREND CARDS ============ */
+.trends-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;align-items:start}
+.trend-card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;transition:transform 0.25s ease,box-shadow 0.25s ease;cursor:pointer;position:relative}
+.trend-card::before{content:'';position:absolute;top:0;left:0;height:3px;width:0%;transition:width 0.4s cubic-bezier(0.22,0.61,0.36,1)}
+.trend-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.trend-card:hover::before,.trend-card.open::before{width:100%}
+.trend-card[data-color="teal"]::before{background:var(--teal)}
+.trend-card[data-color="blue"]::before{background:var(--blue)}
+.trend-card[data-color="violet"]::before{background:var(--violet)}
+.trend-card[data-color="amber"]::before{background:var(--amber)}
+.trend-card[data-color="coral"]::before{background:var(--coral)}
+.trend-card[data-color="green"]::before{background:var(--green)}
+.trend-card-top{padding:24px 24px 18px}
+.trend-card-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;gap:12px}
+.trend-card-confidence{display:flex;align-items:center;gap:6px;font-family:'Poppins',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text3)}
+.confidence-dots{display:inline-flex;gap:3px}
+.confidence-dot{width:5px;height:5px;border-radius:50%;background:var(--border2)}
+.confidence-dot.on{background:var(--teal)}
+.share-btn{background:transparent;border:1px solid var(--border);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text3);transition:all 0.2s ease;flex-shrink:0}
+.share-btn:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-dim)}
+.share-btn svg{width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.share-btn.copied{border-color:var(--green);color:var(--green);background:var(--green-dim)}
+.trend-card h3{font-size:17px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.3}
+.trend-card-summary{font-size:14px;color:var(--text2);line-height:1.7}
+.trend-card-toggle{width:100%;background:none;border:none;border-top:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:var(--teal);transition:background 0.15s ease}
+.trend-card-toggle:hover{background:var(--teal-dim)}
+.trend-card-toggle svg{width:16px;height:16px;stroke:var(--teal);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform 0.25s ease;flex-shrink:0}
+.trend-card.open .trend-card-toggle svg{transform:rotate(180deg)}
+.trend-card-expanded{display:none;padding:0 24px 24px;border-top:1px solid var(--border)}
+.trend-card.open .trend-card-expanded{display:block}
+.trend-expanded-inner{padding-top:18px}
+.trend-expanded-inner p{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:14px}
+.source-chip{display:inline-block;font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;color:var(--teal);background:var(--teal-dim);border:1px solid var(--teal-mid);padding:3px 10px;border-radius:20px;margin-right:6px;margin-bottom:6px;cursor:pointer;transition:all 0.18s ease}
+.source-chip:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.trend-source-line{margin-top:14px;font-size:12px;color:var(--text3)}
+.trend-source-line strong{font-family:'Poppins',sans-serif;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;font-size:10px;margin-right:8px}
+
+/* ============ INSIGHTS ============ */
+.insights-list{display:flex;flex-direction:column;gap:0}
+.insight-row{display:grid;grid-template-columns:180px 1fr auto;gap:28px;padding:32px 28px;border-radius:12px;align-items:start;margin-bottom:16px;position:relative;transition:transform 0.2s ease,box-shadow 0.2s ease}
+.insight-row:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.insight-row:nth-child(odd){background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow)}
+.insight-row:nth-child(even){background:var(--card2);border:1px solid var(--border);box-shadow:var(--shadow)}
+.insight-stat{font-family:'Barlow Condensed',sans-serif;font-size:64px;font-weight:700;color:var(--teal);line-height:1;word-break:break-word;letter-spacing:-0.01em}
+.insight-content{min-width:0}
+.insight-meta-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.insight-headline{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.3}
+.insight-body{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:12px}
+.insight-source{font-size:12px;color:var(--text3);font-style:italic}
+
+/* ============ HERO STATS + CHARTS ============ */
+.hero-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px}
+.hero-stat-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden;transition:transform 0.2s ease,box-shadow 0.2s ease}
+.hero-stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.hero-stat-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+.hero-stat-card:nth-child(1)::after{background:var(--teal)}
+.hero-stat-card:nth-child(2)::after{background:var(--blue)}
+.hero-stat-card:nth-child(3)::after{background:var(--amber)}
+.hero-stat-card:nth-child(4)::after{background:var(--violet)}
+.hero-stat-num{font-family:'Barlow Condensed',sans-serif;font-size:54px;font-weight:700;line-height:1;margin-bottom:8px;letter-spacing:-0.01em}
+.hero-stat-card:nth-child(1) .hero-stat-num{color:var(--teal)}
+.hero-stat-card:nth-child(2) .hero-stat-num{color:var(--blue)}
+.hero-stat-card:nth-child(3) .hero-stat-num{color:var(--amber)}
+.hero-stat-card:nth-child(4) .hero-stat-num{color:var(--violet)}
+.hero-stat-label{font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;line-height:1.3}
+.hero-stat-source{font-size:11px;color:var(--text3);margin-bottom:8px}
+.hero-stat-note{font-size:12px;color:var(--text2);line-height:1.5;margin-top:6px}
+.charts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:var(--shadow);position:relative}
+.chart-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:4px}
+.chart-title{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;flex:1}
+.chart-subtitle{font-size:12px;color:var(--text3);margin-bottom:20px;line-height:1.55}
+.chart-toggle{display:inline-flex;align-items:center;gap:6px;font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;color:var(--text3);cursor:pointer;user-select:none;padding:5px 10px;border:1px solid var(--border);border-radius:50px;background:var(--bg);transition:all 0.18s ease}
+.chart-toggle:hover{border-color:var(--teal-mid);color:var(--teal)}
+.chart-toggle.on{background:var(--teal-dim);border-color:var(--teal-mid);color:var(--teal)}
+.chart-toggle-dot{width:8px;height:8px;border-radius:50%;background:var(--border2);transition:background 0.18s ease}
+.chart-toggle.on .chart-toggle-dot{background:var(--teal)}
+
+/* ============ ACTIONS ============ */
+.actions-list{display:flex;flex-direction:column;gap:16px}
+.action-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 28px 24px;box-shadow:var(--shadow);display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;transition:border-color 0.2s ease,box-shadow 0.2s ease,transform 0.2s ease;position:relative}
+.action-card:hover{border-color:var(--teal-mid);box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.action-num{font-family:'Barlow Condensed',sans-serif;font-size:46px;font-weight:700;color:var(--teal);opacity:0.28;line-height:1;padding-top:4px}
+.action-body{min-width:0}
+.action-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+.action-headline{font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:var(--text);line-height:1.3;flex:1}
+.action-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:14px}
+.action-split-col{padding:14px 16px;border-radius:10px;background:var(--bg2);border:1px solid var(--border)}
+.action-split-label{font-family:'Poppins',sans-serif;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.action-split-label svg{width:11px;height:11px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.action-split .evidence .action-split-label{color:var(--amber)}
+.action-split .change .action-split-label{color:var(--teal)}
+.action-split-body{font-size:13.5px;color:var(--text2);line-height:1.65}
+.action-tags{display:flex;flex-wrap:wrap;gap:6px}
+
+/* ============ READING (was Go Deeper) ============ */
+.filter-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filter-pill{font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;padding:6px 18px;border-radius:50px;border:1px solid var(--border2);background:var(--card);color:var(--text2);cursor:pointer;transition:all 0.18s ease}
+.filter-pill:hover{border-color:var(--teal);color:var(--teal)}
+.filter-pill.active{background:var(--teal);border-color:var(--teal);color:#fff}
+.sources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.source-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;transition:transform 0.2s ease,box-shadow 0.2s ease,border-color 0.2s ease}
+.source-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);border-color:var(--teal-mid)}
+.source-card.hidden{display:none}
+.source-publisher{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3)}
+.source-title{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;color:var(--text);line-height:1.35}
+.source-desc{font-size:13px;color:var(--text2);line-height:1.6;flex:1}
+.source-link{font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:var(--teal);display:inline-flex;align-items:center;gap:6px;margin-top:4px}
+.source-link svg{width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform 0.2s ease}
+.source-link:hover svg{transform:translateX(3px)}
+
+/* ============ FLOATING JUMP-TO-ACTIONS ============ */
+.fab-actions{position:fixed;right:28px;bottom:28px;z-index:150;display:inline-flex;align-items:center;gap:8px;background:var(--violet);color:#fff;border:none;border-radius:50px;padding:12px 20px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 6px 24px rgba(92,95,168,0.32),0 2px 8px rgba(0,0,0,0.12);transition:transform 0.25s ease,box-shadow 0.25s ease,opacity 0.25s ease;opacity:0;transform:translateY(20px) scale(0.92);pointer-events:none}
+[data-theme="dark"] .fab-actions{box-shadow:0 6px 28px rgba(184,176,240,0.35),0 2px 10px rgba(0,0,0,0.4)}
+.fab-actions.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.fab-actions:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 10px 30px rgba(92,95,168,0.42)}
+.fab-actions.on-actions{display:none}
+.fab-actions svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ SEARCH OVERLAY ============ */
+.search-overlay{position:fixed;inset:0;z-index:400;background:var(--overlay);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding-top:14vh;padding-left:20px;padding-right:20px;animation:overlayIn 0.18s ease}
+.search-overlay.open{display:flex}
+@keyframes overlayIn{from{opacity:0}to{opacity:1}}
+.search-modal{background:var(--card);border:1px solid var(--border2);border-radius:18px;width:100%;max-width:640px;box-shadow:0 30px 80px rgba(0,0,0,0.35);overflow:hidden;animation:modalIn 0.22s cubic-bezier(0.22,0.61,0.36,1)}
+@keyframes modalIn{from{opacity:0;transform:translateY(-12px) scale(0.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.search-input-wrap{display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid var(--border)}
+.search-input-wrap svg{width:18px;height:18px;stroke:var(--text3);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+#searchInput{flex:1;border:none;outline:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:16px;color:var(--text);padding:4px 0}
+#searchInput::placeholder{color:var(--text3)}
+.search-esc{font-family:'Poppins',sans-serif;font-size:10px;font-weight:600;padding:2px 7px;border:1px solid var(--border2);border-radius:5px;background:var(--bg2);color:var(--text3);letter-spacing:0.04em}
+.search-results{max-height:55vh;overflow-y:auto;padding:8px}
+.search-results::-webkit-scrollbar{width:8px}
+.search-results::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px}
+.search-empty{padding:36px 20px;text-align:center;color:var(--text3);font-size:14px}
+.search-section-label{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);padding:14px 16px 6px}
+.search-result{display:block;padding:12px 16px;border-radius:10px;cursor:pointer;transition:background 0.12s ease;text-decoration:none;color:inherit;border:1px solid transparent}
+.search-result:hover,.search-result.focused{background:var(--bg2);text-decoration:none;border-color:var(--border)}
+.search-result-title{font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px;line-height:1.35}
+.search-result-snippet{font-size:12.5px;color:var(--text2);line-height:1.5}
+.search-result-snippet mark{background:var(--teal-dim);color:var(--teal);font-weight:600;padding:0 2px;border-radius:3px}
+.search-foot{padding:10px 16px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--text3);background:var(--bg)}
+.search-foot-keys{display:flex;align-items:center;gap:12px}
+.search-foot-keys span{display:inline-flex;align-items:center;gap:6px}
+
+/* ============ TOAST ============ */
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--text);color:var(--card);font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;padding:12px 20px;border-radius:50px;box-shadow:0 8px 28px rgba(0,0,0,0.25);z-index:500;opacity:0;transition:opacity 0.25s ease,transform 0.25s ease;display:inline-flex;align-items:center;gap:8px}
+.toast svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ============ WHAT'S NEW SPOTLIGHT ============ */
+.spotlight-overlay{position:fixed;inset:0;z-index:600;background:rgba(17,21,78,0.58);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity 0.4s ease;pointer-events:none}
+[data-theme="dark"] .spotlight-overlay{background:rgba(4,7,20,0.78)}
+.spotlight-overlay.show{opacity:1;pointer-events:auto}
+.spotlight-card{background:var(--card);border:1px solid var(--border2);border-radius:24px;width:100%;max-width:520px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.28);transform:translateY(20px) scale(0.97);transition:transform 0.45s cubic-bezier(0.22,0.61,0.36,1)}
+.spotlight-overlay.show .spotlight-card{transform:translateY(0) scale(1)}
+.spotlight-bar{height:3px;background:linear-gradient(90deg,var(--teal) 0%,var(--sage) 50%,var(--violet) 100%)}
+.spotlight-body{padding:34px 38px 30px;position:relative}
+.spotlight-close{position:absolute;top:16px;right:16px;width:30px;height:30px;border-radius:50%;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text3);transition:all 0.18s ease;flex-shrink:0}
+.spotlight-close:hover{border-color:var(--teal);color:var(--teal)}
+.spotlight-close svg{width:13px;height:13px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.spotlight-eyebrow{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.spotlight-eyebrow::before{content:'';width:20px;height:1px;background:var(--teal)}
+.spotlight-headline{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:var(--text);letter-spacing:-0.02em;line-height:1.25;margin-bottom:6px}
+.spotlight-sub{font-size:13.5px;color:var(--text2);line-height:1.65;margin-bottom:24px}
+.spotlight-features{display:flex;flex-direction:column;gap:2px;margin-bottom:24px}
+.spotlight-feature{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:11px 12px;border-radius:12px;transition:background 0.15s ease;align-items:flex-start;opacity:0;transform:translateY(8px);transition:opacity 0.35s ease,transform 0.35s ease,background 0.15s ease}
+.spotlight-overlay.show .spotlight-feature:nth-child(1){opacity:1;transform:translateY(0);transition-delay:0.18s}
+.spotlight-overlay.show .spotlight-feature:nth-child(2){opacity:1;transform:translateY(0);transition-delay:0.28s}
+.spotlight-overlay.show .spotlight-feature:nth-child(3){opacity:1;transform:translateY(0);transition-delay:0.38s}
+.spotlight-overlay.show .spotlight-feature:nth-child(4){opacity:1;transform:translateY(0);transition-delay:0.48s}
+.spotlight-feature:hover{background:var(--bg2)}
+.spotlight-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.spotlight-icon svg{width:17px;height:17px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.spotlight-fname{font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.spotlight-badge{font-family:'Poppins',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;background:var(--teal);color:#fff;padding:2px 6px;border-radius:4px}
+.spotlight-fdesc{font-size:12.5px;color:var(--text2);line-height:1.55}
+.spotlight-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--text);color:var(--card);border:none;border-radius:12px;padding:14px 24px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:-0.01em;transition:all 0.22s ease;opacity:0;transform:translateY(6px)}
+.spotlight-overlay.show .spotlight-cta{opacity:1;transform:translateY(0);transition:opacity 0.35s ease 0.56s,transform 0.35s ease 0.56s,background 0.2s ease,box-shadow 0.2s ease}
+.spotlight-cta:hover{background:var(--teal);box-shadow:0 8px 28px rgba(14,123,140,0.35)}
+.spotlight-cta svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* Pulsing new-feature dot on the search button */
+.has-new-pulse{position:relative}
+.has-new-pulse::after{content:'';position:absolute;top:-3px;right:-3px;width:9px;height:9px;border-radius:50%;background:var(--teal);animation:newFeaturePulse 2.4s ease-in-out infinite}
+@keyframes newFeaturePulse{0%{box-shadow:0 0 0 0 rgba(14,123,140,0.55)}65%{box-shadow:0 0 0 9px rgba(14,123,140,0)}100%{box-shadow:0 0 0 0 rgba(14,123,140,0)}}
+[data-theme="dark"] .has-new-pulse::after{background:var(--teal)}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px;margin-top:0}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.footer-left{font-size:13px;color:var(--text2)}
+.footer-left a{color:var(--teal);font-weight:600}
+.footer-right{font-family:'Poppins',sans-serif;font-weight:800;font-size:14px;color:var(--text);display:flex;align-items:center;gap:8px}
+.footer-right .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.footer-prev{display:inline-flex;align-items:center;gap:6px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;color:var(--text2);background:var(--card);border:1px solid var(--border);padding:6px 12px;border-radius:50px;text-decoration:none;margin-left:14px;transition:all 0.2s ease}
+.footer-prev:hover{border-color:var(--teal);color:var(--teal);text-decoration:none}
+.footer-prev svg{width:11px;height:11px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px){
+  .trends-grid{grid-template-columns:1fr}
+  .hero-stats-grid{grid-template-columns:repeat(2,1fr)}
+  .charts-grid{grid-template-columns:1fr}
+  .sources-grid{grid-template-columns:repeat(2,1fr)}
+  .insight-row{grid-template-columns:1fr;gap:14px}
+  .insight-stat{font-size:54px}
+  .video-grid{grid-template-columns:1fr}
+  .action-split{grid-template-columns:1fr}
+  .header-month,.header-archive{display:none}
+}
+@media (max-width: 640px){
+  .site-header{padding:0 16px;gap:8px}
+  .hero{padding:54px 16px 44px}
+  .video-section{padding:44px 16px}
+  .tab-bar-inner{padding:0 16px}
+  .panels-wrapper{padding:0 16px}
+  .hero-stats-grid{grid-template-columns:repeat(2,1fr)}
+  .sources-grid{grid-template-columns:1fr}
+  .action-card{grid-template-columns:1fr;padding:22px}
+  .action-num{font-size:32px;padding-top:0}
+  .tab-btn{padding:14px 12px;font-size:12px}
+  .tab-time{display:none}
+  .header-icon-btn .kbd-hint,.header-icon-btn span:not(.kbd-hint){display:none}
+  .fab-actions{right:16px;bottom:16px;padding:11px 16px;font-size:12px}
+  .three-things{padding:18px 18px 18px 20px}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer{padding:24px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- Reading progress bar -->
+<div class="reading-progress" aria-hidden="true"><div class="reading-progress-fill" id="readProgress"></div></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="#" class="header-logo" onclick="scrollToTop(event)">
+    <img src="elearningu icon.png" alt="eLearningU" style="height:36px;width:auto;filter:var(--logo-filter)">eLearningU
+  </a>
+  <div class="header-center">
+    <span class="header-badge">Tourism Industry Scan</span>
+    <span class="header-month">August 2026</span>
+    <a class="header-archive" href="../july-2026/index.html" title="August 2026 Tourism Industry Scan">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>August 2026
+    </a>
+  </div>
+  <div class="header-right">
+    <button class="header-icon-btn has-new-pulse" id="searchBtn" onclick="openSearch()" aria-label="Search this report">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <span>Search</span>
+      <span class="kbd-hint">⌘K</span>
+    </button>
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" aria-label="Toggle dark mode">
+      <svg id="themeIcon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <span id="themeLabel">Dark mode</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-label">Monthly Intelligence Report for Canadian DMO Leaders</p>
+    <h1>Tourism Industry Scan<span class="accent">August 2026</span></h1>
+    <p class="hero-sub">Nine industry sources synthesized into the trends, insights, stats, and actions Canadian DMO leaders need this month. From record-breaking summer performance to AI booking integration. Here's what changed since July.</p>
+
+    <div class="three-things">
+      <div class="three-things-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        What changed this month
+      </div>
+      <ul>
+        <li><span><strong>Canada is having its strongest tourism summer in history</strong> – Q1 spending hit $29.5 billion (+5.6% YoY) and Destination Canada forecasts $140.9 billion for 2026, the best year on record.</span></li>
+        <li><span><strong>Montreal is writing the playbook</strong> – On track for 12.5 million visitors with 82% hotel occupancy, driven by a deliberate mix of business events, festivals, and sports.</span></li>
+        <li><span><strong>AI has crossed from planning to booking</strong> – IHG and Radisson launched ChatGPT integrations; 72% of Criteo travel clients recorded bookings influenced by AI.</span></li>
+      </ul>
+    </div>
+
+    <div class="hero-pills">
+      <div class="hero-pill"><span class="hero-pill-num" data-count="9">9</span><span class="hero-pill-label">Sources Analyzed</span></div>
+      <div class="hero-pill"><span class="hero-pill-num" data-count="5">5</span><span class="hero-pill-label">Key Trends</span></div>
+      <div class="hero-pill"><span class="hero-pill-num" data-count="6">6</span><span class="hero-pill-label">Recommended Actions</span></div>
+      <div class="hero-pill"><span class="hero-pill-num" data-count="8" data-suffix=" min">~8 min</span><span class="hero-pill-label">Read Time</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="video-inner">
+    <p class="section-eyebrow">Executive Briefing · August 2026</p>
+    <h2>Watch the monthly briefing</h2>
+    <div class="video-grid">
+      <div class="video-container">
+        <div class="video-placeholder">
+          <div class="video-placeholder-icon"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <span class="video-placeholder-text">Video briefing coming soon</span>
+        </div>
+      </div>
+      <div class="video-sidebar">
+        <div class="presenter-card">
+          <p class="presenter-label">Presented by</p>
+          <p class="presenter-name">Conner Galway</p>
+          <p class="presenter-title">President, eLearningU &amp; Junction Creative Solutions</p>
+          <p class="presenter-bio">Junction works with destination marketing organizations across Canada to build stronger teams, sharper strategy, and more effective marketing programs. We deliver world class training at scale through our online learning platform: eLearningU.</p>
+        </div>
+        <div class="topics-card">
+          <p class="topics-heading">In this briefing</p>
+          <ul class="topics-list">
+            <li>Record-breaking summer: $29.5B in Q1 tourism spending</li>
+            <li>Montreal's playbook: diversified demand drives 12.5M visitors</li>
+            <li>The boycott dividend: how tariff tensions reshaped travel patterns</li>
+            <li>AI crosses the booking threshold: IHG, Radisson integrate with ChatGPT</li>
+            <li>Overtourism creates opportunity for uncrowded Canadian destinations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAB BAR -->
+<nav class="tab-bar" id="tabBar">
+  <div class="tab-bar-inner">
+    <button class="tab-btn active" data-tab="trends" onclick="switchTab('trends',this)"><span class="tab-num">01</span><span>Key Trends</span><span class="tab-time">3 min</span></button>
+    <button class="tab-btn" data-tab="insights" onclick="switchTab('insights',this)"><span class="tab-num">02</span><span>Consumer Insights</span><span class="tab-time">2 min</span></button>
+    <button class="tab-btn" data-tab="stats" onclick="switchTab('stats',this)"><span class="tab-num">03</span><span>Industry Stats</span><span class="tab-time">1 min</span></button>
+    <button class="tab-btn" data-tab="actions" onclick="switchTab('actions',this)"><span class="tab-num">04</span><span>Recommended Actions</span><span class="tab-time">2 min</span></button>
+    <button class="tab-btn" data-tab="deeper" onclick="switchTab('deeper',this)"><span class="tab-num">05</span><span>Recommended Reading</span><span class="tab-time">1 min</span></button>
+  </div>
+</nav>
+
+<div class="panels-wrapper">
+
+  <!-- PANEL 1: KEY TRENDS -->
+  <section class="tab-panel active" id="panel-trends">
+    <div class="section-header">
+      <div class="section-header-top"><span class="section-num">01</span><div class="section-divider" style="background:var(--teal)"></div></div>
+      <h2>Key Trends</h2>
+      <p>Five significant forces shaping Canadian tourism this month, synthesized from nine industry sources.</p>
+    </div>
+    <div class="trends-grid">
+
+      <div class="trend-card" data-color="amber" id="trend-1">
+        <div class="trend-card-top">
+          <div class="trend-card-meta">
+            <span class="tag tag-economics">Industry Economics</span>
+            <button class="share-btn" onclick="shareItem(event,'trend-1','Record-Breaking Summer: Canada Having Its Strongest Tourism Year. Q1 spending hit $29.5B, up 5.6% YoY.')" aria-label="Copy link to this trend">
+              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
+            </button>
+          </div>
+          <h3>Record-Breaking Summer: Canada Having Its Strongest Tourism Year</h3>
+          <p class="trend-card-summary">Canada recorded $29.5 billion in tourism spending in Q1 2026, up 5.6% year-over-year. Destination Canada now forecasts total visitor spending of $140.9 billion for 2026 - the strongest year in Canadian tourism history, driven by domestic patriotism, favourable exchange rates, and growing international interest.</p>
+        </div>
+        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="trend-card-expanded"><div class="trend-expanded-inner">
+          <p>Domestic spending accounted for $23.5 billion of Q1 spending (80% of total), as Canadians chose to explore their own country. International visitors now represent over 25.4% of all tourism spending, up from 25.2% in Q4 2025.</p>
+          <p>The sector continues to inject $364 million daily into communities across Canada, supporting one in ten Canadian jobs. Tourism GDP grew 2.5%, outpacing national economic growth of 1.7%.</p>
+          <p>Tourism operators report record-breaking passenger counts. Ambassatours Gray Line CEO Sean Buckland noted his business is "29 percent ahead of passenger counts based on this time last year."</p>
+          <p><strong>DMO Implication:</strong> This isn't a bounce-back - it's growth beyond pre-pandemic peaks. Use these numbers in advocacy conversations to demonstrate tourism's economic contribution and justify continued investment.</p>
+          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
+            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
+          </div>
+          <p class="trend-source-line"><strong>Source</strong>Statistics Canada, Destination Canada Tourism Outlook 2026-2035, CTV News</p>
+        </div></div>
+      </div>
+
+      <div class="trend-card" data-color="amber" id="trend-2">
+        <div class="trend-card-top">
+          <div class="trend-card-meta">
+            <span class="tag tag-economics">Industry Economics</span>
+            <button class="share-btn" onclick="shareItem(event,'trend-2','Montreal Writing the Playbook: On Track for 12.5M Visitors. 82% hotel occupancy driven by events, festivals, and business travel.')" aria-label="Copy link to this trend">
+              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
+            </button>
+          </div>
+          <h3>Montreal Writing the Playbook: On Track for 12.5 Million Visitors</h3>
+          <p class="trend-card-summary">Montreal is on track for 12.5 million visitors in 2026, shattering its previous record of 11 million set in 2019. Hotel occupancy hit 82% from May through July - seven percentage points higher than 2025 - with July reaching 86% occupancy and demand up 14% year-over-year.</p>
+        </div>
+        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="trend-card-expanded"><div class="trend-expanded-inner">
+          <p>The success is driven by a deliberate mix of demand generators: business events, festivals, and sports. In June and July alone, Montreal welcomed 70 groups representing more than 50,000 delegates. The Jazz Festival recorded its highest attendance ever, while Osheaga drew massive crowds.</p>
+          <p>US travel to Montreal increased 7% year-over-year, domestic Canadian travel rose 5%, and international visitors climbed nearly 5%. September projections suggest 90% occupancy during the UCI Road World Championships.</p>
+          <p>As Tourisme Montreal's CEO Yves Lalumiere put it: "Toronto is the downtown of Canada. Montreal is the playground of Canada."</p>
+          <p><strong>DMO Implication:</strong> Study the Montreal model. Diversified demand generators - business events, festivals, sports - create resilient, year-round performance that doesn't depend on any single segment.</p>
+          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
+            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
+          </div>
+          <p class="trend-source-line"><strong>Source</strong>Tourisme Montreal Mid-Season Report, Retail Insider, August 2026</p>
+        </div></div>
+      </div>
+
+      <div class="trend-card" data-color="teal" id="trend-3">
+        <div class="trend-card-top">
+          <div class="trend-card-meta">
+            <span class="tag tag-consumer">Consumer Behaviour</span>
+            <button class="share-btn" onclick="shareItem(event,'trend-3','The Boycott Effect: Tariff War Reshapes Cross-Border Travel. Canadian US travel down 42%, American visits to Canada up 6.1%.')" aria-label="Copy link to this trend">
+              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
+            </button>
+          </div>
+          <h3>The Boycott Effect: Tariff War Reshapes Cross-Border Travel</h3>
+          <p class="trend-card-summary">Nearly 70% of Canadians are actively boycotting the United States as a travel destination. Cell phone data shows Canadian travel to the US dropped 42% over the past year. Meanwhile, American visits to Canada are up 6.1%, creating a net positive shift for Canadian tourism operators.</p>
+        </div>
+        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="trend-card-expanded"><div class="trend-expanded-inner">
+          <p>Statistics Canada data shows air travel to the US fell 19.3% in November 2025, while auto travel dropped 28.6% - the 11th consecutive month of year-over-year declines. The U.S. Travel Association estimates they've lost $5.7 billion in Canadian visitor spending.</p>
+          <p>That money didn't disappear. Domestic spending reached $23.5 billion in Q1 2026 alone, as Canadians chose to explore their own country. Provinces have deployed new ad campaigns to capture this demand, with Manitoba increasing Tourism Manitoba's budget by $4.5 million.</p>
+          <p>Prime Minister Mark Carney noted: "Canadians have been keen to do their bit effectively - buy Canadian, visit their country."</p>
+          <p><strong>DMO Implication:</strong> If your marketing hasn't pivoted to capture domestic demand and value-seeking American visitors, you're leaving money on the table. The boycott created a market shift - are you capturing it?</p>
+          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
+            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
+          </div>
+          <p class="trend-source-line"><strong>Source</strong>Statistics Canada, CBC News, U.S. Travel Association</p>
+        </div></div>
+      </div>
+
+      <div class="trend-card" data-color="blue" id="trend-4">
+        <div class="trend-card-top">
+          <div class="trend-card-meta">
+            <span class="tag tag-ai">Technology</span>
+            <button class="share-btn" onclick="shareItem(event,'trend-4','AI Crosses the Booking Threshold: Major Chains Integrate with ChatGPT. IHG, Radisson launch ChatGPT booking tools; 72% of travel clients report AI-influenced bookings.')" aria-label="Copy link to this trend">
+              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
+            </button>
+          </div>
+          <h3>AI Crosses the Booking Threshold: Major Chains Integrate with ChatGPT</h3>
+          <p class="trend-card-summary">AI has moved from trip planning to actual booking. IHG launched hotel discovery through ChatGPT across 7,000+ properties. Radisson built a dedicated @RadissonHotels app in ChatGPT. One in three trip planning sessions now starts with AI, and 72% of Criteo travel clients recorded at least one booking influenced by ChatGPT.</p>
+        </div>
+        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="trend-card-expanded"><div class="trend-expanded-inner">
+          <p>ChatGPT now integrates directly with Booking.com, Expedia, Uber, and transportation platforms like Rome2Rio. In March 2026, ChatGPT drove 13 percentage points more product page landings than traditional search.</p>
+          <p>The AI market in tourism is growing fast - valued at around $3.37 billion in 2024, it's projected to hit nearly $13.9 billion by 2030 with an annual growth rate of about 26.7%.</p>
+          <p>The technical term for this shift is Generative Engine Optimization (GEO) - getting your business named inside an AI-generated answer, not just search results.</p>
+          <p><strong>DMO Implication:</strong> If you're not in the AI answer, you're not in the consideration set. Test how AI assistants describe your destination. Ensure your content appears in AI-generated answers through structured data, clear descriptions, and machine-readable formats.</p>
+          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
+            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
+          </div>
+          <p class="trend-source-line"><strong>Source</strong>IHG, Radisson/Accenture, Criteo, Captain Book</p>
+        </div></div>
+      </div>
+
+      <div class="trend-card" data-color="green" id="trend-5">
+        <div class="trend-card-top">
+          <div class="trend-card-meta">
+            <span class="tag tag-sustainability">Sustainability</span>
+            <button class="share-btn" onclick="shareItem(event,'trend-5','Overtourism Reshapes Demand: Canada Becomes Top Ecotourism Destination. 93% of Canadians will change habits; willingness to pay tourism fees up to 71%.')" aria-label="Copy link to this trend">
+              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
+            </button>
+          </div>
+          <h3>Overtourism Reshapes Demand: Canada Becomes Top Ecotourism Destination</h3>
+          <p class="trend-card-summary">93% of Canadians say overtourism concerns will shape their 2026 travel plans. Willingness to pay tourism fees has jumped from 57% in 2025 to 71% in 2026. Canada has overtaken Mexico, Iceland, and Costa Rica as the world's top ecotourism destination.</p>
+        </div>
+        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="trend-card-expanded"><div class="trend-expanded-inner">
+          <p>Rather than giving up on bucket-list travel, Canadians are changing when they travel, where they go, and how they spend. Travelers are now actively evaluating crowd density, seasonal pressure, and destination sustainability before booking.</p>
+          <p>Gros Morne National Park in Newfoundland is emerging as one of North America's strongest eco-tourism destinations. The shift validates investments in visitor management and demand distribution tools.</p>
+          <p>More travelers now support tourism fees that directly benefit local communities, reflecting growing understanding that tourism must contribute positively to destination infrastructure and sustainability.</p>
+          <p><strong>DMO Implication:</strong> If your destination isn't capacity-constrained, that's not a weakness - it's your competitive advantage. Position yourself as the antidote to overtourism. Build shoulder-season campaigns as travelers actively seek off-peak alternatives.</p>
+          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
+            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
+          </div>
+          <p class="trend-source-line"><strong>Source</strong>Intrepid Travel, Flight Centre Canada/YouGov, Travel and Tour World</p>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PANEL 2: CONSUMER INSIGHTS -->
+  <section class="tab-panel" id="panel-insights">
+    <div class="section-header">
+      <div class="section-header-top"><span class="section-num">02</span><div class="section-divider" style="background:var(--blue)"></div></div>
+      <h2>Consumer Behaviour Insights</h2>
+      <p>Five key data points on how travelers are making decisions, from AI-powered planning to overtourism concerns.</p>
+    </div>
+    <div class="insights-list">
+
+      <div class="insight-row" id="insight-1">
+        <div class="insight-stat" data-count="57" data-suffix="%">57%</div>
+        <div class="insight-content">
+          <div class="insight-meta-top">
+            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
+          </div>
+          <h3 class="insight-headline">Of Millennials now use AI tools for vacation planning, with Gen Z at 53%</h3>
+          <p class="insight-body">AI-powered trip planning has gone mainstream, fundamentally changing how younger demographics discover and book travel. These tools cut planning time by 50-80% and deliver hyper-personalized recommendations. Destinations that want to reach these travelers must ensure their content is AI-discoverable and well-structured.</p>
+          <p class="insight-source">Source: Simon-Kucher Global Travel Trends 2026</p>
+        </div>
+        <button class="share-btn" onclick="shareItem(event,'insight-1','57% of Millennials now use AI tools for vacation planning, with Gen Z at 53%. Simon-Kucher 2026.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+      </div>
+
+      <div class="insight-row" id="insight-2">
+        <div class="insight-stat" data-count="93" data-suffix="%">93%</div>
+        <div class="insight-content">
+          <div class="insight-meta-top">
+            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
+          </div>
+          <h3 class="insight-headline">Of Canadians would consider changing travel habits to reduce overtourism</h3>
+          <p class="insight-body">Canadian travelers are leading the shift toward responsible tourism. Combined with 84% saying it's important their travel positively impacts local people and places, this creates clear demand for authentic, less-crowded destinations and meaningful local experiences.</p>
+          <p class="insight-source">Source: Intrepid Travel Meaningful Travel Index</p>
+        </div>
+        <button class="share-btn" onclick="shareItem(event,'insight-2','93% of Canadians would consider changing travel habits to reduce overtourism. Intrepid Travel 2026.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+      </div>
+
+      <div class="insight-row" id="insight-3">
+        <div class="insight-stat" data-count="5" data-prefix="+" data-suffix="%">+5%</div>
+        <div class="insight-content">
+          <div class="insight-meta-top">
+            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
+          </div>
+          <h3 class="insight-headline">International arrivals in June 2026, as industry pricing strategies suppressed World Cup demand</h3>
+          <p class="insight-body">Despite hosting 13 FIFA World Cup matches, international arrivals grew only 5% YoY. Early evidence suggests this shortfall reflects industry behavior: operators inflated prices aggressively and reduced promotional efforts, assuming mega-event demand would materialize automatically. The Vancouver data (+21.3% ADR alongside -15.8% occupancy) illustrates the tradeoff.</p>
+          <p class="insight-source">Source: Statistics Canada via TravelMole</p>
+        </div>
+        <button class="share-btn" onclick="shareItem(event,'insight-3','+5% international arrivals in June 2026: industry pricing strategies may have suppressed World Cup demand. Statistics Canada.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+      </div>
+
+      <div class="insight-row" id="insight-4">
+        <div class="insight-stat" data-count="20.2" data-prefix="+" data-suffix="%" data-decimals="1">+20.2%</div>
+        <div class="insight-content">
+          <div class="insight-meta-top">
+            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
+          </div>
+          <h3 class="insight-headline">Nova Scotia RevPAR growth in June 2026, leading all Canadian provinces</h3>
+          <p class="insight-body">The Canada Sail Grand Prix in Halifax drove exceptional hotel performance, with ADR reaching CAD$270.46 (+15.7%) and RevPAR hitting CAD$228.22. This demonstrates that unique, smaller-scale events can deliver outsized economic impact when well-executed.</p>
+          <p class="insight-source">Source: CoStar/STR</p>
+        </div>
+        <button class="share-btn" onclick="shareItem(event,'insight-4','+20.2% Nova Scotia RevPAR growth in June 2026, leading all Canadian provinces. CoStar/STR.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+      </div>
+
+      <div class="insight-row" id="insight-5">
+        <div class="insight-stat" data-count="364" data-prefix="$" data-suffix="M">$364M</div>
+        <div class="insight-content">
+          <div class="insight-meta-top">
+            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
+          </div>
+          <h3 class="insight-headline">Daily economic injection from Canadian tourism into communities across the country</h3>
+          <p class="insight-body">Tourism's daily contribution underscores the sector's importance to local economies nationwide. Combined with one in 10 jobs supported and $32.7 billion in annual tax revenue, these figures make a compelling case for continued tourism investment.</p>
+          <p class="insight-source">Source: Destination Canada</p>
+        </div>
+        <button class="share-btn" onclick="shareItem(event,'insight-5','$364M daily economic injection from Canadian tourism into communities. Destination Canada.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PANEL 3: INDUSTRY STATS -->
+  <section class="tab-panel" id="panel-stats">
+    <div class="section-header">
+      <div class="section-header-top"><span class="section-num">03</span><div class="section-divider" style="background:var(--amber)"></div></div>
+      <h2>Industry Stats</h2>
+      <p>The four numbers worth knowing this month, plus two charts that show what's actually moving.</p>
+    </div>
+
+    <div class="hero-stats-grid">
+      <div class="hero-stat-card">
+        <div class="hero-stat-num" data-count="270.46" data-prefix="CAD$" data-decimals="2">CAD$270.46</div>
+        <div class="hero-stat-label">Nova Scotia ADR in June 2026</div>
+        <div class="hero-stat-source">CoStar/STR</div>
+        <div class="hero-stat-note">+15.7% YoY – led all Canadian provinces, driven by the Halifax Sail Grand Prix. RevPAR hit CAD$228.22 (+20.2%). Events continue to deliver rate power.</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-num" data-count="86.4" data-suffix="%" data-decimals="1">86.4%</div>
+        <div class="hero-stat-label">Newfoundland &amp; Labrador hotel occupancy in June 2026</div>
+        <div class="hero-stat-source">CoStar/STR</div>
+        <div class="hero-stat-note">+4.6% YoY – the Iceberg Festival drove the highest occupancy lift among provinces. ADR reached CAD$235.68 (+13.8%), RevPAR hit CAD$203.61 (+19.0%).</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-num" data-count="406.34" data-prefix="CAD$" data-decimals="2">CAD$406.34</div>
+        <div class="hero-stat-label">Vancouver ADR in June 2026</div>
+        <div class="hero-stat-source">CoStar/STR</div>
+        <div class="hero-stat-note">+21.3% YoY ADR, but occupancy dropped -15.8% to 73.2%. Aggressive early pricing and reduced promotion may have suppressed demand, a cautionary example of mega-event complacency.</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hero-stat-num" data-count="6.0" data-suffix="%" data-decimals="1">6.0%</div>
+        <div class="hero-stat-label">Projected Canadian tourism spending growth in 2026</div>
+        <div class="hero-stat-source">Destination Canada</div>
+        <div class="hero-stat-note">Up from 5.4% previous forecast. Tourism revenue is outpacing the broader economy. Tourism GDP grew 2.5% vs. national economy growth of 1.7%.</div>
+      </div>
+    </div>
+
+    <div class="charts-grid">
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <h3 class="chart-title">Provincial ADR Growth in June 2026</h3>
+          <button class="chart-toggle" id="compareToggle" onclick="toggleCompare(this)"><span class="chart-toggle-dot"></span>Compare Occupancy</button>
+        </div>
+        <p class="chart-subtitle">Year-over-year ADR change in June 2026. Nova Scotia led with +15.7% driven by Halifax Sail Grand Prix. Canada reported first monthly occupancy decline of 2026. <em>CoStar/STR.</em></p>
+        <div style="position:relative;height:280px;width:100%"><canvas id="channelChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <h3 class="chart-title">Event-Driven Market Performance</h3>
+        </div>
+        <p class="chart-subtitle">RevPAR gains in event-driven markets. Halifax Sail Grand Prix and Iceberg Festival outperformed World Cup host cities on per-visitor impact. <em>CoStar/STR.</em></p>
+        <div style="position:relative;height:280px;width:100%"><canvas id="revenueChart"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANEL 4: RECOMMENDED ACTIONS -->
+  <section class="tab-panel" id="panel-actions">
+    <div class="section-header">
+      <div class="section-header-top"><span class="section-num">04</span><div class="section-divider" style="background:var(--violet)"></div></div>
+      <h2>Recommended Actions</h2>
+      <p>Six moves a DMO executive director can make this quarter, drawn directly from this month's source set.</p>
+    </div>
+    <div class="actions-list">
+
+      <div class="action-card" id="action-1">
+        <div class="action-num">01</div>
+        <div class="action-body">
+          <div class="action-top">
+            <h3 class="action-headline">Learn from World Cup pricing and promotion missteps</h3>
+            <button class="share-btn" onclick="shareItem(event,'action-1','Action: Learn from World Cup pricing and promotion missteps. Aggressive pricing and reduced promotion suppressed demand despite mega-event draw.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+          </div>
+          <div class="action-split">
+            <div class="action-split-col evidence">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>The Evidence</div>
+              <p class="action-split-body">International arrivals rose just 5% YoY despite hosting 13 World Cup matches. Vancouver's data tells the story: +21.3% ADR but -15.8% occupancy. The industry inflated prices aggressively and reduced promotion, assuming the event would sell itself.</p>
+            </div>
+            <div class="action-split-col change">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>What Changes In Your Week</div>
+              <p class="action-split-body">For future major events, coordinate pricing strategies with operators to balance yield with volume. Don't let rate ambitions undercut arrivals. Maintain active destination marketing; mega-events require promotion, not complacency. Document these lessons now while data is fresh to inform the next bid cycle.</p>
+            </div>
+          </div>
+          <div class="action-tags"><span class="tag tag-economics">Industry Economics</span><span class="tag tag-demand">Events</span><span class="tag tag-demand">Strategy</span></div>
+        </div>
+      </div>
+
+      <div class="action-card" id="action-2">
+        <div class="action-num">02</div>
+        <div class="action-body">
+          <div class="action-top">
+            <h3 class="action-headline">Optimize your destination content for AI discovery</h3>
+            <button class="share-btn" onclick="shareItem(event,'action-2','Action: Optimize destination content for AI discovery. 57% of Millennials and 53% of Gen Z now use AI tools for trip planning.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+          </div>
+          <div class="action-split">
+            <div class="action-split-col evidence">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>The Evidence</div>
+              <p class="action-split-body">57% of Millennials and 53% of Gen Z now use AI tools for trip planning. These tools reduce planning time by 50-80% and deliver personalized recommendations based on structured data.</p>
+            </div>
+            <div class="action-split-col change">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>What Changes In Your Week</div>
+              <p class="action-split-body">Audit how AI assistants describe your destination. Test queries in ChatGPT, Claude, Gemini asking about your region. Ensure key selling points appear in machine-readable formats (structured data, FAQ pages, clear category descriptions). Consider what questions travelers ask AI about your destination and whether your content answers them.</p>
+            </div>
+          </div>
+          <div class="action-tags"><span class="tag tag-consumer">Consumer Behaviour</span><span class="tag tag-social">Marketing</span><span class="tag tag-ai">Technology</span></div>
+        </div>
+      </div>
+
+      <div class="action-card" id="action-3">
+        <div class="action-num">03</div>
+        <div class="action-body">
+          <div class="action-top">
+            <h3 class="action-headline">Develop an event diversification strategy beyond traditional formats</h3>
+            <button class="share-btn" onclick="shareItem(event,'action-3','Action: Develop event diversification strategy. Halifax Sail Grand Prix drove +15.7% ADR growth; Iceberg Festival lifted Newfoundland occupancy to 86.4%.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+          </div>
+          <div class="action-split">
+            <div class="action-split-col evidence">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>The Evidence</div>
+              <p class="action-split-body">Halifax Sail Grand Prix drove +15.7% ADR growth; Iceberg Festival lifted Newfoundland occupancy to 86.4%. Unique, smaller events can match or exceed mega-event impact per visitor.</p>
+            </div>
+            <div class="action-split-col change">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>What Changes In Your Week</div>
+              <p class="action-split-body">Inventory your current event portfolio and identify gaps in unique/emerging event formats. Research successful niche events from other destinations (sailing regattas, nature festivals, cultural celebrations). Evaluate which fit your destination's assets and shoulder-season needs.</p>
+            </div>
+          </div>
+          <div class="action-tags"><span class="tag tag-demand">Events</span><span class="tag tag-economics">Industry Economics</span><span class="tag tag-demand">Strategy</span></div>
+        </div>
+      </div>
+
+      <div class="action-card" id="action-4">
+        <div class="action-num">04</div>
+        <div class="action-body">
+          <div class="action-top">
+            <h3 class="action-headline">Build "less crowded" positioning into your marketing strategy</h3>
+            <button class="share-btn" onclick="shareItem(event,'action-4','Action: Build less crowded positioning into marketing. 93% of Canadians would change travel habits to reduce overtourism.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+          </div>
+          <div class="action-split">
+            <div class="action-split-col evidence">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>The Evidence</div>
+              <p class="action-split-body">93% of Canadians would change travel habits to reduce overtourism. 16% of Americans actively seek less-crowded destinations in 2026. 84% of Canadians want travel that positively impacts local communities.</p>
+            </div>
+            <div class="action-split-col change">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>What Changes In Your Week</div>
+              <p class="action-split-body">If you're not a capacity-constrained destination, turn that into a feature. Develop content highlighting local connection, community benefit, and crowd-free experiences. Target travelers fleeing peak-season congestion at major destinations with "alternative" positioning.</p>
+            </div>
+          </div>
+          <div class="action-tags"><span class="tag tag-consumer">Consumer Behaviour</span><span class="tag tag-social">Marketing</span><span class="tag tag-sustainability">Sustainability</span></div>
+        </div>
+      </div>
+
+      <div class="action-card" id="action-5">
+        <div class="action-num">05</div>
+        <div class="action-body">
+          <div class="action-top">
+            <h3 class="action-headline">Engage with the Destination Canada/EDAC partnership initiative</h3>
+            <button class="share-btn" onclick="shareItem(event,'action-5','Action: Engage with Destination Canada/EDAC partnership. August 2026 MOU signals increased integration of tourism into economic development strategies.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+          </div>
+          <div class="action-split">
+            <div class="action-split-col evidence">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>The Evidence</div>
+              <p class="action-split-body">The August 2026 MOU signals increased integration of tourism into broader economic development strategies. Communities that advance tourism investment through this framework may gain competitive advantages.</p>
+            </div>
+            <div class="action-split-col change">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>What Changes In Your Week</div>
+              <p class="action-split-body">Contact your provincial/regional EDAC representatives to understand how the partnership applies locally. Identify tourism investment priorities that align with broader economic development goals. Position your tourism strategy within the economic development conversation.</p>
+            </div>
+          </div>
+          <div class="action-tags"><span class="tag tag-economics">Industry Economics</span><span class="tag tag-demand">Strategy</span><span class="tag tag-demand">Partnerships</span></div>
+        </div>
+      </div>
+
+      <div class="action-card" id="action-6">
+        <div class="action-num">06</div>
+        <div class="action-body">
+          <div class="action-top">
+            <h3 class="action-headline">Track event impact in real-time to inform pricing decisions</h3>
+            <button class="share-btn" onclick="shareItem(event,'action-6','Action: Track event impact in real-time to inform pricing decisions. June data shows how pricing affects outcomes: SailGP Halifax +20.2% RevPAR vs World Cup Vancouver -15.8% occupancy.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+          </div>
+          <div class="action-split">
+            <div class="action-split-col evidence">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>The Evidence</div>
+              <p class="action-split-body">June 2026 reveals how pricing strategies drive outcomes: SailGP Halifax (+20.2% RevPAR with balanced pricing) vs World Cup Vancouver (-15.8% occupancy with aggressive +21.3% ADR). Real-time data could have enabled mid-course corrections.</p>
+            </div>
+            <div class="action-split-col change">
+              <div class="action-split-label"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>What Changes In Your Week</div>
+              <p class="action-split-body">Establish real-time tracking of event impact on both rates and occupancy. Share data across operators during events so pricing can be adjusted before demand is lost. Build models that capture the rate/volume tradeoff to inform future event pricing guidance.</p>
+            </div>
+          </div>
+          <div class="action-tags"><span class="tag tag-economics">Industry Economics</span><span class="tag tag-demand">Events</span><span class="tag tag-demand">Analytics</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PANEL 5: RECOMMENDED READING -->
+  <section class="tab-panel" id="panel-deeper">
+    <div class="section-header">
+      <div class="section-header-top"><span class="section-num">05</span><div class="section-divider" style="background:var(--coral)"></div></div>
+      <h2>Recommended Reading</h2>
+      <p>The eight sources synthesized into this month's report. Filter by category or open the original.</p>
+    </div>
+    <div class="filter-pills">
+      <button class="filter-pill active" onclick="filterSources('all',this)">All Sources</button>
+      <button class="filter-pill" onclick="filterSources('economics',this)">Industry Economics</button>
+      <button class="filter-pill" onclick="filterSources('consumer',this)">Consumer Behaviour</button>
+    </div>
+    <div class="sources-grid">
+
+      <div class="source-card" data-cat="economics">
+        <p class="source-publisher">CoStar/STR</p>
+        <h3 class="source-title">Canada Hotels Report First Monthly Occupancy Decline of 2026</h3>
+        <span class="tag tag-economics" style="align-self:flex-start">Industry Economics</span>
+        <p class="source-desc">Nova Scotia ADR +15.7% to CAD$270.46 driven by Halifax Sail Grand Prix. Newfoundland occupancy hit 86.4% with Iceberg Festival. Vancouver ADR +21.3% to CAD$406 despite -15.8% occupancy.</p>
+        <a class="source-link" href="https://www.costar.com/products/str-benchmark/resources/press-releases/canada-hotels-report-first-monthly-occupancy" target="_blank" rel="noopener">Read Report <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+      </div>
+
+      <div class="source-card" data-cat="economics">
+        <p class="source-publisher">TravelMole</p>
+        <h3 class="source-title">Canada's World Cup Tourism Boost Falls Well Short of Expectations</h3>
+        <span class="tag tag-economics" style="align-self:flex-start">Industry Economics</span>
+        <p class="source-desc">Despite C$1B+ investment in hosting 13 World Cup matches, international arrivals rose just 5% YoY in June 2026, well below projections of $940M+ economic impact for Toronto alone.</p>
+        <a class="source-link" href="https://travelmole.com/news/canadas-world-cup-tourism-boost-falls-well-short-of-expectations" target="_blank" rel="noopener">Read Report <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+      </div>
+
+      <div class="source-card" data-cat="economics">
+        <p class="source-publisher">BNN Bloomberg</p>
+        <h3 class="source-title">World Cup to Spur Short-Lived Bump from Tourism Spending: BMO</h3>
+        <span class="tag tag-economics" style="align-self:flex-start">Industry Economics</span>
+        <p class="source-desc">BMO analysis showing quarterly GDP impact estimated at approximately 0.1 percentage points annualized. Reality of multi-nation tournament diffusing economic benefits.</p>
+        <a class="source-link" href="https://www.bnnbloomberg.ca/business-of-sports/2026/06/01/world-cup-to-spur-short-lived-bump-from-tourism-spending-bmo/" target="_blank" rel="noopener">Read Report <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+      </div>
+
+      <div class="source-card" data-cat="economics">
+        <p class="source-publisher">Destination Canada</p>
+        <h3 class="source-title">Canadian Tourism Outlook 2026-2035</h3>
+        <span class="tag tag-economics" style="align-self:flex-start">Industry Economics</span>
+        <p class="source-desc">Tourism spending reached $28.4B in 2026 with 6% growth. Tourism GDP grew 2.5% vs. national economy 1.7%. Sector supports 1 in 10 jobs, injects $364M daily into communities.</p>
+        <a class="source-link" href="https://www.destinationcanada.com/en-ca/news/canadas-global-moment-sets-tourism-sector-course-banner-2026-growth-2035" target="_blank" rel="noopener">Read Report <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+      </div>
+
+      <div class="source-card" data-cat="consumer">
+        <p class="source-publisher">Simon-Kucher</p>
+        <h3 class="source-title">Global Travel Trends 2026</h3>
+        <span class="tag tag-consumer" style="align-self:flex-start">Consumer Behaviour</span>
+        <p class="source-desc">57% of Millennials and 53% of Gen Z now use AI tools for vacation planning. AI reduces planning time by 50-80% and delivers hyper-personalized recommendations.</p>
+        <a class="source-link" href="https://www.simon-kucher.com/en/insights/global-travel-trends-2026" target="_blank" rel="noopener">Read Report <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+      </div>
+
+      <div class="source-card" data-cat="consumer">
+        <p class="source-publisher">Intrepid Travel</p>
+        <h3 class="source-title">Meaningful Travel Index</h3>
+        <span class="tag tag-consumer" style="align-self:flex-start">Consumer Behaviour</span>
+        <p class="source-desc">93% of Canadians would change travel habits to reduce overtourism. 84% say it's important their travel positively impacts local people and places.</p>
+        <a class="source-link" href="https://www.newswire.ca/news-releases/new-research-reveals-canadian-travellers-are-looking-beyond-ai-social-media-and-overcrowded-destinations-815947366.html" target="_blank" rel="noopener">Read Report <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+      </div>
+
+      <div class="source-card" data-cat="economics">
+        <p class="source-publisher">Retail Insider</p>
+        <h3 class="source-title">Destination Canada and EDAC Unite to Advance Tourism</h3>
+        <span class="tag tag-economics" style="align-self:flex-start">Industry Economics</span>
+        <p class="source-desc">August 2026 MOU to strengthen collaboration between tourism and economic development leaders, helping communities advance tourism investment.</p>
+        <a class="source-link" href="https://retail-insider.com/retail-insider/2026/07/destination-canada-and-economic-developers-association-of-canada-unite-to-advance-tourism/" target="_blank" rel="noopener">Read Report <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+      </div>
+
+      <div class="source-card" data-cat="economics">
+        <p class="source-publisher">Hospitality Net</p>
+        <h3 class="source-title">Canada Hotels Post Highest Rate Growth Since 2024</h3>
+        <span class="tag tag-economics" style="align-self:flex-start">Industry Economics</span>
+        <p class="source-desc">June 2026 hotel performance data showing event-driven markets outperforming national trends. Toronto RevPAR +10.4% to CAD$247.18 from World Cup matches.</p>
+        <a class="source-link" href="https://www.hospitalitynet.org/news/4133165/canada-hotels-post-highest-rate-growth-since-2024" target="_blank" rel="noopener">Read Report <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></a>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+
+<!-- Search Overlay -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search this report">
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="searchInput" type="text" placeholder="Search trends, insights, stats, actions, sources…" autocomplete="off">
+      <span class="search-esc">ESC</span>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-foot">
+      <div class="search-foot-keys">
+        <span><span class="kbd-hint">↑↓</span> navigate</span>
+        <span><span class="kbd-hint">↵</span> jump</span>
+        <span><span class="kbd-hint">ESC</span> close</span>
+      </div>
+      <span>Searches this report only</span>
+    </div>
+  </div>
+</div>
+
+<!-- What's New Spotlight -->
+<div class="spotlight-overlay" id="spotlightOverlay" role="dialog" aria-modal="true" aria-label="What's new in August 2026" onclick="handleSpotlightClick(event)">
+  <div class="spotlight-card">
+    <div class="spotlight-bar"></div>
+    <div class="spotlight-body">
+      <button class="spotlight-close" onclick="dismissSpotlight()" aria-label="Close">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <p class="spotlight-eyebrow">What's new · August 2026</p>
+      <h2 class="spotlight-headline">Four new features in this month's report</h2>
+      <p class="spotlight-sub">This edition was rebuilt based on reader feedback. Here's what changed since May.</p>
+      <div class="spotlight-features">
+        <div class="spotlight-feature">
+          <div class="spotlight-icon" style="background:var(--teal-dim);color:var(--teal)">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </div>
+          <div>
+            <p class="spotlight-fname">Full-report search <span class="spotlight-badge">New</span></p>
+            <p class="spotlight-fdesc">Press <strong>⌘K</strong> to instantly find any trend, stat, action, or source across the entire report, without leaving the page.</p>
+          </div>
+        </div>
+        <div class="spotlight-feature">
+          <div class="spotlight-icon" style="background:var(--violet-dim);color:var(--violet)">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <p class="spotlight-fname">Source confidence ratings <span class="spotlight-badge">New</span></p>
+            <p class="spotlight-fdesc">Every finding now shows how strong the source evidence is, so you know which numbers to lead with at your next board meeting.</p>
+          </div>
+        </div>
+        <div class="spotlight-feature">
+          <div class="spotlight-icon" style="background:var(--amber-dim);color:var(--amber)">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div>
+            <p class="spotlight-fname">Compare 2025 on charts <span class="spotlight-badge">New</span></p>
+            <p class="spotlight-fdesc">Toggle prior-year data on the Industry Stats charts to see exactly how much has shifted in 12 months.</p>
+          </div>
+        </div>
+        <div class="spotlight-feature">
+          <div class="spotlight-icon" style="background:var(--green-dim);color:var(--green)">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <p class="spotlight-fname">Evidence + Action framework <span class="spotlight-badge">New</span></p>
+            <p class="spotlight-fdesc">Every recommended action now shows the supporting evidence and a specific move for your week, so you can brief your team in minutes.</p>
+          </div>
+        </div>
+      </div>
+      <button class="spotlight-cta" onclick="dismissSpotlight()">
+        Start reading <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  <span id="toastText">Link copied</span>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      Produced by eLearningU for Canadian DMO Leaders · August 2026 · <a href="https://www.elearningu.com" target="_blank" rel="noopener">elearningu.com</a>
+      <a class="footer-prev" href="../july-2026/index.html"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>July 2026 Scan</a>
+    </div>
+    <div class="footer-right"><span class="logo-dot"></span>eLearningU</div>
+  </div>
+</footer>
+
+<script>
+/* ============ THEME ============ */
+function toggleTheme(){
+  var html=document.documentElement;
+  var current=html.getAttribute('data-theme');
+  var next=current==='dark'?'light':'dark';
+  html.setAttribute('data-theme',next);
+  updateThemeUI(next);
+  // If stats panel is active, rebuild charts with new colors
+  var statsPanel=document.getElementById('panel-stats');
+  if(statsPanel && statsPanel.classList.contains('active')){
+    requestAnimationFrame(function(){requestAnimationFrame(buildCharts);});
+  }
+}
+function updateThemeUI(theme){
+  var icon=document.getElementById('themeIcon');
+  var label=document.getElementById('themeLabel');
+  if(theme==='dark'){
+    icon.innerHTML='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+    label.textContent='Light mode';
+  }else{
+    icon.innerHTML='<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>';
+    label.textContent='Dark mode';
+  }
+}
+
+/* ============ TABS + URL HASH PERSIST ============ */
+var VALID_TABS=['trends','insights','stats','actions','deeper'];
+function switchTab(panelId,btn,opts){
+  opts=opts||{};
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  var panel=document.getElementById('panel-'+panelId);
+  if(!panel)return;
+  panel.classList.add('active');
+  if(btn){btn.classList.add('active');}else{
+    var b=document.querySelector('.tab-btn[data-tab="'+panelId+'"]');
+    if(b)b.classList.add('active');
+  }
+  // Update URL hash without jumping
+  if(!opts.skipHash){
+    history.replaceState(null,'','#'+panelId);
+  }
+  // Scroll to tab bar (unless we're initializing on page load)
+  if(!opts.skipScroll){
+    var tabBar=document.getElementById('tabBar');
+    var tabTop=tabBar.getBoundingClientRect().top+window.scrollY-64;
+    window.scrollTo({top:tabTop,behavior:'smooth'});
+  }
+  // Animate any visible count-ups in this panel
+  animateCountUpsInPanel(panel);
+  // Build charts if stats panel
+  if(panelId==='stats'){
+    requestAnimationFrame(function(){requestAnimationFrame(buildCharts);});
+  }
+  // FAB hide on actions tab
+  updateFabVisibility();
+}
+function switchTabById(id){
+  if(VALID_TABS.indexOf(id)===-1)return;
+  var btn=document.querySelector('.tab-btn[data-tab="'+id+'"]');
+  switchTab(id,btn);
+}
+
+/* ============ TRENDS EXPAND ============ */
+function toggleTrend(btn){
+  var card=btn.closest('.trend-card');
+  card.classList.toggle('open');
+  var textNode=btn.childNodes[0];
+  if(textNode&&textNode.nodeType===3){
+    textNode.textContent=card.classList.contains('open')?'Close ':'Dig deeper ';
+  }
+}
+
+/* ============ SOURCE FILTER ============ */
+function filterSources(cat,pill){
+  document.querySelectorAll('.filter-pill').forEach(function(p){p.classList.remove('active');});
+  pill.classList.add('active');
+  document.querySelectorAll('.source-card').forEach(function(card){
+    if(cat==='all'){card.classList.remove('hidden');}
+    else{
+      var cats=card.getAttribute('data-cat')||'';
+      cats.includes(cat)?card.classList.remove('hidden'):card.classList.add('hidden');
+    }
+  });
+}
+
+/* ============ SHARE (copy-to-clipboard) ============ */
+function shareItem(evt,id,text){
+  evt.stopPropagation();
+  var btn=evt.currentTarget;
+  var url=location.origin+location.pathname+'#'+id;
+  var payload=text+'\n\n'+url+'\n\nFrom: Tourism Industry Scan, August 2026 (eLearningU)';
+  function done(){
+    btn.classList.add('copied');
+    showToast('Copied and ready to paste');
+    setTimeout(function(){btn.classList.remove('copied');},1800);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(payload).then(done).catch(function(){
+      legacyCopy(payload);done();
+    });
+  }else{
+    legacyCopy(payload);done();
+  }
+}
+function legacyCopy(text){
+  var ta=document.createElement('textarea');
+  ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');}catch(e){}
+  document.body.removeChild(ta);
+}
+function showToast(msg){
+  var t=document.getElementById('toast');
+  document.getElementById('toastText').textContent=msg;
+  t.classList.add('show');
+  clearTimeout(showToast._t);
+  showToast._t=setTimeout(function(){t.classList.remove('show');},2200);
+}
+
+function scrollToTop(e){
+  e.preventDefault();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============ READING PROGRESS BAR ============ */
+function updateReadingProgress(){
+  var doc=document.documentElement;
+  var scrollTop=window.scrollY||doc.scrollTop;
+  var height=doc.scrollHeight-doc.clientHeight;
+  var pct=height>0?(scrollTop/height)*100:0;
+  document.getElementById('readProgress').style.width=Math.min(100,Math.max(0,pct))+'%';
+  updateFabVisibility();
+}
+
+/* ============ FAB VISIBILITY ============ */
+function updateFabVisibility(){
+  var fab=document.getElementById('fabActions');
+  var actionsActive=document.getElementById('panel-actions').classList.contains('active');
+  var scrolledPastHero=window.scrollY>500;
+  if(actionsActive){fab.classList.remove('visible');return;}
+  if(scrolledPastHero){fab.classList.add('visible');}else{fab.classList.remove('visible');}
+}
+
+/* ============ COUNT-UP ANIMATIONS ============ */
+var animatedNodes=new WeakSet();
+var prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function animateCountUp(el){
+  if(animatedNodes.has(el))return;
+  animatedNodes.add(el);
+  var target=parseFloat(el.getAttribute('data-count'));
+  if(isNaN(target))return;
+  var prefix=el.getAttribute('data-prefix')||'';
+  var suffix=el.getAttribute('data-suffix')||'';
+  var decimals=parseInt(el.getAttribute('data-decimals')||'0',10);
+  if(prefersReduced){
+    el.textContent=prefix+formatNum(target,decimals)+suffix;
+    return;
+  }
+  var duration=Math.min(1600,800+Math.abs(target)*4);
+  var start=null;
+  function tick(t){
+    if(!start)start=t;
+    var p=Math.min(1,(t-start)/duration);
+    var eased=1-Math.pow(1-p,3); // easeOutCubic
+    var val=target*eased;
+    el.textContent=prefix+formatNum(val,decimals)+suffix;
+    if(p<1)requestAnimationFrame(tick);
+    else el.textContent=prefix+formatNum(target,decimals)+suffix;
+  }
+  requestAnimationFrame(tick);
+}
+function formatNum(n,decimals){
+  if(decimals>0)return n.toFixed(decimals);
+  return Math.round(n).toString();
+}
+
+function animateCountUpsInPanel(panel){
+  if(!panel)return;
+  panel.querySelectorAll('[data-count]').forEach(function(el){
+    var rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight && rect.bottom>0){
+      animateCountUp(el);
+    }
+  });
+}
+
+var countObserver=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      // Only animate if the containing panel is active (or it's outside panels, like hero)
+      var panel=e.target.closest('.tab-panel');
+      if(!panel || panel.classList.contains('active')){
+        animateCountUp(e.target);
+        countObserver.unobserve(e.target);
+      }
+    }
+  });
+},{threshold:0.4});
+
+function registerCountUps(){
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    countObserver.observe(el);
+  });
+}
+
+/* ============ CHARTS ============ */
+var channelChartInst=null;
+var revenueChartInst=null;
+var showCompare=false;
+
+function freshCanvas(id){
+  var old=document.getElementById(id);
+  if(!old)return null;
+  var canvas=document.createElement('canvas');
+  canvas.id=id;
+  old.parentNode.replaceChild(canvas,old);
+  return canvas;
+}
+function getCSSVar(name){
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+function buildCharts(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  var gridColor=isDark?'rgba(255,255,255,0.08)':'rgba(17,21,78,0.08)';
+  var tickColor=getCSSVar('--text3');
+  var textColor=getCSSVar('--text2');
+  var tealColor=getCSSVar('--teal');
+  var blueColor=getCSSVar('--blue');
+  var violetColor=getCSSVar('--violet');
+  var amberColor=getCSSVar('--amber');
+  var coralColor=getCSSVar('--coral');
+  var greenColor=getCSSVar('--green');
+  var text2=getCSSVar('--text2');
+
+  // ---- Chart 1: Provincial ADR Growth in June 2026 (horizontal bar, with optional occupancy compare) ----
+  var c1=freshCanvas('channelChart');
+  if(c1){
+    var labels=['Nova Scotia','Vancouver','Toronto','Newfoundland','Ontario','National Average'];
+    var data2026=[15.7,21.3,19.0,13.8,8.2,7.5];
+    var data2025=[4.5,-15.8,1.2,4.6,-0.8,-1.2]; // Occupancy change YoY for comparison
+    var datasets=[{
+      label:'ADR Growth %',
+      data:data2026,
+      backgroundColor:[tealColor,blueColor,violetColor,amberColor,coralColor,greenColor],
+      borderRadius:6,
+      borderSkipped:false,
+      barPercentage:0.78,
+      categoryPercentage:0.78
+    }];
+    if(showCompare){
+      datasets.unshift({
+        label:'Occupancy Change %',
+        data:data2025,
+        backgroundColor:isDark?'rgba(255,255,255,0.10)':'rgba(17,21,78,0.10)',
+        borderColor:isDark?'rgba(255,255,255,0.20)':'rgba(17,21,78,0.20)',
+        borderWidth:1,
+        borderRadius:6,
+        borderSkipped:false,
+        barPercentage:0.78,
+        categoryPercentage:0.78
+      });
+    }
+    channelChartInst=new Chart(c1,{
+      type:'bar',
+      data:{labels:labels,datasets:datasets},
+      options:{
+        indexAxis:'y',
+        responsive:true,
+        maintainAspectRatio:false,
+        animation:prefersReduced?false:{duration:700,easing:'easeOutCubic'},
+        plugins:{
+          legend:{
+            display:showCompare,
+            position:'top',
+            align:'end',
+            labels:{color:textColor,font:{family:'Poppins',size:11,weight:'600'},boxWidth:12,padding:10,usePointStyle:true}
+          },
+          tooltip:{
+            backgroundColor:isDark?'#0a1024':'#11154e',
+            titleFont:{family:'Poppins',size:12,weight:'600'},
+            bodyFont:{family:'DM Sans',size:12},
+            padding:10,
+            cornerRadius:6,
+            callbacks:{
+              label:function(ctx){return ' '+ctx.dataset.label+': '+ctx.parsed.x+'%';}
+            }
+          }
+        },
+        scales:{
+          x:{min:0,max:100,grid:{color:gridColor},ticks:{color:tickColor,font:{family:'DM Sans',size:11},callback:function(v){return v+'%';}},border:{display:false}},
+          y:{grid:{display:false},ticks:{color:textColor,font:{family:'Poppins',size:12,weight:'600'}},border:{display:false}}
+        },
+        onHover:function(evt,active){
+          evt.native.target.style.cursor=active.length?'pointer':'default';
+        }
+      }
+    });
+  }
+
+  // ---- Chart 2: Event-Driven Market Performance (grouped bar chart) ----
+  var c2=freshCanvas('revenueChart');
+  if(c2){
+    var cityLabels=['Halifax SailGP','Iceberg Festival NL','Toronto WC','Vancouver WC'];
+    var adrData=[15.7,13.8,19.0,21.3];
+    var revparData=[20.2,19.0,10.4,1.8];
+    revenueChartInst=new Chart(c2,{
+      type:'bar',
+      data:{
+        labels:cityLabels,
+        datasets:[{
+          label:'ADR Lift %',
+          data:adrData,
+          backgroundColor:tealColor,
+          borderRadius:6,
+          borderSkipped:false,
+          barPercentage:0.65,
+          categoryPercentage:0.65
+        },{
+          label:'RevPAR Lift %',
+          data:revparData,
+          backgroundColor:violetColor,
+          borderRadius:6,
+          borderSkipped:false,
+          barPercentage:0.65,
+          categoryPercentage:0.65
+        }]
+      },
+      options:{
+        responsive:true,
+        maintainAspectRatio:false,
+        animation:prefersReduced?false:{duration:900,easing:'easeOutCubic'},
+        interaction:{mode:'index',intersect:false},
+        plugins:{
+          legend:{
+            display:true,
+            position:'top',
+            align:'end',
+            labels:{color:textColor,font:{family:'Poppins',size:11,weight:'600'},boxWidth:12,padding:10,usePointStyle:true}
+          },
+          tooltip:{
+            backgroundColor:isDark?'#0a1024':'#11154e',
+            titleFont:{family:'Poppins',size:12,weight:'600'},
+            bodyFont:{family:'DM Sans',size:12},
+            padding:10,
+            cornerRadius:6,
+            callbacks:{
+              label:function(ctx){return ' '+ctx.dataset.label+': +'+ctx.parsed.y+'%';}
+            }
+          }
+        },
+        scales:{
+          x:{grid:{display:false},ticks:{color:textColor,font:{family:'Poppins',size:12,weight:'600'}},border:{display:false}},
+          y:{min:0,max:25,grid:{color:gridColor},ticks:{color:tickColor,font:{family:'DM Sans',size:11},callback:function(v){return '+'+v+'%';}},border:{display:false}}
+        }
+      },
+      plugins:[{
+        id:'verticalLine',
+        afterDatasetsDraw:function(chart){
+          var active=chart.getActiveElements();
+          if(!active.length)return;
+          var ctx=chart.ctx;
+          var x=active[0].element.x;
+          var topY=chart.scales.y.top;
+          var bottomY=chart.scales.y.bottom;
+          ctx.save();
+          ctx.beginPath();
+          ctx.moveTo(x,topY);
+          ctx.lineTo(x,bottomY);
+          ctx.lineWidth=1;
+          ctx.strokeStyle=tealColor;
+          ctx.setLineDash([4,4]);
+          ctx.globalAlpha=0.6;
+          ctx.stroke();
+          ctx.restore();
+        }
+      }]
+    });
+  }
+}
+
+function toggleCompare(btn){
+  showCompare=!showCompare;
+  btn.classList.toggle('on',showCompare);
+  requestAnimationFrame(function(){requestAnimationFrame(buildCharts);});
+}
+
+/* ============ SEARCH ============ */
+var SEARCH_INDEX=[];
+function buildSearchIndex(){
+  SEARCH_INDEX=[];
+  // Trends
+  document.querySelectorAll('.trend-card').forEach(function(card){
+    var id=card.id;
+    var title=card.querySelector('h3')?card.querySelector('h3').textContent.trim():'';
+    var summary=card.querySelector('.trend-card-summary')?card.querySelector('.trend-card-summary').textContent.trim():'';
+    var expanded=Array.from(card.querySelectorAll('.trend-expanded-inner p')).map(function(p){return p.textContent.trim();}).join(' ');
+    SEARCH_INDEX.push({type:'Trend',tab:'trends',id:id,title:title,body:summary+' '+expanded,snippet:summary});
+  });
+  // Insights
+  document.querySelectorAll('.insight-row').forEach(function(row){
+    var id=row.id;
+    var stat=row.querySelector('.insight-stat')?row.querySelector('.insight-stat').textContent.trim():'';
+    var headline=row.querySelector('.insight-headline')?row.querySelector('.insight-headline').textContent.trim():'';
+    var body=row.querySelector('.insight-body')?row.querySelector('.insight-body').textContent.trim():'';
+    SEARCH_INDEX.push({type:'Consumer Insight',tab:'insights',id:id,title:stat+' · '+headline,body:body,snippet:body});
+  });
+  // Stats
+  document.querySelectorAll('#panel-stats .hero-stat-card').forEach(function(card,i){
+    var num=card.querySelector('.hero-stat-num')?card.querySelector('.hero-stat-num').textContent.trim():'';
+    var label=card.querySelector('.hero-stat-label')?card.querySelector('.hero-stat-label').textContent.trim():'';
+    var note=card.querySelector('.hero-stat-note')?card.querySelector('.hero-stat-note').textContent.trim():'';
+    SEARCH_INDEX.push({type:'Stat',tab:'stats',id:'panel-stats',title:num+' · '+label,body:note,snippet:note});
+  });
+  // Actions
+  document.querySelectorAll('.action-card').forEach(function(card){
+    var id=card.id;
+    var headline=card.querySelector('.action-headline')?card.querySelector('.action-headline').textContent.trim():'';
+    var bodies=Array.from(card.querySelectorAll('.action-split-body')).map(function(p){return p.textContent.trim();}).join(' ');
+    SEARCH_INDEX.push({type:'Action',tab:'actions',id:id,title:headline,body:bodies,snippet:bodies.substring(0,200)});
+  });
+  // Sources
+  document.querySelectorAll('.source-card').forEach(function(card){
+    var title=card.querySelector('.source-title')?card.querySelector('.source-title').textContent.trim():'';
+    var pub=card.querySelector('.source-publisher')?card.querySelector('.source-publisher').textContent.trim():'';
+    var desc=card.querySelector('.source-desc')?card.querySelector('.source-desc').textContent.trim():'';
+    SEARCH_INDEX.push({type:'Source',tab:'deeper',id:'panel-deeper',title:title,body:pub+' '+desc,snippet:pub+' · '+desc});
+  });
+}
+
+var searchFocusIdx=-1;
+var currentResults=[];
+
+function openSearch(){
+  document.getElementById('searchOverlay').classList.add('open');
+  setTimeout(function(){document.getElementById('searchInput').focus();},20);
+  runSearch('');
+}
+function closeSearch(){
+  document.getElementById('searchOverlay').classList.remove('open');
+  document.getElementById('searchInput').value='';
+  searchFocusIdx=-1;
+}
+function runSearch(q){
+  q=q.trim().toLowerCase();
+  var results;
+  if(!q){
+    results=SEARCH_INDEX.slice(0,8);
+  }else{
+    var terms=q.split(/\s+/).filter(Boolean);
+    results=SEARCH_INDEX.filter(function(item){
+      var hay=(item.title+' '+item.body).toLowerCase();
+      return terms.every(function(t){return hay.indexOf(t)!==-1;});
+    });
+  }
+  currentResults=results;
+  searchFocusIdx=results.length?0:-1;
+  renderSearchResults(q,results);
+}
+function highlight(text,q){
+  if(!q)return escapeHtml(text);
+  var terms=q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  var safe=escapeHtml(text);
+  terms.forEach(function(t){
+    var re=new RegExp('('+escapeRegex(t)+')','gi');
+    safe=safe.replace(re,'<mark>$1</mark>');
+  });
+  return safe;
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,function(c){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];});}
+function escapeRegex(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+
+function renderSearchResults(q,results){
+  var container=document.getElementById('searchResults');
+  if(!results.length){
+    container.innerHTML='<div class="search-empty">No matches in this report. Try a different term.</div>';
+    return;
+  }
+  var grouped={};
+  results.forEach(function(r){if(!grouped[r.type])grouped[r.type]=[];grouped[r.type].push(r);});
+  var html='';
+  var globalIdx=0;
+  Object.keys(grouped).forEach(function(type){
+    html+='<div class="search-section-label">'+escapeHtml(type)+'</div>';
+    grouped[type].forEach(function(r){
+      var isFocused=(globalIdx===searchFocusIdx);
+      html+='<a class="search-result'+(isFocused?' focused':'')+'" data-tab="'+r.tab+'" data-id="'+r.id+'" data-idx="'+globalIdx+'" onclick="goToResult(event,\''+r.tab+'\',\''+r.id+'\')">';
+      html+='<div class="search-result-title">'+highlight(r.title,q)+'</div>';
+      html+='<div class="search-result-snippet">'+highlight((r.snippet||'').substring(0,160)+(r.snippet&&r.snippet.length>160?'…':''),q)+'</div>';
+      html+='</a>';
+      globalIdx++;
+    });
+  });
+  container.innerHTML=html;
+  // Scroll focused into view
+  var focused=container.querySelector('.search-result.focused');
+  if(focused)focused.scrollIntoView({block:'nearest'});
+}
+function goToResult(e,tab,id){
+  if(e)e.preventDefault();
+  closeSearch();
+  switchTabById(tab);
+  setTimeout(function(){
+    var target=document.getElementById(id);
+    if(target){
+      var y=target.getBoundingClientRect().top+window.scrollY-128;
+      window.scrollTo({top:y,behavior:'smooth'});
+      target.style.transition='box-shadow 0.4s ease';
+      target.style.boxShadow='0 0 0 3px var(--teal-mid), var(--shadow-lg)';
+      setTimeout(function(){target.style.boxShadow='';},1400);
+    }
+  },350);
+}
+
+/* ============ KEYBOARD ============ */
+document.addEventListener('keydown',function(e){
+  // ESC closes spotlight if open (takes priority)
+  var spotlight=document.getElementById('spotlightOverlay');
+  if(spotlight && spotlight.classList.contains('show')){
+    if(e.key==='Escape'){e.preventDefault();dismissSpotlight();return;}
+  }
+  // Cmd/Ctrl + K opens search
+  if((e.metaKey||e.ctrlKey) && e.key.toLowerCase()==='k'){
+    e.preventDefault();
+    openSearch();
+    return;
+  }
+  var overlay=document.getElementById('searchOverlay');
+  if(!overlay.classList.contains('open'))return;
+  if(e.key==='Escape'){e.preventDefault();closeSearch();return;}
+  if(e.key==='ArrowDown'){
+    e.preventDefault();
+    if(currentResults.length===0)return;
+    searchFocusIdx=(searchFocusIdx+1)%currentResults.length;
+    renderSearchResults(document.getElementById('searchInput').value,currentResults);
+    return;
+  }
+  if(e.key==='ArrowUp'){
+    e.preventDefault();
+    if(currentResults.length===0)return;
+    searchFocusIdx=(searchFocusIdx-1+currentResults.length)%currentResults.length;
+    renderSearchResults(document.getElementById('searchInput').value,currentResults);
+    return;
+  }
+  if(e.key==='Enter'){
+    e.preventDefault();
+    if(searchFocusIdx>=0 && currentResults[searchFocusIdx]){
+      var r=currentResults[searchFocusIdx];
+      goToResult(null,r.tab,r.id);
+    }
+  }
+});
+document.addEventListener('click',function(e){
+  var overlay=document.getElementById('searchOverlay');
+  if(overlay.classList.contains('open') && e.target===overlay){
+    closeSearch();
+  }
+});
+
+/* ============ WHAT'S NEW SPOTLIGHT ============ */
+function showSpotlight(){
+  if(sessionStorage.getItem('whatsNew_june2026'))return;
+  setTimeout(function(){
+    var el=document.getElementById('spotlightOverlay');
+    if(el)el.classList.add('show');
+  },1300);
+}
+function dismissSpotlight(){
+  sessionStorage.setItem('whatsNew_june2026','1');
+  var el=document.getElementById('spotlightOverlay');
+  if(el)el.classList.remove('show');
+  var sb=document.getElementById('searchBtn');
+  if(sb)sb.classList.remove('has-new-pulse');
+}
+function handleSpotlightClick(e){
+  if(e.target===document.getElementById('spotlightOverlay'))dismissSpotlight();
+}
+
+/* ============ HASH ON LOAD + ITEM SCROLL ============ */
+function initFromHash(){
+  var hash=(location.hash||'').replace('#','');
+  if(!hash){return;}
+  // If hash matches a tab id directly
+  if(VALID_TABS.indexOf(hash)!==-1){
+    switchTab(hash,null,{skipScroll:true,skipHash:true});
+    return;
+  }
+  // If hash is an item id (trend-1, insight-2, action-3), figure out the tab
+  var tab=null;
+  if(hash.indexOf('trend-')===0)tab='trends';
+  else if(hash.indexOf('insight-')===0)tab='insights';
+  else if(hash.indexOf('action-')===0)tab='actions';
+  if(tab){
+    switchTab(tab,null,{skipScroll:true,skipHash:true});
+    setTimeout(function(){
+      var target=document.getElementById(hash);
+      if(target){
+        var y=target.getBoundingClientRect().top+window.scrollY-128;
+        window.scrollTo({top:y,behavior:'smooth'});
+        target.style.transition='box-shadow 0.4s ease';
+        target.style.boxShadow='0 0 0 3px var(--teal-mid), var(--shadow-lg)';
+        setTimeout(function(){target.style.boxShadow='';},1400);
+      }
+    },200);
+  }
+}
+
+/* ============ INIT ============ */
+document.addEventListener('DOMContentLoaded',function(){
+  // Search input handler
+  document.getElementById('searchInput').addEventListener('input',function(e){
+    runSearch(e.target.value);
+  });
+  // Build search index
+  buildSearchIndex();
+  // Register count-up observer for all data-count nodes
+  registerCountUps();
+  // Reading progress
+  window.addEventListener('scroll',updateReadingProgress,{passive:true});
+  updateReadingProgress();
+  // Hash routing
+  initFromHash();
+  // Ensure theme is light by default (defensive: clear any stale dark attribute)
+  if(document.documentElement.getAttribute('data-theme')!=='dark'){
+    document.documentElement.setAttribute('data-theme','light');
+  }
+  // What's new spotlight
+  showSpotlight();
+});
+</script>
+</body>
+</html>
