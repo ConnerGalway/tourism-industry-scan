@@ -223,17 +223,14 @@ button{font-family:inherit}
 .trend-source-line{margin-top:14px;font-size:12px;color:var(--text3)}
 .trend-source-line strong{font-family:'Poppins',sans-serif;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;font-size:10px;margin-right:8px}
 
-/* ============ NEW INDUSTRY TRENDS (Data Cards) ============ */
+/* ============ TREND DATA CARDS ============ */
 .new-trends-section{margin-bottom:48px}
-.new-trends-header{margin-bottom:32px}
-.new-trends-header h3{font-size:22px;font-weight:700;color:var(--text);margin-bottom:6px}
-.new-trends-header p{font-size:14px;color:var(--text3)}
 .new-trends-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .new-trend-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:var(--shadow);transition:transform 0.2s ease,box-shadow 0.2s ease}
 .new-trend-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
 .new-trend-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
 .new-trend-card-header h4{font-size:18px;font-weight:700;color:var(--text);line-height:1.3;flex:1}
-.new-trend-badge{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;background:var(--coral);color:#fff;padding:5px 12px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.new-trend-card-header .tag{flex-shrink:0}
 .new-trend-card-intro{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:20px}
 .new-trend-card-intro strong{color:var(--text);font-weight:700}
 .new-trend-callout{background:var(--bg2);border-left:3px solid var(--teal);padding:16px 18px;border-radius:0 10px 10px 0;margin-bottom:20px}
@@ -478,7 +475,7 @@ button{font-family:inherit}
   <div class="hero-inner">
     <p class="hero-label">Monthly Intelligence Report for Canadian DMO Leaders</p>
     <h1>Tourism Industry Scan<span class="accent">September 2026</span></h1>
-    <p class="hero-sub">Ten industry sources synthesized into the trends, insights, stats, and actions Canadian DMO leaders need this month. This month's focus: structural shifts reshaping the industry — shoulder season economics, labor constraints, and business travel recovery.</p>
+    <p class="hero-sub">Ten industry sources synthesized into the trends, insights, stats, and actions Canadian DMO leaders need this month. This month's focus: shoulder season economics, labor constraints, and business travel recovery.</p>
 
     <div class="three-things">
       <div class="three-things-label">
@@ -487,7 +484,7 @@ button{font-family:inherit}
       </div>
       <ul>
         <li><span><strong>Shoulder season has disappeared</strong> – Fall 2026 bookings up 59% with sales up 69%. French Riviera rates jumped +179% for fall bookings. Remote work has permanently redistributed demand.</span></li>
-        <li><span><strong>Labor shortage is now structural</strong> – 76% of hotels operating short-staffed. 8.6 million worker shortfall projected by 2035. This is no longer cyclical — it's a permanent constraint.</span></li>
+        <li><span><strong>Labor shortage is now structural</strong> – 76% of hotels operating short-staffed. 8.6 million worker shortfall projected by 2035. This is no longer cyclical. It's a permanent constraint.</span></li>
         <li><span><strong>Business travel hits full recovery</strong> – $1.62 trillion global spend in 2026. Only 8% of travel shifted permanently virtual (down from 29% projections). Face-to-face has won.</span></li>
       </ul>
     </div>
@@ -549,28 +546,24 @@ button{font-family:inherit}
     <div class="section-header">
       <div class="section-header-top"><span class="section-num">01</span><div class="section-divider" style="background:var(--teal)"></div></div>
       <h2>Key Trends</h2>
-      <p>Structural shifts reshaping Canadian tourism this month, synthesized from ten industry sources. Focus: industry economics, workforce, and technology.</p>
+      <p>Changes in Canadian tourism this month, synthesized from ten industry sources. Focus: industry economics, workforce, and technology.</p>
     </div>
 
-    <!-- New Industry Trends Section (Data Card Layout) -->
+    <!-- Trends Grid (Data Card Layout) -->
     <div class="new-trends-section">
-      <div class="new-trends-header">
-        <h3>New Industry Trends</h3>
-        <p>Emerging shifts not covered in previous monthly scans</p>
-      </div>
       <div class="new-trends-grid">
 
-        <div class="new-trend-card" id="new-trend-1">
+        <div class="new-trend-card" id="trend-1">
           <div class="new-trend-card-header">
             <h4>Shoulder Season Is Disappearing</h4>
-            <span class="new-trend-badge">New Trend</span>
+            <span class="tag tag-economics">Economics</span>
           </div>
-          <p class="new-trend-card-intro">The traditional fall "shoulder season" has officially shed its bargain reputation. <strong>Fall 2026 bookings are up 59% with sales up 69%</strong>, fundamentally reshaping seasonal pricing dynamics.</p>
+          <p class="new-trend-card-intro">The traditional fall "shoulder season" has officially shed its bargain reputation. <strong>Fall 2026 bookings are up 59% with sales up 69%</strong>, changing how destinations price their seasonal offerings.</p>
           <div class="new-trend-callout">
             <div class="new-trend-callout-label">Rate Surge Data</div>
             <p class="new-trend-callout-body">French Riviera hotel rates jumped +179% for fall bookings. Puglia, Italy up +78%. Across top 10 US markets, fall lodging costs are now 20% above summer levels.</p>
           </div>
-          <p class="new-trend-narrative">Remote work has enabled this shift—travelers now choose "cheaper days" flexibly, spreading demand into what were once slower periods. Vrbo reports a 17% YoY increase in fall travel interest, with average nightly rates now only 5% below peak summer.</p>
+          <p class="new-trend-narrative">Remote work has enabled this shift. Travelers now choose "cheaper days" flexibly, spreading demand into what were once slower periods. Vrbo reports a 17% YoY increase in fall travel interest, with average nightly rates now only 5% below peak summer.</p>
           <div class="new-trend-metrics">
             <div class="new-trend-metric">
               <span class="new-trend-metric-label">September bookings</span>
@@ -596,12 +589,12 @@ button{font-family:inherit}
           <p class="new-trend-sources">Sources: <a href="#">Expedia Fall Outlook</a>, <a href="#">CNBC</a>, <a href="#">Vrbo</a></p>
         </div>
 
-        <div class="new-trend-card" id="new-trend-2">
+        <div class="new-trend-card" id="trend-2">
           <div class="new-trend-card-header">
             <h4>Labor Crisis Becomes Structural</h4>
-            <span class="new-trend-badge">New Trend</span>
+            <span class="tag tag-policy">Workforce</span>
           </div>
-          <p class="new-trend-card-intro">The hospitality labor shortage is no longer cyclical—it's a permanent structural force. <strong>76% of US hotels are operating short-staffed</strong>, with the industry facing an 8.6 million worker shortfall by 2035.</p>
+          <p class="new-trend-card-intro">The hospitality labor shortage is no longer cyclical. It's now a long-term reality. <strong>76% of US hotels are operating short-staffed</strong>, with the industry facing an 8.6 million worker shortfall by 2035.</p>
           <div class="new-trend-callout">
             <div class="new-trend-callout-label">Scale of the Crisis</div>
             <p class="new-trend-callout-body">65% of US hotels report ongoing shortages. 71% have positions they cannot fill despite active recruiting. Hotels average 6-7 open roles per property.</p>
@@ -632,115 +625,139 @@ button{font-family:inherit}
           <p class="new-trend-sources">Sources: <a href="#">AHLA State of Industry 2026</a>, <a href="#">WTTC Workforce Report</a></p>
         </div>
 
-      </div>
-    </div>
-
-    <div class="trends-grid">
-
-      <div class="trend-card" data-color="amber" id="trend-3">
-        <div class="trend-card-top">
-          <div class="trend-card-meta">
+        <div class="new-trend-card" id="trend-3">
+          <div class="new-trend-card-header">
+            <h4>Business Travel Achieves Full Recovery</h4>
             <span class="tag tag-economics">Economics</span>
-            <button class="share-btn" onclick="shareItem(event,'trend-3','Business Travel Achieves Full Recovery. $1.62 trillion global spend in 2026. Virtual shift collapsed to 8% (from 29% projections). Face-to-face has won.')" aria-label="Copy link to this trend">
-              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
-            </button>
           </div>
-          <h3>Business Travel Achieves Full Recovery</h3>
-          <p class="trend-card-summary">Global business travel spending is forecast to reach $1.62 trillion in 2026, marking the sector's full recovery from pandemic disruption. Virtual meeting substitution has collapsed to just 8%—down from projections as high as 29%.</p>
+          <p class="new-trend-card-intro">Global business travel spending is forecast to reach <strong>$1.62 trillion in 2026</strong>, marking the sector's full recovery from pandemic disruption. Virtual meeting substitution has collapsed to just 8%, down from projections as high as 29%.</p>
+          <div class="new-trend-callout">
+            <div class="new-trend-callout-label">Recovery Indicators</div>
+            <p class="new-trend-callout-body">MICE projected to grow 7-9% in 2026. 61% of travel managers optimistic about outlook (up from 50%). SMEs now drive 50%+ of all new managed travel programs.</p>
+          </div>
+          <p class="new-trend-narrative">The pandemic-era prediction that virtual meetings would permanently replace 20-30% of business travel has proven wrong. <strong>Face-to-face interaction remains essential</strong> for relationship building, deal-making, and complex collaboration.</p>
+          <div class="new-trend-metrics">
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Global business travel spend</span>
+              <span class="new-trend-metric-value">$1.62 trillion</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Virtual substitution rate</span>
+              <span class="new-trend-metric-value">8% (vs 29% projected)</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">MICE growth forecast</span>
+              <span class="new-trend-metric-value">7-9%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Hotel bookings (business)</span>
+              <span class="new-trend-metric-value">+6.3%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Room rates (business)</span>
+              <span class="new-trend-metric-value">+3.9%</span>
+            </div>
+          </div>
+          <p class="new-trend-sources">Sources: <a href="#">GBTA</a>, <a href="#">Morgan Stanley</a>, <a href="#">CWT</a></p>
         </div>
-        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="trend-card-expanded"><div class="trend-expanded-inner">
-          <p>MICE (Meetings, Incentives, Conferences, Exhibitions) is projected to grow 7-9% in 2026. 61% of travel managers are "optimistic" or "very optimistic" about 2026 outlook, up from 50% in mid-2025.</p>
-          <p>SMEs now drive 50%+ of all new managed travel programs in US and EU. Hotel bookings from business travelers up 6.3% with room rates up 3.9%. The corporate segment is back—and growing.</p>
-          <p>The pandemic-era prediction that virtual meetings would permanently replace 20-30% of business travel has proven wrong. Face-to-face interaction has proven irreplaceable for relationship building, deal-making, and complex collaboration.</p>
-          <p><strong>Canadian Context:</strong> Canadian business travel is recovering alongside global trends. Toronto, Vancouver, and Montreal are seeing renewed MICE activity. The expansion of direct air routes (see Air Canada trend) supports this recovery by improving connectivity to key business markets.</p>
-          <p><strong>Considerations:</strong> Recovery varies by sector and company size. Tech companies have adopted more permanent hybrid models, while professional services and sales-driven industries are returning to pre-pandemic travel levels. Monitor your market's specific corporate mix.</p>
-          <p><strong>DMO Implication:</strong> If your destination has MICE facilities, now is the time to re-engage corporate planners. SMEs represent an underserved market segment—consider targeted outreach to small and midsize businesses rather than focusing only on large corporate accounts.</p>
-          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
-            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
-          </div>
-          <p class="trend-source-line"><strong>Source</strong>GBTA, Morgan Stanley, CWT</p>
-        </div></div>
-      </div>
 
-      <div class="trend-card" data-color="coral" id="trend-5">
-        <div class="trend-card-top">
-          <div class="trend-card-meta">
+        <div class="new-trend-card" id="trend-4">
+          <div class="new-trend-card-header">
+            <h4>Destination Dupes Movement</h4>
             <span class="tag tag-consumer">Consumer</span>
-            <button class="share-btn" onclick="shareItem(event,'trend-5','Destination Dupes Movement. 48% of travelers want to avoid crowds. Albania prices up 14% vs Greece 2% as dupes get discovered.')" aria-label="Copy link to this trend">
-              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
-            </button>
           </div>
-          <h3>Destination Dupes Movement</h3>
-          <p class="trend-card-summary">"Destination dupes" is one of the biggest travel trends of 2026—affordable alternatives to famous, expensive, or overcrowded hotspots. 48% of travelers say they want to avoid crowds in 2026. But dupes don't stay affordable long.</p>
+          <p class="new-trend-card-intro">"Destination dupes" has emerged as a major travel trend in 2026: affordable alternatives to famous, expensive, or overcrowded hotspots. <strong>48% of travelers say they want to avoid crowds</strong> in 2026. But dupes don't stay affordable long.</p>
+          <div class="new-trend-callout">
+            <div class="new-trend-callout-label">The Dupe Lifecycle</div>
+            <p class="new-trend-callout-body">Discovery → viral content → price surge → new dupe needed. Albania hotel prices jumped 14% in one summer vs 2% in Greece. The window is narrowing fast.</p>
+          </div>
+          <p class="new-trend-narrative">The trend surged with Venice's entry fee (April 3) and Japan's new tourist levies (July 1). Popular swaps: Albania for Greece, Slovenia for Switzerland, Oman for Maldives. <strong>38% cite money-saving as primary motivation.</strong></p>
+          <div class="new-trend-metrics">
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Travelers avoiding crowds</span>
+              <span class="new-trend-metric-value">48%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Money-saving motivation</span>
+              <span class="new-trend-metric-value">38%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Albania price increase</span>
+              <span class="new-trend-metric-value">+14% (vs Greece +2%)</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Venice entry fee start</span>
+              <span class="new-trend-metric-value">April 3, 2026</span>
+            </div>
+          </div>
+          <p class="new-trend-sources">Sources: <a href="#">GetYourGuide</a>, <a href="#">Dragonpass</a></p>
         </div>
-        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="trend-card-expanded"><div class="trend-expanded-inner">
-          <p>The trend surged with Venice's entry fee (April 3) and Japan's new tourist levies (July 1). Travelers are using AI tools to find hidden gems with similar experiences at lower cost. 38% cite money-saving as their primary motivation.</p>
-          <p>Popular swaps: Albania for Greece, Slovenia for Switzerland, Oman for Maldives, Vietnam for Bali, Medellín for Barcelona. But discovery creates its own problem—Albania hotel prices jumped 14% in one summer vs 2% in Greece.</p>
-          <p>The dupe lifecycle is accelerating: discovery → viral content → price surge → new dupe needed. Destinations that are "discovered" have a narrow window before they face the same pressures they were positioned against.</p>
-          <p><strong>Canadian Context:</strong> Canadian destinations can position as dupes for expensive US alternatives. Nova Scotia for Maine, BC wine country for Napa, Banff for Swiss Alps at a fraction of the cost. The messaging must balance "similar experience" with authentic differentiation.</p>
-          <p><strong>Considerations:</strong> Being labeled a "dupe" can feel diminishing—it positions you as secondary. Consider whether this framing serves your long-term brand, or whether leading with unique attributes is more sustainable.</p>
-          <p><strong>DMO Implication:</strong> Monitor social conversation for dupe mentions of your destination. If you're being compared to crowded/expensive alternatives, lean into it strategically. If you're the "original," emphasize authentic experiences that dupes can't replicate.</p>
-          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
-            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot"></span></span></div>
-          </div>
-          <p class="trend-source-line"><strong>Source</strong>GetYourGuide, Dragonpass</p>
-        </div></div>
-      </div>
 
-      <div class="trend-card" data-color="teal" id="trend-6">
-        <div class="trend-card-top">
-          <div class="trend-card-meta">
+        <div class="new-trend-card" id="trend-5">
+          <div class="new-trend-card-header">
+            <h4>Multi-Generational Travel Boom</h4>
             <span class="tag tag-consumer">Consumer</span>
-            <button class="share-btn" onclick="shareItem(event,'trend-6','Multi-Generational Travel Boom. 47% of travelers opting for multi-gen trips—up 17 points from 2024. Gen X grandparents often footing the bill.')" aria-label="Copy link to this trend">
-              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
-            </button>
           </div>
-          <h3>Multi-Generational Travel Boom</h3>
-          <p class="trend-card-summary">Multi-generational travel has surged: 47% of all travelers in 2026 are opting for multi-gen trips, a 17 percentage point increase from 2024. Campspot reports 85% of families plan multi-gen trips. Gen X grandparents are often funding these journeys.</p>
+          <p class="new-trend-card-intro">Multi-generational travel has surged: <strong>47% of all travelers in 2026 are opting for multi-gen trips</strong>, a 17 percentage point increase from 2024. Gen X grandparents are often funding these journeys.</p>
+          <div class="new-trend-callout">
+            <div class="new-trend-callout-label">XZ Beta Travel</div>
+            <p class="new-trend-callout-body">New pattern emerging: Gen X grandparents vacationing with Gen Z adult children (young parents) and Beta babies (born 2026+). 58% of Millennial/Gen Z parents plan to bring extended family.</p>
+          </div>
+          <p class="new-trend-narrative">AARP reports <strong>75% of grandparents say family travel is the single best way to bond with grandchildren</strong>. Multi-gen groups have complex needs: accessibility, kid-friendly options, shared and separate spaces.</p>
+          <div class="new-trend-metrics">
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Multi-gen travelers</span>
+              <span class="new-trend-metric-value">47% (+17 pts from 2024)</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Families planning multi-gen</span>
+              <span class="new-trend-metric-value">85%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Parents with grandparents</span>
+              <span class="new-trend-metric-value">57%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Extended family vacations</span>
+              <span class="new-trend-metric-value">+48% (+7 pts from 2023)</span>
+            </div>
+          </div>
+          <p class="new-trend-sources">Sources: <a href="#">Campspot 2026</a>, <a href="#">AARP</a>, <a href="#">Travel Weekly</a></p>
         </div>
-        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="trend-card-expanded"><div class="trend-expanded-inner">
-          <p>A new demographic pattern is emerging: "XZ Beta Travel"—Gen X grandparents vacationing with Gen Z adult children (young parents) and Beta babies (born 2026+). 58% of Millennial/Gen Z parents plan to bring extended family.</p>
-          <p>AARP reports 75% of grandparents say family travel is the single best way to bond with grandchildren. Travel Weekly confirms 57% of parents plan trips with both grandparents and children. Extended family vacations up 48% (+7 pts from 2023).</p>
-          <p>This demographic shift has major implications for accommodation, activities, and messaging. Multi-gen groups have complex needs: accessibility for older travelers, kid-friendly options, shared spaces for bonding, and separate spaces for privacy.</p>
-          <p><strong>Canadian Context:</strong> Canadian destinations with multi-bedroom vacation rentals, accessible activities, and intergenerational programming have a competitive advantage. Consider how your destination serves groups spanning 3+ generations with different mobility and interest levels.</p>
-          <p><strong>Considerations:</strong> Multi-gen groups book further in advance and spend more per trip, but require more complex coordination. Booking systems that accommodate group dynamics—split payment, varied room types, accessible options—have an advantage.</p>
-          <p><strong>DMO Implication:</strong> Review your destination's multi-gen readiness: accommodation options for large groups, activities that span age ranges, dining that works for different dietary needs. Feature multi-gen content in family-focused marketing campaigns.</p>
-          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
-            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
-          </div>
-          <p class="trend-source-line"><strong>Source</strong>Campspot 2026 Report, AARP, Travel Weekly</p>
-        </div></div>
-      </div>
 
-      <div class="trend-card" data-color="green" id="trend-7">
-        <div class="trend-card-top">
-          <div class="trend-card-meta">
+        <div class="new-trend-card" id="trend-6">
+          <div class="new-trend-card-header">
+            <h4>Air Canada Route Expansion</h4>
             <span class="tag tag-sustainability">Canada Focus</span>
-            <button class="share-btn" onclick="shareItem(event,'trend-7','Air Canada Route Expansion. 5 new destinations, 7 new routes for Summer 2027. Toronto-Oslo, Vancouver-Guangzhou year-round, +8% seat miles.')" aria-label="Copy link to this trend">
-              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
-            </button>
           </div>
-          <h3>Air Canada Route Expansion</h3>
-          <p class="trend-card-summary">On September 3, 2026, Air Canada announced a major global expansion: 5 new international destinations and 7 new routes for Summer 2027, representing 8%+ increase in available seat miles. New connectivity opens new source markets.</p>
+          <p class="new-trend-card-intro">On September 3, 2026, Air Canada announced a major global expansion: <strong>5 new international destinations and 7 new routes</strong> for Summer 2027, representing 8%+ increase in available seat miles.</p>
+          <div class="new-trend-callout">
+            <div class="new-trend-callout-label">Key New Routes</div>
+            <p class="new-trend-callout-body">Toronto: Oslo, Shannon, Nice. Vancouver: Guangzhou (year-round). Plus Toronto-London Heathrow day-tripper and daily Toronto-Shanghai service.</p>
+          </div>
+          <p class="new-trend-narrative">The Guangzhou route stands out. <strong>Year-round service to China's third-largest city</strong> opens a major source market for Canadian tourism. Air Transat also expanded with Quebec City-Marseille and Ottawa-London Gatwick.</p>
+          <div class="new-trend-metrics">
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">New destinations</span>
+              <span class="new-trend-metric-value">5</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">New routes</span>
+              <span class="new-trend-metric-value">7</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Seat mile increase</span>
+              <span class="new-trend-metric-value">+8%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Announcement date</span>
+              <span class="new-trend-metric-value">September 3, 2026</span>
+            </div>
+          </div>
+          <p class="new-trend-sources">Sources: <a href="#">Air Canada</a></p>
         </div>
-        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="trend-card-expanded"><div class="trend-expanded-inner">
-          <p>New routes from Toronto: Oslo (Norway), Shannon (Ireland), Nice (France). From Vancouver: Guangzhou (China) year-round. Plus Toronto-London Heathrow Day-tripper return and daily Toronto-Shanghai.</p>
-          <p>Air Transat also expanded with Quebec City–Marseille and Ottawa–London Gatwick exclusives. Regional additions include Calgary-Merida (Dec 17), Edmonton-Montego Bay (Oct 26), and Winnipeg-Belize City (Nov 28).</p>
-          <p>The Guangzhou route is particularly significant—year-round service to China's third-largest city opens a major source market for Canadian tourism and supports business travel recovery in both directions.</p>
-          <p><strong>Canadian Context:</strong> These routes directly benefit Canadian destinations by improving inbound connectivity. DMOs in gateway cities should engage with airline route development teams. New routes create opportunities for targeted marketing in newly connected source markets.</p>
-          <p><strong>Considerations:</strong> Route announcements don't guarantee long-term service. Monitor load factors and schedule changes. New routes typically need 2-3 seasons to mature—plan marketing accordingly.</p>
-          <p><strong>DMO Implication:</strong> Review which new routes connect to your destination (directly or via hub). Consider source market activation campaigns timed to route launch dates. Partner with airports and airlines on joint marketing to fill new capacity.</p>
-          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
-            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
-          </div>
-          <p class="trend-source-line"><strong>Source</strong>Air Canada September 3, 2026 announcement</p>
-        </div></div>
-      </div>
 
+      </div>
     </div>
   </section>
 
@@ -760,7 +777,7 @@ button{font-family:inherit}
             <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
           </div>
           <h3 class="insight-headline">Of Gen Z and Millennials find their next destination through short-form video</h3>
-          <p class="insight-body">Short-form video has become the primary discovery channel for younger travelers. TikTok's data shows 60% of users visit new destinations after discovering them on the platform, with 59% booking within one week. This isn't supplementary — it's the starting point.</p>
+          <p class="insight-body">Short-form video has become the primary discovery channel for younger travelers. TikTok's data shows 60% of users visit new destinations after discovering them on the platform, with 59% booking within one week. This isn't supplementary. It's the starting point.</p>
           <p class="insight-source">Source: TikTok Business Insights, Miles Partnership</p>
         </div>
         <button class="share-btn" onclick="shareItem(event,'insight-1','70% of Gen Z and Millennials find their next destination through short-form video. TikTok Business Insights.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
@@ -773,10 +790,10 @@ button{font-family:inherit}
             <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
           </div>
           <h3 class="insight-headline">Reach advantage of a 15-second BTS reel over a professional property tour</h3>
-          <p class="insight-body">Authenticity beats production value — by a factor of three. Travel content featuring "imperfect moments" — mishaps, unexpected discoveries, genuine reactions — consistently outperforms curated, polished content. Reallocate production budget from long-form to high-volume authentic short-form.</p>
+          <p class="insight-body">Authenticity beats production value by a factor of three. Travel content featuring "imperfect moments" (mishaps, unexpected discoveries, genuine reactions) consistently outperforms curated, polished content. Reallocate production budget from long-form to high-volume authentic short-form.</p>
           <p class="insight-source">Source: Vamoos Social Media Marketing Guide 2026</p>
         </div>
-        <button class="share-btn" onclick="shareItem(event,'insight-2','340% — a 15-second BTS reel outperformed a professional property tour on reach. Authenticity wins.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+        <button class="share-btn" onclick="shareItem(event,'insight-2','340%: a 15-second BTS reel outperformed a professional property tour on reach. Authenticity wins.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
       </div>
 
       <div class="insight-row" id="insight-3">
@@ -786,7 +803,7 @@ button{font-family:inherit}
             <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
           </div>
           <h3 class="insight-headline">Of travelers trust creator recommendations over traditional advertising</h3>
-          <p class="insight-body">Trust has shifted from brands to creators. 73% say influencer recommendations have directly led to a booking, rising to 83% among under-40s. Micro-influencers (10K-250K followers) generate 6% engagement versus 1-2% for larger accounts — and $6 average ROI per dollar spent.</p>
+          <p class="insight-body">Trust has shifted from brands to creators. 73% say influencer recommendations have directly led to a booking, rising to 83% among under-40s. Micro-influencers (10K-250K followers) generate 6% engagement versus 1-2% for larger accounts, and $6 average ROI per dollar spent.</p>
           <p class="insight-source">Source: Evok Destination Influencer Marketing Guide 2026</p>
         </div>
         <button class="share-btn" onclick="shareItem(event,'insight-3','82% of travelers trust creator recommendations over traditional advertising. Evok 2026.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
@@ -815,7 +832,7 @@ button{font-family:inherit}
           <p class="insight-body">The biggest strategic shift in DMO marketing this decade. Nearly 80% of North American DMOs now prioritize ROI and economic impact. Conversions as a main goal doubled YoY (15% to 31%). The DMOs winning are running full-funnel campaigns, not choosing between brand and performance.</p>
           <p class="insight-source">Source: Sojern State of Destination Marketing 2026</p>
         </div>
-        <button class="share-btn" onclick="shareItem(event,'insight-5','34-point drop in DMOs prioritizing awareness (59% to 25%) — the biggest strategic shift in a decade. Sojern 2026.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+        <button class="share-btn" onclick="shareItem(event,'insight-5','34-point drop in DMOs prioritizing awareness (59% to 25%), the biggest strategic shift in a decade. Sojern 2026.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
       </div>
 
     </div>
@@ -880,7 +897,7 @@ button{font-family:inherit}
     <div class="section-header">
       <div class="section-header-top"><span class="section-num">04</span><div class="section-divider" style="background:var(--violet)"></div></div>
       <h2>Recommended Actions</h2>
-      <p>Six marketing moves a DMO executive director can make this quarter, drawn directly from this month's source set. Each action includes budget-appropriate approaches — these strategies scale from regional DMOs to provincial organizations.</p>
+      <p>Six marketing moves a DMO executive director can make this quarter, drawn directly from this month's source set. Each action includes budget-appropriate approaches that scale from regional DMOs to provincial organizations.</p>
     </div>
     <div class="actions-list">
 
@@ -898,7 +915,7 @@ button{font-family:inherit}
             </div>
             <div class="action-split-col change">
               <div class="action-split-label"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>What Changes In Your Week</div>
-              <p class="action-split-body"><strong>$50K+ budget:</strong> Hire a part-time content creator or reallocate 20% of video production budget to short-form. <strong>Under $50K:</strong> Train existing staff on smartphone content capture. Use free tools like CapCut for editing. Prioritize quantity and authenticity over production value — your iPhone is enough.</p>
+              <p class="action-split-body"><strong>$50K+ budget:</strong> Hire a part-time content creator or reallocate 20% of video production budget to short-form. <strong>Under $50K:</strong> Train existing staff on smartphone content capture. Use free tools like CapCut for editing. Prioritize quantity and authenticity over production value. Your iPhone is enough.</p>
             </div>
           </div>
           <div class="action-tags"><span class="tag tag-social">Channels</span><span class="tag tag-consumer">Content</span></div>
@@ -936,11 +953,11 @@ button{font-family:inherit}
           <div class="action-split">
             <div class="action-split-col evidence">
               <div class="action-split-label"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>The Evidence</div>
-              <p class="action-split-body">Travel brands respond to only 6% of incoming social messages. 94% of interactions — many from high-intent travelers — go unanswered. Meanwhile, 64% are comfortable booking directly through social platforms.</p>
+              <p class="action-split-body">Travel brands respond to only 6% of incoming social messages. 94% of interactions, many from high-intent travelers, go unanswered. Meanwhile, 64% are comfortable booking directly through social platforms.</p>
             </div>
             <div class="action-split-col change">
               <div class="action-split-label"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>What Changes In Your Week</div>
-              <p class="action-split-body"><strong>Any budget:</strong> This action costs nothing but staff time. Audit response rates this week using native platform analytics. <strong>$25K+ budget:</strong> Consider a social listening tool (Sprout Social, Hootsuite) to centralize and track response times. <strong>Under $25K:</strong> Assign one team member "social duty" each day. Set phone alerts for DMs. Commit to 24-hour reply windows — this is the lowest-hanging fruit in destination marketing.</p>
+              <p class="action-split-body"><strong>Any budget:</strong> This action costs nothing but staff time. Audit response rates this week using native platform analytics. <strong>$25K+ budget:</strong> Consider a social listening tool (Sprout Social, Hootsuite) to centralize and track response times. <strong>Under $25K:</strong> Assign one team member "social duty" each day. Set phone alerts for DMs. Commit to 24-hour reply windows. This is the simplest improvement in destination marketing.</p>
             </div>
           </div>
           <div class="action-tags"><span class="tag tag-social">Marketing</span><span class="tag tag-consumer">Operations</span><span class="tag tag-demand">Conversion</span></div>
@@ -994,7 +1011,7 @@ button{font-family:inherit}
         <div class="action-body">
           <div class="action-top">
             <h3 class="action-headline">Study the Montreal model: bold, differentiated creative that owns a position</h3>
-            <button class="share-btn" onclick="shareItem(event,'action-6','Action: Study Montreal marketing playbook. Reality TV creative, Penn Station activation, clear positioning drove 12.5M visitors — a record.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
+            <button class="share-btn" onclick="shareItem(event,'action-6','Action: Study Montreal marketing playbook. Reality TV creative, Penn Station activation, clear positioning drove 12.5M visitors, a record.')" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button>
           </div>
           <div class="action-split">
             <div class="action-split-col evidence">
@@ -1003,7 +1020,7 @@ button{font-family:inherit}
             </div>
             <div class="action-split-col change">
               <div class="action-split-label"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>What Changes In Your Week</div>
-              <p class="action-split-body"><strong>Any budget:</strong> The positioning exercise costs nothing. Block 2 hours this month to define your destination's ownable position. Ask: "What can we own that competitors can't?" <strong>$50K+ budget:</strong> Once you have positioning clarity, invest in one bold creative execution per year rather than many mediocre ones. <strong>Under $50K:</strong> Look at Tourism Saskatoon's "Seriously Underrated" campaign (est. $400K) — proof that positioning clarity, not budget size, drives differentiation.</p>
+              <p class="action-split-body"><strong>Any budget:</strong> The positioning exercise costs nothing. Block 2 hours this month to define your destination's ownable position. Ask: "What can we own that competitors can't?" <strong>$50K+ budget:</strong> Once you have positioning clarity, invest in one bold creative execution per year rather than many mediocre ones. <strong>Under $50K:</strong> Look at Tourism Saskatoon's "Seriously Underrated" campaign (est. $400K), proof that positioning clarity, not budget size, drives differentiation.</p>
             </div>
           </div>
           <div class="action-tags"><span class="tag tag-social">Marketing</span><span class="tag tag-demand">Strategy</span><span class="tag tag-social">Creative</span></div>
