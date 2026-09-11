@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tourism Industry Scan | September 2026 | eLearningU</title>
-<meta name="description" content="Monthly intelligence report for Canadian DMO leaders, September 2026. Shoulder season disappearing, labor crisis structural, business travel recovery, biometric travel mainstream, destination dupes movement.">
+<meta name="description" content="Monthly intelligence report for Canadian DMO leaders, September 2026. Shoulder season disappearing, labor crisis structural, business travel recovery, destination dupes movement.">
 <link rel="icon" type="image/png" href="elearningu favicon.png">
 <link rel="shortcut icon" href="elearningu favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -222,6 +222,33 @@ button{font-family:inherit}
 .source-chip:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
 .trend-source-line{margin-top:14px;font-size:12px;color:var(--text3)}
 .trend-source-line strong{font-family:'Poppins',sans-serif;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;font-size:10px;margin-right:8px}
+
+/* ============ NEW INDUSTRY TRENDS (Data Cards) ============ */
+.new-trends-section{margin-bottom:48px}
+.new-trends-header{margin-bottom:32px}
+.new-trends-header h3{font-size:22px;font-weight:700;color:var(--text);margin-bottom:6px}
+.new-trends-header p{font-size:14px;color:var(--text3)}
+.new-trends-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.new-trend-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:var(--shadow);transition:transform 0.2s ease,box-shadow 0.2s ease}
+.new-trend-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.new-trend-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px}
+.new-trend-card-header h4{font-size:18px;font-weight:700;color:var(--text);line-height:1.3;flex:1}
+.new-trend-badge{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;background:var(--coral);color:#fff;padding:5px 12px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.new-trend-card-intro{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:20px}
+.new-trend-card-intro strong{color:var(--text);font-weight:700}
+.new-trend-callout{background:var(--bg2);border-left:3px solid var(--teal);padding:16px 18px;border-radius:0 10px 10px 0;margin-bottom:20px}
+.new-trend-callout-label{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:8px}
+.new-trend-callout-body{font-size:13px;color:var(--text2);line-height:1.6}
+.new-trend-narrative{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:20px}
+.new-trend-narrative strong{color:var(--text);font-weight:700}
+.new-trend-metrics{display:flex;flex-direction:column;gap:0;margin-bottom:20px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.new-trend-metric{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border)}
+.new-trend-metric:last-child{border-bottom:none}
+.new-trend-metric-label{font-size:13px;color:var(--text2)}
+.new-trend-metric-value{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;color:var(--text);text-align:right}
+.new-trend-sources{font-size:12px;color:var(--text3)}
+.new-trend-sources a{color:var(--teal);font-weight:600}
+@media (max-width:960px){.new-trends-grid{grid-template-columns:1fr}}
 
 /* ============ INSIGHTS ============ */
 .insights-list{display:flex;flex-direction:column;gap:0}
@@ -451,7 +478,7 @@ button{font-family:inherit}
   <div class="hero-inner">
     <p class="hero-label">Monthly Intelligence Report for Canadian DMO Leaders</p>
     <h1>Tourism Industry Scan<span class="accent">September 2026</span></h1>
-    <p class="hero-sub">Ten industry sources synthesized into the trends, insights, stats, and actions Canadian DMO leaders need this month. This month's focus: structural shifts reshaping the industry — shoulder season economics, labor constraints, business travel recovery, and biometric transformation.</p>
+    <p class="hero-sub">Ten industry sources synthesized into the trends, insights, stats, and actions Canadian DMO leaders need this month. This month's focus: structural shifts reshaping the industry — shoulder season economics, labor constraints, and business travel recovery.</p>
 
     <div class="three-things">
       <div class="three-things-label">
@@ -496,7 +523,6 @@ button{font-family:inherit}
             <li>Shoulder season disappearing: fall bookings up 59%, rates approaching peak levels</li>
             <li>Labor crisis goes structural: 76% short-staffed, 8.6M worker gap by 2035</li>
             <li>Business travel full recovery: $1.62T spend, virtual shift collapses to 8%</li>
-            <li>Biometric travel mainstream: 250+ TSA airports, 10-second clearance</li>
             <li>Multi-generational travel boom: 47% of travelers, up 17 points from 2024</li>
           </ul>
         </div>
@@ -523,61 +549,93 @@ button{font-family:inherit}
     <div class="section-header">
       <div class="section-header-top"><span class="section-num">01</span><div class="section-divider" style="background:var(--teal)"></div></div>
       <h2>Key Trends</h2>
-      <p>Seven structural shifts reshaping Canadian tourism this month, synthesized from ten industry sources. Focus: industry economics, workforce, and technology.</p>
+      <p>Structural shifts reshaping Canadian tourism this month, synthesized from ten industry sources. Focus: industry economics, workforce, and technology.</p>
     </div>
+
+    <!-- New Industry Trends Section (Data Card Layout) -->
+    <div class="new-trends-section">
+      <div class="new-trends-header">
+        <h3>New Industry Trends</h3>
+        <p>Emerging shifts not covered in previous monthly scans</p>
+      </div>
+      <div class="new-trends-grid">
+
+        <div class="new-trend-card" id="new-trend-1">
+          <div class="new-trend-card-header">
+            <h4>Shoulder Season Is Disappearing</h4>
+            <span class="new-trend-badge">New Trend</span>
+          </div>
+          <p class="new-trend-card-intro">The traditional fall "shoulder season" has officially shed its bargain reputation. <strong>Fall 2026 bookings are up 59% with sales up 69%</strong>, fundamentally reshaping seasonal pricing dynamics.</p>
+          <div class="new-trend-callout">
+            <div class="new-trend-callout-label">Rate Surge Data</div>
+            <p class="new-trend-callout-body">French Riviera hotel rates jumped +179% for fall bookings. Puglia, Italy up +78%. Across top 10 US markets, fall lodging costs are now 20% above summer levels.</p>
+          </div>
+          <p class="new-trend-narrative">Remote work has enabled this shift—travelers now choose "cheaper days" flexibly, spreading demand into what were once slower periods. Vrbo reports a 17% YoY increase in fall travel interest, with average nightly rates now only 5% below peak summer.</p>
+          <div class="new-trend-metrics">
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">September bookings</span>
+              <span class="new-trend-metric-value">+55%, sales +77%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">October bookings</span>
+              <span class="new-trend-metric-value">+59%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">November bookings</span>
+              <span class="new-trend-metric-value">+70%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Europe fall bookings</span>
+              <span class="new-trend-metric-value">+49% despite +7% rates</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Avg domestic ticket</span>
+              <span class="new-trend-metric-value">$326 (+39% YoY)</span>
+            </div>
+          </div>
+          <p class="new-trend-sources">Sources: <a href="#">Expedia Fall Outlook</a>, <a href="#">CNBC</a>, <a href="#">Vrbo</a></p>
+        </div>
+
+        <div class="new-trend-card" id="new-trend-2">
+          <div class="new-trend-card-header">
+            <h4>Labor Crisis Becomes Structural</h4>
+            <span class="new-trend-badge">New Trend</span>
+          </div>
+          <p class="new-trend-card-intro">The hospitality labor shortage is no longer cyclical—it's a permanent structural force. <strong>76% of US hotels are operating short-staffed</strong>, with the industry facing an 8.6 million worker shortfall by 2035.</p>
+          <div class="new-trend-callout">
+            <div class="new-trend-callout-label">Scale of the Crisis</div>
+            <p class="new-trend-callout-body">65% of US hotels report ongoing shortages. 71% have positions they cannot fill despite active recruiting. Hotels average 6-7 open roles per property.</p>
+          </div>
+          <p class="new-trend-narrative">AHLA projects US hotels will pay <strong>$131 billion in wages and benefits in 2026</strong>. Most acute gaps: housekeeping, front desk, culinary, and maintenance. Globally, tourism worker demand will exceed supply by 43 million by 2035.</p>
+          <div class="new-trend-metrics">
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Hotels operating short-staffed</span>
+              <span class="new-trend-metric-value">76%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Hotels with unfillable positions</span>
+              <span class="new-trend-metric-value">71%</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">2026 industry wages</span>
+              <span class="new-trend-metric-value">$131 billion</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Hospitality gap by 2035</span>
+              <span class="new-trend-metric-value">8.6 million (18% below need)</span>
+            </div>
+            <div class="new-trend-metric">
+              <span class="new-trend-metric-label">Global tourism gap by 2035</span>
+              <span class="new-trend-metric-value">43 million</span>
+            </div>
+          </div>
+          <p class="new-trend-sources">Sources: <a href="#">AHLA State of Industry 2026</a>, <a href="#">WTTC Workforce Report</a></p>
+        </div>
+
+      </div>
+    </div>
+
     <div class="trends-grid">
-
-      <div class="trend-card" data-color="teal" id="trend-1">
-        <div class="trend-card-top">
-          <div class="trend-card-meta">
-            <span class="tag tag-economics">Economics</span>
-            <button class="share-btn" onclick="shareItem(event,'trend-1','Shoulder Season Is Disappearing. Fall 2026 bookings up 59% with sales up 69%. French Riviera rates jumped +179%. Remote work has permanently redistributed demand.')" aria-label="Copy link to this trend">
-              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
-            </button>
-          </div>
-          <h3>Shoulder Season Is Disappearing</h3>
-          <p class="trend-card-summary">The traditional fall "shoulder season" has officially shed its bargain reputation. Fall 2026 bookings are up 59% with sales up 69%, fundamentally reshaping seasonal pricing dynamics. Remote work has permanently redistributed travel demand.</p>
-        </div>
-        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="trend-card-expanded"><div class="trend-expanded-inner">
-          <p>French Riviera hotel rates jumped +179% for fall bookings. Puglia, Italy up +78%. Across top 10 US markets, fall lodging costs are now 20% above summer levels. The bargain-hunter's window has closed.</p>
-          <p>September bookings up +55% with sales +77%. October bookings +59%. November bookings +70%. Europe fall bookings up +49% despite +7% rate increases. Average domestic ticket now $326 (+39% YoY).</p>
-          <p>Vrbo reports a 17% YoY increase in fall travel interest, with average nightly rates now only 5% below peak summer. The pricing gap that defined shoulder season has essentially evaporated.</p>
-          <p><strong>Canadian Context:</strong> Canadian destinations historically dependent on summer peaks should reframe fall marketing. The "value season" narrative no longer resonates—position fall around unique experiences (foliage, harvest festivals, fewer crowds) rather than savings.</p>
-          <p><strong>Considerations:</strong> This shift may not apply equally to all markets. Destinations with weather-dependent activities may still see seasonal patterns. Monitor your specific market data rather than assuming national trends apply.</p>
-          <p><strong>DMO Implication:</strong> Update pricing communications and seasonal messaging. September-October marketing should emphasize unique fall experiences, not value propositions. Revenue management systems need recalibration—historical seasonal patterns no longer predict demand accurately.</p>
-          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
-            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
-          </div>
-          <p class="trend-source-line"><strong>Source</strong>Expedia Fall Outlook 2026, CNBC, Vrbo</p>
-        </div></div>
-      </div>
-
-      <div class="trend-card" data-color="violet" id="trend-2">
-        <div class="trend-card-top">
-          <div class="trend-card-meta">
-            <span class="tag tag-policy">Workforce</span>
-            <button class="share-btn" onclick="shareItem(event,'trend-2','Labor Crisis Becomes Structural. 76% of hotels short-staffed, 8.6 million worker shortfall by 2035. This is no longer cyclical.')" aria-label="Copy link to this trend">
-              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
-            </button>
-          </div>
-          <h3>Labor Crisis Becomes Structural</h3>
-          <p class="trend-card-summary">The hospitality labor shortage is no longer cyclical—it's a permanent structural force. 76% of US hotels are operating short-staffed, with the industry facing an 8.6 million worker shortfall by 2035. This changes everything about service delivery.</p>
-        </div>
-        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="trend-card-expanded"><div class="trend-expanded-inner">
-          <p>65% of US hotels report ongoing shortages. 71% have positions they cannot fill despite active recruiting. Hotels average 6-7 open roles per property. AHLA projects US hotels will pay $131 billion in wages and benefits in 2026.</p>
-          <p>Most acute gaps: housekeeping, front desk, culinary, and maintenance. Globally, tourism worker demand will exceed supply by 43 million by 2035. The industry is 18% below projected workforce needs.</p>
-          <p>Properties are responding with leaner core teams supplemented by flex labor. Cross-training is replacing deep-benched specialists. Rolling occupancy-pace forecasts are replacing fixed schedules. Immigration pathways (EB-3 visas) are becoming strategic HR tools.</p>
-          <p><strong>Canadian Context:</strong> Canada's hospitality sector faces similar pressures, exacerbated by immigration policy shifts. TIAC has advocated for expanded Temporary Foreign Worker Program access for seasonal destinations. Quebec's tourism industry has been particularly vocal about labor constraints limiting growth.</p>
-          <p><strong>Considerations:</strong> Labor constraints vary by market and property type. Urban hotels face different challenges than resort properties. Seasonal destinations have acute peaks that intensify shortages. Monitor your specific market's labor dynamics.</p>
-          <p><strong>DMO Implication:</strong> Destination competitiveness will increasingly depend on workforce availability. Markets with labor supply advantages will outperform. Consider how workforce constraints affect member operators and whether DMO programming should address workforce development.</p>
-          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
-            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
-          </div>
-          <p class="trend-source-line"><strong>Source</strong>AHLA State of Industry 2026, WTTC Workforce Report</p>
-        </div></div>
-      </div>
 
       <div class="trend-card" data-color="amber" id="trend-3">
         <div class="trend-card-top">
@@ -602,32 +660,6 @@ button{font-family:inherit}
             <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot on"></span></span></div>
           </div>
           <p class="trend-source-line"><strong>Source</strong>GBTA, Morgan Stanley, CWT</p>
-        </div></div>
-      </div>
-
-      <div class="trend-card" data-color="blue" id="trend-4">
-        <div class="trend-card-top">
-          <div class="trend-card-meta">
-            <span class="tag tag-ai">Technology</span>
-            <button class="share-btn" onclick="shareItem(event,'trend-4','Biometric Travel Goes Mainstream. TSA Digital ID at 250+ airports. Singapore Changi 95% automated immigration—10 second clearance.')" aria-label="Copy link to this trend">
-              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
-            </button>
-          </div>
-          <h3>Biometric Travel Goes Mainstream</h3>
-          <p class="trend-card-summary">The airport of 2026 is now a connected digital environment. TSA has expanded Digital ID to 250+ US airports, while Singapore Changi will have 95% of immigration processing automated—clearing passengers in 10 seconds.</p>
-        </div>
-        <button class="trend-card-toggle" onclick="toggleTrend(this)">Dig deeper <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="trend-card-expanded"><div class="trend-expanded-inner">
-          <p>Visa acquired BioCatch for $2.4 billion. Apple announced passport-based digital ID for Apple Wallet. Dubai's smart gates verify travelers at security, immigration, and boarding without manual checks. The infrastructure for frictionless travel is being built.</p>
-          <p>IATA's One ID initiative is advancing paperless journeys where passengers control their own digital identity. Self-Sovereign Identity (SSI) protocols are replacing centralized biometric databases—passengers now own their identity attributes through digital wallets.</p>
-          <p>These technologies promise to dramatically reduce airport friction, but adoption varies widely by country and airport. The experience gap between cutting-edge facilities and legacy airports will widen before it closes.</p>
-          <p><strong>Canadian Context:</strong> CATSA is piloting digital identity programs at major Canadian airports, though adoption lags US and Asian airports. Canadian travelers will increasingly experience biometric processing when traveling internationally, raising expectations for domestic facilities.</p>
-          <p><strong>Considerations:</strong> Privacy concerns remain significant. Travelers vary in their comfort with biometric data collection. Destinations should monitor regulatory developments around digital identity and prepare for a more connected traveler journey.</p>
-          <p><strong>DMO Implication:</strong> While DMOs don't control airport infrastructure, understanding traveler journey friction matters for positioning. Destinations with modern airport facilities have a competitive advantage. Consider how the entire arrival experience—from airport to destination—affects visitor perception.</p>
-          <div class="trend-card-meta" style="margin-top:14px;align-items:flex-end">
-            <div class="trend-card-confidence">Confidence <span class="confidence-dots"><span class="confidence-dot on"></span><span class="confidence-dot on"></span><span class="confidence-dot"></span></span></div>
-          </div>
-          <p class="trend-source-line"><strong>Source</strong>TSA, IATA One ID, Changi Airport</p>
         </div></div>
       </div>
 
