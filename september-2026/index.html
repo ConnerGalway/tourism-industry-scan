@@ -1445,39 +1445,38 @@ function buildCharts(){
   var greenColor=getCSSVar('--green');
   var text2=getCSSVar('--text2');
 
-  // ---- Chart 1: Platform Engagement Rates 2026 (horizontal bar, with optional conversion compare) ----
+  // ---- Chart 1: Seasonal Demand Shift 2024-2026 (grouped bar showing monthly booking index) ----
   var c1=freshCanvas('channelChart');
   if(c1){
-    var labels=['YouTube Shorts','TikTok','Instagram Reels','Facebook','LinkedIn','Display Ads'];
-    var data2026=[5.91,3.73,2.65,1.48,1.22,0.35];
-    var data2025=[4.8,3.2,2.3,1.6,1.0,0.4]; // 2025 rates for comparison
+    var labels=['May','Jun','Jul','Aug','Sep','Oct'];
+    var data2026=[92,105,118,120,142,138];  // 2026 booking index (100 = 2024 Jul baseline)
+    var data2024=[88,98,100,102,89,87];     // 2024 booking index
     var datasets=[{
-      label:'Engagement Rate 2026',
+      label:'2026 Bookings',
       data:data2026,
-      backgroundColor:[tealColor,blueColor,violetColor,amberColor,coralColor,greenColor],
+      backgroundColor:tealColor,
       borderRadius:6,
       borderSkipped:false,
-      barPercentage:0.78,
-      categoryPercentage:0.78
+      barPercentage:0.7,
+      categoryPercentage:0.8
     }];
     if(showCompare){
-      datasets.unshift({
-        label:'Engagement Rate 2025',
-        data:data2025,
-        backgroundColor:isDark?'rgba(255,255,255,0.10)':'rgba(17,21,78,0.10)',
-        borderColor:isDark?'rgba(255,255,255,0.20)':'rgba(17,21,78,0.20)',
+      datasets.push({
+        label:'2024 Bookings',
+        data:data2024,
+        backgroundColor:isDark?'rgba(255,255,255,0.15)':'rgba(17,21,78,0.15)',
+        borderColor:isDark?'rgba(255,255,255,0.25)':'rgba(17,21,78,0.25)',
         borderWidth:1,
         borderRadius:6,
         borderSkipped:false,
-        barPercentage:0.78,
-        categoryPercentage:0.78
+        barPercentage:0.7,
+        categoryPercentage:0.8
       });
     }
     channelChartInst=new Chart(c1,{
       type:'bar',
       data:{labels:labels,datasets:datasets},
       options:{
-        indexAxis:'y',
         responsive:true,
         maintainAspectRatio:false,
         animation:prefersReduced?false:{duration:700,easing:'easeOutCubic'},
@@ -1495,13 +1494,13 @@ function buildCharts(){
             padding:10,
             cornerRadius:6,
             callbacks:{
-              label:function(ctx){return ' '+ctx.dataset.label+': '+ctx.parsed.x+'%';}
+              label:function(ctx){return ' '+ctx.dataset.label+': '+ctx.parsed.y+' index';}
             }
           }
         },
         scales:{
-          x:{min:0,max:7,grid:{color:gridColor},ticks:{color:tickColor,font:{family:'DM Sans',size:11},callback:function(v){return v+'%';}},border:{display:false}},
-          y:{grid:{display:false},ticks:{color:textColor,font:{family:'Poppins',size:12,weight:'600'}},border:{display:false}}
+          x:{grid:{display:false},ticks:{color:textColor,font:{family:'Poppins',size:12,weight:'600'}},border:{display:false}},
+          y:{min:0,max:160,grid:{color:gridColor},ticks:{color:tickColor,font:{family:'DM Sans',size:11},callback:function(v){return v;}},border:{display:false}}
         },
         onHover:function(evt,active){
           evt.native.target.style.cursor=active.length?'pointer':'default';
@@ -1510,45 +1509,33 @@ function buildCharts(){
     });
   }
 
-  // ---- Chart 2: Influencer ROI by Tier ----
+  // ---- Chart 2: Hotel Workforce Gap by Role (horizontal bar showing shortage %) ----
   var c2=freshCanvas('revenueChart');
   if(c2){
-    var tierLabels=['Nano\n(1K-10K)','Micro\n(10K-250K)','Mid-Tier\n(250K-500K)','Macro\n(500K-1M)','Mega\n(1M+)'];
-    var roiData=[4.2,6.0,3.5,2.5,2.0];
-    var conversionData=[5.5,5.0,2.8,1.5,0.8];
+    var roleLabels=['Housekeeping','Front Desk','Food Service','Maintenance','Management'];
+    var shortageData=[82,71,68,58,42];  // % of hotels reporting shortage in each role
     revenueChartInst=new Chart(c2,{
       type:'bar',
       data:{
-        labels:tierLabels,
+        labels:roleLabels,
         datasets:[{
-          label:'ROI per $1',
-          data:roiData,
-          backgroundColor:tealColor,
+          label:'Hotels reporting shortage',
+          data:shortageData,
+          backgroundColor:[coralColor,amberColor,violetColor,tealColor,blueColor],
           borderRadius:6,
           borderSkipped:false,
-          barPercentage:0.65,
-          categoryPercentage:0.65
-        },{
-          label:'Booking Conv. %',
-          data:conversionData,
-          backgroundColor:violetColor,
-          borderRadius:6,
-          borderSkipped:false,
-          barPercentage:0.65,
-          categoryPercentage:0.65
+          barPercentage:0.7,
+          categoryPercentage:0.8
         }]
       },
       options:{
+        indexAxis:'y',
         responsive:true,
         maintainAspectRatio:false,
         animation:prefersReduced?false:{duration:900,easing:'easeOutCubic'},
-        interaction:{mode:'index',intersect:false},
         plugins:{
           legend:{
-            display:true,
-            position:'top',
-            align:'end',
-            labels:{color:textColor,font:{family:'Poppins',size:11,weight:'600'},boxWidth:12,padding:10,usePointStyle:true}
+            display:false
           },
           tooltip:{
             backgroundColor:isDark?'#0a1024':'#11154e',
@@ -1558,38 +1545,16 @@ function buildCharts(){
             cornerRadius:6,
             callbacks:{
               label:function(ctx){
-                if(ctx.dataset.label==='ROI per $1') return ' '+ctx.dataset.label+': $'+ctx.parsed.y.toFixed(2);
-                return ' '+ctx.dataset.label+': '+ctx.parsed.y+'%';
+                return ' '+ctx.parsed.x+'% of hotels short-staffed';
               }
             }
           }
         },
         scales:{
-          x:{grid:{display:false},ticks:{color:textColor,font:{family:'Poppins',size:11,weight:'600'}},border:{display:false}},
-          y:{min:0,max:8,grid:{color:gridColor},ticks:{color:tickColor,font:{family:'DM Sans',size:11},callback:function(v){return v;}},border:{display:false}}
+          x:{min:0,max:100,grid:{color:gridColor},ticks:{color:tickColor,font:{family:'DM Sans',size:11},callback:function(v){return v+'%';}},border:{display:false}},
+          y:{grid:{display:false},ticks:{color:textColor,font:{family:'Poppins',size:12,weight:'600'}},border:{display:false}}
         }
-      },
-      plugins:[{
-        id:'verticalLine',
-        afterDatasetsDraw:function(chart){
-          var active=chart.getActiveElements();
-          if(!active.length)return;
-          var ctx=chart.ctx;
-          var x=active[0].element.x;
-          var topY=chart.scales.y.top;
-          var bottomY=chart.scales.y.bottom;
-          ctx.save();
-          ctx.beginPath();
-          ctx.moveTo(x,topY);
-          ctx.lineTo(x,bottomY);
-          ctx.lineWidth=1;
-          ctx.strokeStyle=tealColor;
-          ctx.setLineDash([4,4]);
-          ctx.globalAlpha=0.6;
-          ctx.stroke();
-          ctx.restore();
-        }
-      }]
+      }
     });
   }
 }
