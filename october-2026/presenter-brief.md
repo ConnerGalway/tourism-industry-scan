@@ -3,7 +3,7 @@
 **Presenter:** Conner Galway
 **Runtime:** ~10 minutes
 **Slides:** 10 slides, 16:9 aspect ratio
-**Theme:** Domestic boom, AI disruption, and the road to 2027
+**Theme:** Domestic boom evolving, trade war reversal, and 2027 predictions
 
 ---
 
@@ -21,11 +21,11 @@ Navy/cream palette with oversized headline. This month focuses on the historic d
 
 Three narrative pillars presented in card grid format:
 
-1. **The domestic boom is real** — 70% of Canadians avoiding US travel, $4.4B in reshored spending through 2027
+1. **The domestic boom is evolving** — 70% avoiding US travel, but fall domestic intent dropped to 61% (from 77% in summer)
 2. **Record Q3 performance** — July hit 3.1M visitors, $140.9B spending projected for 2026
-3. **AI is reshaping travel discovery** — 80% of travelers open to AI trip planning, but only 22% of DMOs are ready
+3. **The trade war is reshaping travel** — Canadians going global (Morocco +250%), Americans flooding north (C$1.37 exchange rate)
 
-**Narrative hook:** "Canadian tourism is in the middle of a once-in-a-generation moment. The destinations that move now will capture the most value."
+**Narrative hook:** "The summer's domestic surge is softening. Canadians are going global again—and Americans are taking their place. The destinations that adapt fastest will win."
 
 ---
 
@@ -61,35 +61,37 @@ Three narrative pillars presented in card grid format:
 
 ---
 
-## Slide 5: Trend 3 — AI Reshaping Travel Discovery
+## Slide 5: Trend 3 — Canadians Go Global Again
 
-**Core stat:** 80% of travelers open to AI trip planning
+**Core stat:** Only 61% plan domestic travel this fall (down from 77% in summer)
 
 **Key data points:**
-- AI Overviews now appear on 50%+ of travel-related Google searches
-- Only 22% of DMOs offer AI-powered tools
-- Just 26% have a formal AI strategy
-- AI content drafting delivers 3.2x ROI
+- Mexico bookings jumped from 4% to 9% of fall travelers
+- International destinations rose from 15% to 23%
+- Casablanca bookings surged +250% YoY
+- Delhi overtook Tokyo as #1 international city destination
+- Costa Rica +145%, Aruba +118%
 
-**Insight:** "When travelers plan through ChatGPT, you get zero data. The window to build your own AI presence is closing fast."
+**Insight:** "The summer's domestic surge is softening. Canadians are rediscovering the world—and your destination is now competing with Morocco, not just Florida."
 
-**Sources:** Seeker/Engine AI Statistics 2026, Sojern State of Destination Marketing
+**Sources:** Léger Fall 2026, FlightHub, Statistics Canada
 
 ---
 
-## Slide 6: Trend 4 — FIFA World Cup 2026 Anticipation
+## Slide 6: Trend 4 — The Trade War Tourism Reversal
 
-**Core stat:** 6.4% tourism GDP growth expected from the World Cup
+**Core stat:** 60% of Canadians less open to US travel than at any point in the past year
 
 **Key data points:**
-- Highest impact among the three host nations (US, Canada, Mexico)
-- 13 matches in Toronto and Vancouver
-- 300,000+ international visitors expected in Toronto alone
-- Hotel RevPAR during tournament could rise +552%
+- Canadian visits to the US fell 25% in 2025 vs 2023-24
+- That drop cost American border communities 14,000-42,000 jobs
+- USD at ~C$1.37 makes Canada a high-value destination for Americans
+- US-to-Canada travel surging as Americans seek value
+- September cross-border trips hit 1.9 million (+6.8% YoY)
 
-**Insight:** "June 2026 is less than 8 months away. The destinations that have World Cup packages ready now will capture the early bookers."
+**Insight:** "The trade war has triggered a rare tourism reversal. While Canadians boycott the US, Americans are flooding north. Your next big market might be across the border."
 
-**Sources:** WTTC Canada Economic Impact Research 2026
+**Sources:** ProMarket, CTV News, Léger, Statistics Canada
 
 ---
 
@@ -131,8 +133,8 @@ Three narrative pillars presented in card grid format:
 Six numbered prescriptive steps:
 
 1. **Capitalize on domestic boom** — Target Canadians who previously vacationed in the US; create "Why fly south?" campaigns
-2. **Build AI-friendly content** — Ensure Wikipedia and Google Business profiles are accurate; build structured FAQs and itineraries
-3. **Prepare for FIFA World Cup** — Position secondary destinations for overflow; target football-crazy source markets
+2. **Prepare for outbound competition** — The "stay home" momentum is fading; you're now competing with Morocco, not just Florida
+3. **Capture American visitors** — Target US border states with "your dollar goes further" messaging; exchange rate does the selling
 4. **Leverage premium pricing** — Partner on value-add packages rather than discounts; the market supports premium rates
 5. **Target transformation seekers** — Feature experiences that challenge visitors; "out of character" messaging resonates
 6. **Monitor TikTok ROI** — If you can't prove performance, reallocate to measured channels
@@ -144,8 +146,8 @@ Six numbered prescriptive steps:
 Three centered action items:
 
 1. **Audit your domestic marketing** — Are you capturing the 70% avoiding US travel?
-2. **Check what ChatGPT says about your destination** — AI is already making recommendations
-3. **Build your World Cup packages now** — June 2026 is less than 8 months away
+2. **Target American visitors now** — The C$1.37 exchange rate makes you a value destination
+3. **Prepare for outbound competition** — Fall domestic intent dropped to 61%—you'll need to earn travelers again
 
 ---
 
@@ -153,7 +155,7 @@ Three centered action items:
 
 Visual hold with logo and Vol. 7 badge.
 
-**Sign-off:** "The domestic boom won't last forever. The AI window is closing. And the World Cup is coming. Move now."
+**Sign-off:** "The domestic boom is evolving. Canadians are going global. And Americans are flooding north. The destinations that adapt fastest will win."
 
 ---
 
@@ -162,12 +164,12 @@ Visual hold with logo and Vol. 7 badge.
 | Stat | Context |
 |------|---------|
 | 70% | Canadians avoiding US travel |
-| $4.4B | Reshored spending through 2027 |
+| 61% | Fall domestic travel intent (down from 77%) |
 | 3.1M | July 2026 visitor arrivals |
 | $140.9B | Projected 2026 visitor spending |
-| 80% | Travelers open to AI trip planning |
-| 22% | DMOs offering AI tools |
-| 6.4% | Tourism GDP growth from World Cup |
+| +250% | Casablanca bookings by Canadians YoY |
+| 60% | Less open to US travel than ever |
+| C$1.37 | USD exchange rate driving Americans north |
 | 80.9% | National hotel occupancy |
 | 69% | Want "out of character" 2027 trips |
 
@@ -175,13 +177,13 @@ Visual hold with logo and Vol. 7 badge.
 
 ## Narrative Throughline
 
-The presentation asks: "Are you ready for the three biggest opportunities in a generation?"
+The presentation asks: "The landscape is shifting—are you adapting fast enough?"
 
 It emphasizes that:
-- The domestic boom is real and time-limited (capture it now)
-- AI is reshaping discovery (own it or become invisible)
-- The World Cup is coming (prepare or miss out)
+- The domestic boom is evolving (capture it while positioning for change)
+- Canadians are going global again (you're competing with Morocco now)
+- The trade war reversal is real (Americans are your new opportunity)
 - Premium pricing is working (don't discount)
 - 2027 travelers want transformation (position accordingly)
 
-**Tone:** Urgent, data-driven, action-oriented. Emphasizes the time-sensitive nature of these opportunities.
+**Tone:** Urgent, data-driven, action-oriented. Emphasizes adaptation and the evolving nature of the opportunity.
