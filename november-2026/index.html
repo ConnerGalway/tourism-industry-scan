@@ -156,7 +156,7 @@ button{font-family:inherit}
 .chapter-item{display:block;width:100%;min-width:0;background:none;border:none;padding:0;text-align:left;cursor:pointer;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--text2)}
 .chapter-item:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:4px}
 .chapter-track{display:block;height:3px;border-radius:2px;background:var(--teal-mid);overflow:hidden;margin-bottom:8px}
-.chapter-fill{display:block;height:100%;width:0;background:var(--teal);border-radius:2px}
+.chapter-fill{display:block;height:100%;width:0;background:var(--teal);border-radius:2px;transition:width .2s ease}
 .chapter-row{display:flex;align-items:baseline;gap:8px}
 .chapter-num{font-family:'Bebas Neue','Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:19px;font-weight:400;line-height:1;color:var(--text3);width:19px;flex-shrink:0}
 .chapter-label{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:13px;line-height:1.3;color:var(--text2);white-space:nowrap;transition:color .18s ease}
@@ -465,12 +465,12 @@ button{font-family:inherit}
 <!-- CHAPTER BAR -->
 <nav class="chapter-bar" id="tabBar" aria-label="Sections">
   <div class="chapter-bar-inner">
-    <button class="chapter-item active" data-tab="briefing" onclick="switchTab('briefing',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">00</span><span class="chapter-label">Briefing</span></span><span class="chapter-meta">4 min</span></button>
-    <button class="chapter-item" data-tab="trends" onclick="switchTab('trends',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">01</span><span class="chapter-label">Key Trends</span></span><span class="chapter-meta">3 min</span></button>
-    <button class="chapter-item" data-tab="insights" onclick="switchTab('insights',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">02</span><span class="chapter-label">Insights</span></span><span class="chapter-meta">2 min</span></button>
-    <button class="chapter-item" data-tab="stats" onclick="switchTab('stats',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">03</span><span class="chapter-label">Stats</span></span><span class="chapter-meta">1 min</span></button>
-    <button class="chapter-item" data-tab="actions" onclick="switchTab('actions',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">04</span><span class="chapter-label">Actions</span></span><span class="chapter-meta">2 min</span></button>
-    <button class="chapter-item" data-tab="deeper" onclick="switchTab('deeper',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">05</span><span class="chapter-label">Reading</span></span><span class="chapter-meta">1 min</span></button>
+    <button class="chapter-item active" data-tab="briefing" data-time="4 min" onclick="switchTab('briefing',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">00</span><span class="chapter-label">Briefing</span></span><span class="chapter-meta">4 min</span></button>
+    <button class="chapter-item" data-tab="trends" data-time="3 min" onclick="switchTab('trends',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">01</span><span class="chapter-label">Key Trends</span></span><span class="chapter-meta">3 min</span></button>
+    <button class="chapter-item" data-tab="insights" data-time="2 min" onclick="switchTab('insights',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">02</span><span class="chapter-label">Insights</span></span><span class="chapter-meta">2 min</span></button>
+    <button class="chapter-item" data-tab="stats" data-time="1 min" onclick="switchTab('stats',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">03</span><span class="chapter-label">Stats</span></span><span class="chapter-meta">1 min</span></button>
+    <button class="chapter-item" data-tab="actions" data-time="2 min" onclick="switchTab('actions',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">04</span><span class="chapter-label">Actions</span></span><span class="chapter-meta">2 min</span></button>
+    <button class="chapter-item" data-tab="deeper" data-time="1 min" onclick="switchTab('deeper',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">05</span><span class="chapter-label">Reading</span></span><span class="chapter-meta">1 min</span></button>
   </div>
 </nav>
 
@@ -1269,7 +1269,9 @@ function switchTab(panelId,btn,opts){
     var panelTop=-stickyOffset();
     for(var el=panel;el;el=el.offsetParent){panelTop+=el.offsetTop;}
     window.scrollTo({top:Math.max(0,panelTop),behavior:prefersReduced?'auto':'smooth'});
+    progressHold={top:Math.max(0,panelTop),until:Date.now()+1500};
   }
+  renderChapterProgress();
   // Animate any visible count-ups in this panel
   animateCountUpsInPanel(panel);
   // Build charts if stats panel
@@ -1283,6 +1285,79 @@ function switchTabById(id){
   if(VALID_TABS.indexOf(id)===-1)return;
   var btn=document.querySelector('.chapter-item[data-tab="'+id+'"]');
   switchTab(id,btn);
+}
+
+/* ============ CHAPTER READING PROGRESS ============ */
+// Per-panel progress (0-100) for the chapter bar. Persisted per issue; never goes down.
+var PROGRESS_KEY='scan-progress-november-2026';
+var chapterProgress=loadChapterProgress();
+var progressHold=null; // {top,until}: ignore scroll events while switchTab's own scroll is in flight
+var chapterTick=false;
+
+function loadChapterProgress(){
+  var saved={};
+  try{saved=JSON.parse(window.localStorage.getItem(PROGRESS_KEY))||{};}catch(e){}
+  var out={};
+  VALID_TABS.forEach(function(t){
+    var v=Number(saved[t]);
+    out[t]=isFinite(v)?Math.min(100,Math.max(0,v)):0;
+  });
+  return out;
+}
+function saveChapterProgress(){
+  try{window.localStorage.setItem(PROGRESS_KEY,JSON.stringify(chapterProgress));}catch(e){}
+}
+
+// Single entry point for progress, used by scroll today.
+// VIMEO HOOK: once the briefing video is embedded, drive the Briefing from playback
+// as well, e.g. player.on('timeupdate',function(d){setChapterProgress('briefing',d.percent*100);});
+// Because progress only goes up, scroll and playback can both feed it safely.
+function setChapterProgress(tab,pct){
+  if(!(tab in chapterProgress))return;
+  pct=Math.round(Math.min(100,Math.max(0,pct)));
+  if(pct<=chapterProgress[tab])return;
+  chapterProgress[tab]=pct;
+  saveChapterProgress();
+  renderChapterProgress();
+}
+
+function renderChapterProgress(){
+  document.querySelectorAll('.chapter-item').forEach(function(item){
+    var tab=item.getAttribute('data-tab');
+    var pct=chapterProgress[tab]||0;
+    var time=item.getAttribute('data-time');
+    var meta=item.querySelector('.chapter-meta');
+    item.querySelector('.chapter-fill').style.width=pct+'%';
+    if(pct>=100)meta.textContent='✓ Done';
+    else if(item.classList.contains('active')&&pct>0)meta.textContent=(tab==='briefing'?'Watching · ':'Reading · ')+time;
+    else meta.textContent=time;
+  });
+}
+
+function docTop(el){
+  var y=0;
+  for(;el;el=el.offsetParent){y+=el.offsetTop;}
+  return y;
+}
+
+// 0% when the panel top sits under the sticky bars, 100% when its bottom reaches the viewport bottom
+function updateChapterProgress(){
+  var panel=document.querySelector('.tab-panel.active');
+  if(!panel)return;
+  if(progressHold){
+    if(Math.abs(window.scrollY-progressHold.top)>2 && Date.now()<progressHold.until)return;
+    progressHold=null;
+  }
+  var top=docTop(panel);
+  var start=top-stickyOffset();
+  var end=top+panel.offsetHeight-window.innerHeight;
+  var pct=window.scrollY>=end-4?100:(window.scrollY-start)/(end-start)*100;
+  setChapterProgress(panel.id.replace('panel-',''),pct);
+}
+function onChapterScroll(){
+  if(chapterTick)return;
+  chapterTick=true;
+  requestAnimationFrame(function(){chapterTick=false;updateChapterProgress();});
 }
 
 /* ============ TRENDS EXPAND ============ */
@@ -1815,6 +1890,11 @@ document.addEventListener('DOMContentLoaded',function(){
   updateReadingProgress();
   // Hash routing
   initFromHash();
+  // Chapter bar reading progress
+  renderChapterProgress();
+  window.addEventListener('scroll',onChapterScroll,{passive:true});
+  window.addEventListener('resize',onChapterScroll);
+  updateChapterProgress();
   // Ensure theme is light by default (defensive: clear any stale dark attribute)
   if(document.documentElement.getAttribute('data-theme')!=='dark'){
     document.documentElement.setAttribute('data-theme','light');
