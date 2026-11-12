@@ -521,6 +521,24 @@ button{font-family:inherit}
   .toast{bottom:calc(84px + env(safe-area-inset-bottom))}
   .fab-actions{bottom:calc(84px + env(safe-area-inset-bottom))}
 }
+/* ============ MOBILE CONTENT (<=640px): one layer, not three ============ */
+@media (max-width: 640px){
+  .panels-wrapper{padding:0 16px}
+  .new-trend-card,.action-card,.insight-row,.insight-row:nth-child(odd),.insight-row:nth-child(even),.source-card,.hero-stat-card,.chart-card,.reveal-card,.presenter-card,.topics-card{padding:16px;border-radius:14px;box-shadow:none}
+  .new-trend-card:hover,.action-card:hover,.insight-row:hover,.source-card:hover,.hero-stat-card:hover{transform:none;box-shadow:none}
+  .action-card:hover,.source-card:hover{border-color:var(--border)}
+  /* nested panels lose their box so text runs the full card width */
+  .action-split-col,[data-theme="dark"] .action-split-col{background:none;border:none;border-radius:0;padding:0}
+  .action-split{gap:16px}
+  /* type */
+  body{font-size:14px;line-height:1.55}
+  .new-trend-card-intro,.new-trend-narrative,.insight-body,.action-split-body,.source-desc,.presenter-bio,.topics-list li{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.55}
+  .section-header{margin-bottom:0}
+  .section-header h2,.briefing-heading{font-size:30px;line-height:1.02}
+  .section-header p{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;margin-bottom:18px}
+  .new-trend-card-header h4,.insight-headline,.chart-title{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:17px;font-weight:600}
+  .action-headline,.source-title,.reveal-title{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:16.5px;font-weight:600}
+}
 </style>
 </head>
 <body>
