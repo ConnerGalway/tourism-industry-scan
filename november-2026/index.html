@@ -562,6 +562,25 @@ button{font-family:inherit}
   .reveal-grid .reveal-title{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;font-weight:600;margin-bottom:4px}
   .reveal-grid .reveal-body{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13.5px;line-height:1.55;color:var(--text2)}
 }
+/* ============ MOBILE KEY TRENDS (<=640px): collapsible trend cards ============ */
+.trend-eyebrow,.trend-key,.trend-toggle{display:none}
+@media (max-width: 640px){
+  .new-trend-card-header{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:6px;margin-bottom:10px}
+  .trend-eyebrow{display:block;grid-column:1;grid-row:1;font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:500;font-size:11px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+  .new-trend-card-header .tag{grid-column:2;grid-row:1}
+  .new-trend-card-header h4{grid-column:1 / -1;grid-row:2}
+  .trend-key{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:10px;row-gap:4px;margin:0 0 12px}
+  .trend-key-value{flex:0 1 auto;min-width:0;font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:40px;line-height:1;color:#1A4D2E}
+  [data-theme="dark"] .trend-key-value{color:#7FC99A}
+  .trend-key-label{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.35;color:var(--text2)}
+  .new-trend-card-intro{margin-bottom:14px}
+  .trend-more{overflow:hidden;transition:height .25s ease,opacity .25s ease,visibility 0s linear 0s}
+  .new-trend-card.is-collapsed .trend-more{height:0;opacity:0;visibility:hidden;transition:height .25s ease,opacity .25s ease,visibility 0s linear .25s}
+  .trend-toggle{display:flex;align-items:center;gap:6px;width:100%;padding:4px 0 0;border:none;background:none;cursor:pointer;text-align:left;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:13.5px;line-height:1.5;color:var(--teal)}
+  .trend-toggle:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:4px}
+  .trend-toggle-chev{width:14px;height:14px;flex:none;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s ease}
+  .new-trend-card:not(.is-collapsed) .trend-toggle-chev{transform:rotate(180deg)}
+}
 </style>
 </head>
 <body>
@@ -1695,6 +1714,90 @@ function handoffNext(tab){
   switchTabById(next);
 }
 
+/* ============ MOBILE KEY TRENDS: collapsible trend cards ============ */
+// Built for every width but only styled at <=640px: an eyebrow, a key number from the
+// card's first metric, and a toggle around the callout, narrative, metrics and sources.
+function initTrendCards(){
+  var cards=document.querySelectorAll('.new-trend-card');
+  cards.forEach(function(card,i){
+    var header=card.querySelector('.new-trend-card-header');
+    var intro=card.querySelector('.new-trend-card-intro');
+    if(!header||!intro||card.querySelector('.trend-more'))return;
+    var eyebrow=document.createElement('span');
+    eyebrow.className='trend-eyebrow';
+    eyebrow.textContent='Trend '+(i+1)+' of '+cards.length;
+    header.insertBefore(eyebrow,header.firstChild);
+    var metric=card.querySelector('.new-trend-metric');
+    if(metric){
+      var key=document.createElement('div');
+      key.className='trend-key';
+      key.setAttribute('aria-hidden','true'); // the same metric stays in the full list
+      key.innerHTML='<span class="trend-key-value"></span><span class="trend-key-label"></span>';
+      key.querySelector('.trend-key-value').textContent=metric.querySelector('.new-trend-metric-value').textContent.trim();
+      key.querySelector('.trend-key-label').textContent=metric.querySelector('.new-trend-metric-label').textContent.trim();
+      header.parentNode.insertBefore(key,header.nextSibling);
+    }
+    var more=document.createElement('div');
+    more.className='trend-more';
+    more.id=(card.id||'trend-'+(i+1))+'-more';
+    while(intro.nextSibling)more.appendChild(intro.nextSibling);
+    card.appendChild(more);
+    var btn=document.createElement('button');
+    btn.type='button';
+    btn.className='trend-toggle';
+    btn.setAttribute('aria-controls',more.id);
+    btn.innerHTML='<span class="trend-toggle-text"></span><svg class="trend-toggle-chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>';
+    btn.addEventListener('click',function(){toggleTrendCard(card);});
+    card.appendChild(btn);
+    setTrendOpen(card,i===0,{instant:true}); // trend 1 starts open
+  });
+}
+function setTrendOpen(card,open,opts){
+  var more=card.querySelector('.trend-more'),btn=card.querySelector('.trend-toggle');
+  if(!more||!btn)return;
+  btn.setAttribute('aria-expanded',open?'true':'false');
+  btn.querySelector('.trend-toggle-text').textContent=open?'Show less':'Read the full trend';
+  if(open===!card.classList.contains('is-collapsed'))return;
+  clearTimeout(more._heightTimer);
+  var animate=!(opts&&opts.instant) && !prefersReduced && mobileQuery.matches;
+  if(!animate){
+    card.classList.toggle('is-collapsed',!open);
+    more.style.height='';
+    return;
+  }
+  // .25s height/opacity: pin the current height, then animate to the target
+  var from=more.getBoundingClientRect().height;
+  card.classList.toggle('is-collapsed',!open);
+  var to=open?more.scrollHeight:0;
+  more.style.height=from+'px';
+  void more.offsetHeight;
+  more.style.height=to+'px';
+  more._heightTimer=setTimeout(function(){more.style.height='';},260);
+}
+function toggleTrendCard(card){
+  var open=card.classList.contains('is-collapsed');
+  setTrendOpen(card,open);
+  // Collapsing with the card top above the viewport: bring the reader back to it
+  if(!open){
+    var rect=card.getBoundingClientRect();
+    if(rect.top<stickyOffset()){
+      window.scrollTo({top:rect.top+window.scrollY-stickyOffset(),behavior:prefersReduced?'auto':'smooth'});
+    }
+  }
+}
+
+/* ============ SEARCH + HASH: open collapsed content before jumping to it ============ */
+function revealForSearch(target,q){
+  if(!target||!target.closest)return;
+  var card=target.closest('.new-trend-card');
+  if(card)setTrendOpen(card,true,{instant:true});
+}
+
+/* ============ MOBILE CONTENT INIT ============ */
+function initMobileContent(){
+  initTrendCards();
+}
+
 /* ============ TRENDS EXPAND ============ */
 function toggleTrend(btn){
   var card=btn.closest('.trend-card');
@@ -2011,6 +2114,13 @@ function buildSearchIndex(){
     var expanded=Array.from(card.querySelectorAll('.trend-expanded-inner p')).map(function(p){return p.textContent.trim();}).join(' ');
     SEARCH_INDEX.push({type:'Trend',tab:'trends',id:id,title:title,body:summary+' '+expanded,snippet:summary});
   });
+  // Key Trends (data cards)
+  document.querySelectorAll('.new-trend-card').forEach(function(card){
+    var title=card.querySelector('h4')?card.querySelector('h4').textContent.trim():'';
+    var intro=card.querySelector('.new-trend-card-intro')?card.querySelector('.new-trend-card-intro').textContent.trim():'';
+    var rest=Array.from(card.querySelectorAll('.new-trend-callout,.new-trend-narrative,.new-trend-metric')).map(function(el){return el.textContent.replace(/\s+/g,' ').trim();}).join(' ');
+    SEARCH_INDEX.push({type:'Trend',tab:'trends',id:card.id,title:title,body:intro+' '+rest,snippet:intro});
+  });
   // Insights
   document.querySelectorAll('.insight-row').forEach(function(row){
     var id=row.id;
@@ -2112,11 +2222,13 @@ function renderSearchResults(q,results){
 }
 function goToResult(e,tab,id){
   if(e)e.preventDefault();
+  var q=document.getElementById('searchInput').value;
   closeSearch();
   switchTabById(tab);
   setTimeout(function(){
     var target=document.getElementById(id);
     if(target){
+      revealForSearch(target,q);
       var y=target.getBoundingClientRect().top+window.scrollY-stickyOffset()-16;
       window.scrollTo({top:y,behavior:'smooth'});
       target.style.transition='box-shadow 0.4s ease';
@@ -2217,6 +2329,7 @@ function initFromHash(){
     var jumpToItem=function(){
       var target=document.getElementById(hash);
       if(!target)return null;
+      revealForSearch(target,'');
       var y=target.getBoundingClientRect().top+window.scrollY-stickyOffset()-16;
       window.scrollTo({top:y,behavior:'smooth'});
       return target;
@@ -2237,6 +2350,8 @@ function initFromHash(){
 
 /* ============ INIT ============ */
 document.addEventListener('DOMContentLoaded',function(){
+  // Mobile content structure (collapsible trends etc.), before the search index is built
+  initMobileContent();
   // Search input handler
   document.getElementById('searchInput').addEventListener('input',function(e){
     runSearch(e.target.value);
