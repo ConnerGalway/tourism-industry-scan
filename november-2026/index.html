@@ -456,7 +456,10 @@ button{font-family:inherit}
   .cover-inner{grid-template-columns:1fr;padding:22px 18px;gap:24px}
   .cover h1{font-size:50px}
   .reveal-grid,.briefing-cards{grid-template-columns:1fr}
-  .handoff-end{grid-template-columns:1fr}
+  .handoff{grid-template-columns:auto minmax(0,1fr);row-gap:0}
+  .handoff-end{grid-template-columns:minmax(0,1fr)}
+  .handoff > .handoff-cta,.handoff-actions{grid-column:1 / -1;justify-self:end;margin-top:8px}
+  .handoff-actions{justify-content:flex-end}
   .chapter-bar-inner,.nav-unit.is-compact .chapter-bar-inner{padding-left:16px;padding-right:16px}
   .chapter-grid{grid-template-columns:repeat(6,max-content);overflow-x:auto;scrollbar-width:none}
   .chapter-grid::-webkit-scrollbar{display:none}
@@ -491,6 +494,8 @@ button{font-family:inherit}
   .sheet-scrim.open{opacity:1;visibility:visible;transition:opacity .3s ease,visibility 0s linear 0s}
   .section-sheet{display:block;position:fixed;left:0;right:0;bottom:0;z-index:390;max-height:85vh;overflow-y:auto;background:var(--bg);border-radius:22px 22px 0 0;padding:10px 16px calc(22px + env(safe-area-inset-bottom));transform:translateY(100%);visibility:hidden;transition:transform .3s ease,visibility 0s linear .3s}
   .section-sheet.open{transform:translateY(0);visibility:visible;transition:transform .3s ease,visibility 0s linear 0s}
+  .sheet-grab{position:sticky;top:-10px;z-index:1;margin:-10px -16px 0;padding:10px 16px 0;background:var(--bg);touch-action:none;-webkit-user-select:none;user-select:none;cursor:grab}
+  .sheet-grab:active{cursor:grabbing}
   .sheet-handle{width:38px;height:4px;border-radius:2px;background:var(--border);margin:0 auto 14px}
   .sheet-head{display:flex;align-items:center;justify-content:space-between;padding:0 12px;margin-bottom:6px;font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:12px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase}
   .sheet-head-label{color:var(--teal)}
@@ -510,7 +515,8 @@ button{font-family:inherit}
   .sheet-row.done .sheet-meta{color:var(--teal)}
 
   /* keep the last content, toasts and the FAB clear of the bottom bar */
-  body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+  .footer{padding-bottom:calc(100px + env(safe-area-inset-bottom))}
+  .footer-prev{margin-left:0}
   .toast{bottom:calc(84px + env(safe-area-inset-bottom))}
   .fab-actions{bottom:calc(84px + env(safe-area-inset-bottom))}
 }
@@ -1335,8 +1341,10 @@ button{font-family:inherit}
 </button>
 <div class="sheet-scrim" id="sheetScrim" onclick="closeSheet()"></div>
 <div class="section-sheet" id="sectionSheet" role="dialog" aria-modal="true" aria-label="Sections in this issue" aria-hidden="true">
-  <div class="sheet-handle"></div>
-  <div class="sheet-head"><span class="sheet-head-label">In this issue</span><span class="sheet-head-time">~12 min</span></div>
+  <div class="sheet-grab">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head"><span class="sheet-head-label">In this issue</span><span class="sheet-head-time">~12 min</span></div>
+  </div>
   <div class="sheet-list">
     <button type="button" class="sheet-row" data-tab="briefing" onclick="pickSheetSection('briefing')"><span class="sheet-num">00</span><span class="sheet-main"><span class="sheet-title">The Briefing</span><span class="sheet-track"><span class="sheet-fill"></span></span></span><span class="sheet-meta">4 min</span></button>
     <button type="button" class="sheet-row" data-tab="trends" onclick="pickSheetSection('trends')"><span class="sheet-num">01</span><span class="sheet-main"><span class="sheet-title">Key Trends</span><span class="sheet-track"><span class="sheet-fill"></span></span></span><span class="sheet-meta">3 min</span></button>
@@ -1555,6 +1563,39 @@ function closeSheet(){
 function pickSheetSection(tab){
   closeSheet();
   switchTabById(tab);
+}
+
+// Swipe down on the sheet's handle/header to close it: the sheet follows the finger,
+// closes past 80px or on a quick downward flick, otherwise snaps back. Only the grab
+// area listens, so scrolling the list is unaffected.
+function initSheetSwipe(){
+  var sheet=document.getElementById('sectionSheet');
+  var grab=sheet?sheet.querySelector('.sheet-grab'):null;
+  if(!grab)return;
+  var dragging=false,startY=0,dy=0,sampleY=0,sampleT=0,velocity=0;
+  grab.addEventListener('pointerdown',function(e){
+    if(!isSheetOpen())return;
+    dragging=true;startY=sampleY=e.clientY;sampleT=performance.now();dy=0;velocity=0;
+    sheet.style.transition='none';
+    grab.setPointerCapture(e.pointerId);
+  });
+  grab.addEventListener('pointermove',function(e){
+    if(!dragging)return;
+    dy=Math.max(0,e.clientY-startY);
+    sheet.style.transform='translateY('+dy+'px)';
+    var now=performance.now();
+    if(now-sampleT>=16){velocity=(e.clientY-sampleY)/(now-sampleT);sampleY=e.clientY;sampleT=now;} // px per ms
+  });
+  var end=function(cancelled){
+    if(!dragging)return;
+    dragging=false;
+    var close=!cancelled && (dy>80 || (dy>20 && velocity>0.5));
+    sheet.style.transition='';
+    sheet.style.transform='';
+    if(close)closeSheet();
+  };
+  grab.addEventListener('pointerup',function(){end(false);});
+  grab.addEventListener('pointercancel',function(){end(true);});
 }
 
 function docTop(el){
@@ -2160,6 +2201,7 @@ document.addEventListener('DOMContentLoaded',function(){
   // Nav unit: "top" vs "compact"
   window.addEventListener('scroll',updateNavState,{passive:true});
   window.addEventListener('resize',updateNavState);
+  initSheetSwipe();
   // Leaving the mobile layout closes the section sheet
   var onMobileChange=function(){closeSheet();updateNavState();};
   if(mobileQuery.addEventListener)mobileQuery.addEventListener('change',onMobileChange);
