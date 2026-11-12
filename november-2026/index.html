@@ -165,12 +165,11 @@ button{font-family:inherit}
 .chapter-item.active .chapter-num{color:var(--teal)}
 
 /* ============ UP NEXT HANDOFF ============ */
-.handoff{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;width:100%;margin-top:40px;padding:16px 20px;border:none;border-radius:14px;background:#E9EEE3;text-align:left;cursor:pointer;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--text);transition:background .18s ease}
+.handoff{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;width:100%;max-width:760px;margin-top:40px;padding:16px 20px;border:none;border-radius:14px;background:#E9EEE3;text-align:left;cursor:pointer;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--text);transition:background .18s ease}
 [data-theme="dark"] .handoff{background:rgba(127,201,154,.08)}
 .handoff:hover{background:#DFE9DD}
 [data-theme="dark"] .handoff:hover{background:rgba(127,201,154,.13)}
 .handoff:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
-.handoff-end{grid-template-columns:1fr auto}
 .handoff-num{font-family:'Bebas Neue','Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:36px;font-weight:400;line-height:1;color:var(--teal)}
 .handoff-text{display:flex;flex-direction:column;gap:2px;min-width:0}
 .handoff-label{font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:500;font-size:11.5px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
@@ -178,6 +177,15 @@ button{font-family:inherit}
 .handoff-preview{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;color:var(--text2)}
 .handoff-cta{display:inline-block;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:14px;color:var(--teal);white-space:nowrap;transition:transform .18s ease}
 .handoff:hover .handoff-cta{transform:translateX(4px)}
+/* End card: not one button, but two separate actions */
+.handoff-end{grid-template-columns:1fr auto;cursor:default}
+.handoff-end:hover{background:#E9EEE3}
+[data-theme="dark"] .handoff-end:hover{background:rgba(127,201,154,.08)}
+.handoff-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.handoff-link{background:none;border:none;padding:0;cursor:pointer;text-decoration:none;line-height:1.4}
+.handoff-end:hover .handoff-cta{transform:none}
+.handoff-end .handoff-link:hover{transform:translateX(4px);text-decoration:none}
+.handoff-end .handoff-link:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
 
 /* ============ PANELS ============ */
 .panels-wrapper{max-width:1200px;margin:0 auto;padding:0 32px}
@@ -433,6 +441,7 @@ button{font-family:inherit}
   .cover-inner{grid-template-columns:1fr;padding:22px 18px;gap:24px}
   .cover h1{font-size:50px}
   .reveal-grid,.briefing-cards{grid-template-columns:1fr}
+  .handoff-end{grid-template-columns:1fr}
   .chapter-bar-inner{padding:12px 16px 11px;grid-template-columns:repeat(6,max-content);overflow-x:auto;scrollbar-width:none}
   .chapter-bar-inner::-webkit-scrollbar{display:none}
   .panels-wrapper{padding:0 16px}
@@ -1157,10 +1166,13 @@ button{font-family:inherit}
       </div>
 
     </div>
-    <button type="button" class="handoff handoff-end" onclick="handoffNext('deeper')">
+    <div class="handoff handoff-end">
       <span class="handoff-text"><span class="handoff-label">That's the full scan</span><span class="handoff-title">You're all caught up</span><span class="handoff-preview">Back to the briefing, or browse past issues in the archive</span></span>
-      <span class="handoff-cta">Back to the briefing →</span>
-    </button>
+      <span class="handoff-actions">
+        <button type="button" class="handoff-cta handoff-link" onclick="handoffNext('deeper')">Back to the briefing →</button>
+        <a class="handoff-cta handoff-link" href="../october-2026/index.html" onclick="setChapterProgress('deeper',100)">Past issues →</a>
+      </span>
+    </div>
   </section>
 
 </div>
