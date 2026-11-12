@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="elearningu favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Oswald:wght@600;700&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Oswald:wght@500;600;700&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 :root{
@@ -54,7 +54,7 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:128px}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
 body{font-family:'DM Sans',sans-serif;font-weight:400;background:var(--bg);color:var(--text);line-height:1.65;transition:background 0.3s ease,color 0.3s ease;overflow-x:hidden}
 h1,h2{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0;line-height:1.2}
 h3,h4,h5{font-family:'DM Sans',sans-serif;font-weight:600;line-height:1.2}
@@ -84,70 +84,64 @@ button{font-family:inherit}
 .tag-policy{background:var(--coral-dim);color:var(--coral);border:1px solid var(--coral)}
 .tag-strategy{background:var(--teal-dim);color:var(--teal);border:1px solid var(--teal)}
 .tag-performance{background:var(--coral-dim);color:var(--coral);border:1px solid var(--coral)}
+.tag-industry{background:color-mix(in srgb,var(--text2) 8%,transparent);color:var(--text2);border:1px solid var(--text2)}
 
-/* ============ HEADER ============ */
-.site-header{position:sticky;top:0;z-index:200;height:64px;background:rgba(244,240,232,0.88);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;transition:background 0.3s ease,border-color 0.3s ease}
-[data-theme="dark"] .site-header{background:rgba(16,26,20,0.82)}
-.header-logo{font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;color:var(--text);letter-spacing:-0.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+/* ============ NAV UNIT: header row + chapter nav ============ */
+/* Fixed forest bar in both themes. A spacer of the "top" height holds its place in the
+   page, so collapsing the header row on scroll never shifts content. */
+.nav-unit{position:fixed;top:0;left:0;right:0;z-index:200;background:#16241C;border-bottom:1px solid rgba(127,201,154,.14)}
+.nav-spacer{height:99px}
+.site-header{height:58px;overflow:hidden;transition:height .35s ease,opacity .35s ease,visibility 0s linear 0s}
+.nav-unit.is-compact .site-header{height:0;opacity:0;visibility:hidden;transition:height .35s ease,opacity .35s ease,visibility 0s linear .35s}
+.site-header-inner{max-width:1200px;height:58px;margin:0 auto;padding:0 44px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+.header-logo{justify-self:start;font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;color:#F4F0E8;letter-spacing:-0.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
 .header-logo:hover{text-decoration:none}
-.header-logo .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px var(--teal-dim)}
-
-.header-center{display:flex;align-items:center;gap:10px}
-.header-badge{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);border:1px solid var(--border2);padding:4px 12px;border-radius:20px}
-.header-month{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--text2)}
-.header-archive{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text2);background:var(--card);border:1px solid var(--border);padding:4px 10px 4px 8px;border-radius:20px;display:inline-flex;align-items:center;gap:4px;transition:all 0.2s ease;text-decoration:none}
-.header-archive:hover{border-color:var(--teal);color:var(--teal);text-decoration:none;transform:translateX(-1px)}
-.header-archive svg{width:11px;height:11px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-
-.header-right{display:flex;align-items:center;gap:8px}
-.header-icon-btn{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:6px 12px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--text2);transition:all 0.2s ease}
-.header-icon-btn:hover{border-color:var(--teal);color:var(--teal)}
-.header-icon-btn svg{width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.header-logo img{height:36px;width:auto;filter:brightness(0) invert(1)}
+.header-title{font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:12px;line-height:1;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,240,232,.65);white-space:nowrap}
+.header-title span{color:#7FC99A}
+.header-right{justify-self:end;display:flex;align-items:center;gap:8px}
+.header-archive{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;font-weight:500;color:rgba(244,240,232,.75);text-decoration:none;margin-right:8px;white-space:nowrap}
+.header-archive:hover{color:rgba(244,240,232,.75);text-decoration:underline}
+.nav-icon-btn{position:relative;width:34px;height:34px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;padding:0;border:1px solid rgba(244,240,232,.22);border-radius:10px;background:transparent;color:#F4F0E8;cursor:pointer;transition:background .18s ease}
+.nav-icon-btn:hover{background:rgba(244,240,232,.08)}
+.nav-icon-btn:focus-visible,.header-logo:focus-visible,.header-archive:focus-visible{outline:2px solid #7FC99A;outline-offset:2px}
+.nav-icon-btn svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .kbd-hint{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;padding:1px 5px;border:1px solid var(--border2);border-radius:4px;background:var(--kbd-bg);color:var(--text3);margin-left:2px}
-.theme-toggle{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:6px 14px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--text2);transition:all 0.2s ease}
-.theme-toggle:hover{border-color:var(--teal);color:var(--teal)}
-.theme-toggle svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
-/* ============ HERO ============ */
-.hero{background:var(--hero-bg);padding:72px 32px 56px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;top:-40%;right:-10%;width:560px;height:560px;background:radial-gradient(circle,var(--teal-dim) 0%,transparent 70%);pointer-events:none}
-.hero-inner{max-width:1200px;margin:0 auto;position:relative}
-.hero-label{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal);margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.hero-label::before{content:"";width:24px;height:1px;background:var(--teal)}
-.hero h1{font-size:clamp(38px,5.5vw,68px);font-weight:700;letter-spacing:0;color:var(--text);line-height:1.05;margin-bottom:20px}
-.hero h1 .accent{color:var(--teal);display:block}
-.hero-sub{font-family:'DM Sans',sans-serif;font-size:17px;color:var(--text2);max-width:580px;line-height:1.7;margin-bottom:32px}
-
-/* Three-things-to-know block */
-.three-things{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 24px;margin-bottom:36px;max-width:760px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-.three-things::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--teal),var(--sage))}
-.three-things-label{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:6px}
-.three-things-label svg{width:12px;height:12px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.three-things ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.three-things li{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);line-height:1.55;display:flex;align-items:flex-start;gap:10px;font-weight:500}
-.three-things li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:7px}
-.three-things li strong{color:var(--text);font-weight:700}
-
-.hero-pills{display:flex;flex-wrap:wrap;gap:12px}
-.hero-pill{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:10px 20px;box-shadow:var(--shadow);transition:transform 0.2s ease,box-shadow 0.2s ease}
-.hero-pill:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-.hero-pill-num{font-family:'Bebas Neue',sans-serif;font-size:26px;font-weight:400;color:var(--teal);line-height:1}
-.hero-pill-label{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;max-width:90px;line-height:1.3}
-
-/* ============ VIDEO ============ */
-.video-section{background:var(--bg2);border-bottom:1px solid var(--border);padding:56px 32px;position:relative}
-.video-section::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal),var(--sage))}
-.video-inner{max-width:1200px;margin:0 auto}
-.section-eyebrow{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:var(--teal);margin-bottom:10px}
-.video-section h2{font-size:28px;font-weight:700;color:var(--text);margin-bottom:32px;letter-spacing:0}
-.video-grid{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
+/* ============ BRIEFING: COVER ============ */
+#panel-briefing{padding-top:0}
+.cover{width:100vw;margin-left:calc(50% - 50vw);background:radial-gradient(circle at 12% 18%,rgba(127,201,154,.16),transparent 42%),radial-gradient(circle at 88% 90%,rgba(127,201,154,.10),transparent 40%),linear-gradient(135deg,#1A4D2E 0%,#16241C 70%);color:#F4F0E8}
+.cover-inner{max-width:1200px;margin:0 auto;padding:40px 44px 44px;display:grid;grid-template-columns:1fr 560px;gap:40px;align-items:center}
+.cover .hero-label{font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:500;font-size:12.5px;line-height:1.4;text-transform:uppercase;letter-spacing:.08em;color:#7FC99A;margin-bottom:16px}
+.cover-month{display:inline-block;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:12.5px;font-weight:500;line-height:1.3;color:#F4F0E8;border:1px solid rgba(244,240,232,.55);border-radius:8px;padding:5px 12px;margin-bottom:18px}
+.cover h1{font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;font-size:76px;line-height:.92;letter-spacing:0;color:#F4F0E8;width:min-content;margin-bottom:22px}
+.cover .hero-sub{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15.5px;line-height:1.6;color:rgba(244,240,232,.82);max-width:420px;margin-bottom:16px}
+.cover-stats{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.5;color:rgba(244,240,232,.7)}
+.cover-video-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}
+.cover-video-label{font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.08em;color:#7FC99A}
+.cover-video-meta{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:12.5px;color:rgba(244,240,232,.7)}
 .video-container{background:var(--card);border-radius:16px;aspect-ratio:16/9;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);border:1px solid var(--border)}
 .video-container iframe{width:100%;height:100%;border:0}
 .video-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:var(--card);color:var(--text3)}
 .video-placeholder-icon{width:64px;height:64px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 8px var(--teal-dim)}
 .video-placeholder-icon svg{width:28px;height:28px;fill:white;margin-left:4px}
 .video-placeholder-text{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--text3)}
-.video-sidebar{display:flex;flex-direction:column;gap:16px}
+.cover .video-container{border-radius:14px;border:1px solid rgba(127,201,154,.25);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.cover .video-placeholder{background:linear-gradient(135deg,#20352A,#101A14);color:rgba(244,240,232,.7)}
+.cover .video-placeholder-icon{background:rgba(244,240,232,.7);box-shadow:0 0 0 8px rgba(244,240,232,.08)}
+.cover .video-placeholder-icon svg{fill:#16241C}
+.cover .video-placeholder-text{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:rgba(244,240,232,.7)}
+
+/* ============ BRIEFING: BODY ============ */
+.briefing-body{padding-top:48px}
+.briefing-heading{font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;font-size:34px;line-height:1.1;letter-spacing:0;color:var(--text);margin-bottom:20px}
+.reveal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-bottom:32px}
+.reveal-card{border-radius:14px;padding:20px 22px;border:1.5px solid transparent;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,#2E7D4F,#C8E8D4) border-box}
+[data-theme="dark"] .reveal-card{background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,rgba(127,201,154,.45),rgba(127,201,154,.12)) border-box}
+.reveal-title{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--text);margin-bottom:8px}
+.reveal-body{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.55;color:var(--text2)}
+.briefing-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
 .presenter-card,.topics-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
 .presenter-label{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);margin-bottom:6px}
 .presenter-name{font-family:'DM Sans',sans-serif;font-size:17px;font-weight:600;color:var(--text);margin-bottom:2px}
@@ -158,21 +152,50 @@ button{font-family:inherit}
 .topics-list li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text2);line-height:1.5}
 .topics-list li::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;flex-shrink:0;margin-top:6px}
 
-/* ============ TAB BAR ============ */
-.tab-bar{position:sticky;top:64px;z-index:100;background:rgba(244,240,232,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:background 0.3s ease}
-[data-theme="dark"] .tab-bar{background:rgba(16,26,20,0.88)}
-.tab-bar-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;overflow-x:auto;scrollbar-width:none;position:relative}
-.tab-bar-inner::-webkit-scrollbar{display:none}
-.tab-btn{position:relative;background:none;border:none;padding:18px 18px 16px;display:flex;align-items:center;gap:9px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--text3);transition:color 0.18s ease;white-space:nowrap;border-bottom:2px solid transparent}
-.tab-btn:hover{color:var(--text2)}
-.tab-btn.active{color:var(--tab-active-text);border-bottom-color:var(--teal)}
-.tab-num{font-family:'Bebas Neue',sans-serif;font-size:11px;font-weight:400;letter-spacing:0.05em;padding:2px 6px;border-radius:4px;background:var(--bg2);border:1px solid var(--border);color:var(--text3);transition:all 0.18s ease}
-.tab-btn.active .tab-num{background:var(--teal-dim);border-color:var(--teal-mid);color:var(--teal)}
-.tab-time{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;color:var(--text3);background:transparent;border:1px solid var(--border);padding:1px 6px;border-radius:10px;letter-spacing:0.02em}
-.tab-btn.active .tab-time{border-color:var(--teal-mid);color:var(--teal)}
-/* per-tab progress fill inside the bottom border */
-.tab-btn::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0%;background:var(--teal);opacity:0;transition:width 0.15s linear,opacity 0.2s ease}
-.tab-btn.active::after{opacity:1}
+/* ============ CHAPTER NAV (row 2 of the nav unit) ============ */
+.chapter-bar-inner{max-width:1200px;margin:0 auto;padding:0 44px 12px;display:flex;align-items:center;transition:padding .35s ease}
+.nav-unit.is-compact .chapter-bar-inner{padding:12px 44px 11px}
+.nav-slot{flex:none;display:flex;align-items:center;gap:8px;max-width:0;max-height:0;opacity:0;visibility:hidden;overflow:hidden;transition:max-width .35s ease,max-height .35s ease,opacity .35s ease,margin .35s ease,visibility 0s linear .35s}
+.nav-unit.is-compact .nav-slot{max-width:120px;max-height:40px;opacity:1;visibility:visible;overflow:visible;transition:max-width .35s ease,max-height .35s ease,opacity .35s ease,margin .35s ease,visibility 0s linear 0s}
+.nav-unit.is-compact .nav-slot-left{margin-right:22px}
+.nav-unit.is-compact .nav-slot-right{margin-left:22px}
+.nav-slot-left{font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:12px;line-height:1;letter-spacing:.12em;text-transform:uppercase;color:#7FC99A;white-space:nowrap}
+.chapter-grid{flex:1;min-width:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.chapter-item{display:block;width:100%;min-width:0;background:none;border:none;padding:0;text-align:left;cursor:pointer;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+.chapter-item:focus-visible{outline:2px solid #7FC99A;outline-offset:4px;border-radius:4px}
+.chapter-track{display:block;height:3px;border-radius:2px;background:rgba(127,201,154,.22);overflow:hidden}
+.chapter-fill{display:block;height:100%;width:0;background:#7FC99A;border-radius:2px;transition:width .2s ease}
+.chapter-row{display:block;margin-top:7px;height:18px;line-height:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.7;transition:opacity .35s ease}
+.nav-unit.is-compact .chapter-row{opacity:1}
+.chapter-num{font-family:'Bebas Neue','Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;color:rgba(244,240,232,.5);margin-right:6px}
+.chapter-label{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:12.5px;color:rgba(244,240,232,.78);transition:color .18s ease}
+.chapter-meta{display:none;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:500;font-size:10.5px;color:rgba(244,240,232,.5);margin-left:6px}
+.nav-unit.is-compact .chapter-meta{display:inline}
+.chapter-item:hover .chapter-label,.chapter-item.active .chapter-label{color:#F4F0E8}
+.chapter-item.active .chapter-num,.chapter-item.active .chapter-meta{color:#7FC99A}
+
+/* ============ UP NEXT HANDOFF ============ */
+.handoff{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;width:100%;max-width:760px;margin-top:40px;padding:16px 20px;border:none;border-radius:14px;background:#E9EEE3;text-align:left;cursor:pointer;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--text);transition:background .18s ease}
+[data-theme="dark"] .handoff{background:rgba(127,201,154,.08)}
+.handoff:hover{background:#DFE9DD}
+[data-theme="dark"] .handoff:hover{background:rgba(127,201,154,.13)}
+.handoff:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.handoff-num{font-family:'Bebas Neue','Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:36px;font-weight:400;line-height:1;color:var(--teal)}
+.handoff-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.handoff-label{font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:500;font-size:11.5px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+.handoff-title{font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:20px;line-height:1.15;text-transform:uppercase;color:var(--text)}
+.handoff-preview{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;color:var(--text2)}
+.handoff-cta{display:inline-block;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:14px;color:var(--teal);white-space:nowrap;transition:transform .18s ease}
+.handoff:hover .handoff-cta{transform:translateX(4px)}
+/* End card: not one button, but two separate actions */
+.handoff-end{grid-template-columns:1fr auto;cursor:default}
+.handoff-end:hover{background:#E9EEE3}
+[data-theme="dark"] .handoff-end:hover{background:rgba(127,201,154,.08)}
+.handoff-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.handoff-link{background:none;border:none;padding:0;cursor:pointer;text-decoration:none;line-height:1.4}
+.handoff-end:hover .handoff-cta{transform:none}
+.handoff-end .handoff-link:hover{transform:translateX(4px);text-decoration:none}
+.handoff-end .handoff-link:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
 
 /* ============ PANELS ============ */
 .panels-wrapper{max-width:1200px;margin:0 auto;padding:0 32px}
@@ -234,7 +257,8 @@ button{font-family:inherit}
 .new-trend-card-header .tag{flex-shrink:0}
 .new-trend-card-intro{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:20px}
 .new-trend-card-intro strong{color:var(--text);font-weight:700}
-.new-trend-callout{background:var(--bg2);border-left:3px solid var(--teal);padding:16px 18px;border-radius:0 10px 10px 0;margin-bottom:20px}
+.new-trend-callout{background:#E9EEE3;border-left:3px solid var(--teal);padding:16px 18px;border-radius:0 10px 10px 0;margin-bottom:20px}
+[data-theme="dark"] .new-trend-callout{background:rgba(127,201,154,.08)}
 .new-trend-callout-label{font-family:'Oswald',sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);margin-bottom:8px}
 .new-trend-callout-body{font-size:13px;color:var(--text2);line-height:1.6}
 .new-trend-narrative{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:20px}
@@ -357,7 +381,7 @@ button{font-family:inherit}
 .search-foot-keys span{display:inline-flex;align-items:center;gap:6px}
 
 /* ============ TOAST ============ */
-.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--text);color:var(--card);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;padding:12px 20px;border-radius:50px;box-shadow:0 8px 28px rgba(0,0,0,0.25);z-index:500;opacity:0;transition:opacity 0.25s ease,transform 0.25s ease;display:inline-flex;align-items:center;gap:8px}
+.toast{position:fixed;bottom:32px;pointer-events:none;left:50%;transform:translateX(-50%) translateY(80px);background:var(--text);color:var(--card);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;padding:12px 20px;border-radius:50px;box-shadow:0 8px 28px rgba(0,0,0,0.25);z-index:500;opacity:0;transition:opacity 0.25s ease,transform 0.25s ease;display:inline-flex;align-items:center;gap:8px}
 .toast svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
@@ -411,34 +435,192 @@ button{font-family:inherit}
 .footer-prev svg{width:11px;height:11px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 
 /* ============ RESPONSIVE ============ */
+@media (max-width: 1100px){
+  .nav-unit.is-compact .chapter-meta{display:none}
+}
 @media (max-width: 960px){
+  .site-header-inner{padding:0 32px}
+  .chapter-bar-inner,.nav-unit.is-compact .chapter-bar-inner{padding-left:32px;padding-right:32px}
+  .cover-inner{grid-template-columns:1fr;padding:32px;gap:24px}
+  .cover h1{font-size:64px}
   .trends-grid{grid-template-columns:1fr}
   .hero-stats-grid{grid-template-columns:repeat(2,1fr)}
   .charts-grid{grid-template-columns:1fr}
   .sources-grid{grid-template-columns:repeat(2,1fr)}
   .insight-row{grid-template-columns:1fr;gap:14px}
   .insight-stat{font-size:54px}
-  .video-grid{grid-template-columns:1fr}
   .action-split{grid-template-columns:1fr}
-  .header-month,.header-archive{display:none}
+  .header-archive{display:none}
 }
 @media (max-width: 640px){
-  .site-header{padding:0 16px;gap:8px}
-  .hero{padding:54px 16px 44px}
-  .video-section{padding:44px 16px}
-  .tab-bar-inner{padding:0 16px}
+  .site-header-inner{padding:0 16px;grid-template-columns:1fr auto}
+  .header-title{display:none}
+  .cover-inner{grid-template-columns:1fr;padding:22px 18px;gap:24px}
+  .cover h1{font-size:50px}
+  .reveal-grid,.briefing-cards{grid-template-columns:1fr}
+  .handoff{grid-template-columns:auto minmax(0,1fr);row-gap:0}
+  .handoff-end{grid-template-columns:minmax(0,1fr)}
+  .handoff > .handoff-cta,.handoff-actions{grid-column:1 / -1;justify-self:end;margin-top:8px}
+  .handoff-actions{justify-content:flex-end}
+  .chapter-bar-inner,.nav-unit.is-compact .chapter-bar-inner{padding-left:16px;padding-right:16px}
+  .chapter-grid{grid-template-columns:repeat(6,max-content);overflow-x:auto;scrollbar-width:none}
+  .chapter-grid::-webkit-scrollbar{display:none}
   .panels-wrapper{padding:0 16px}
   .hero-stats-grid{grid-template-columns:repeat(2,1fr)}
   .sources-grid{grid-template-columns:1fr}
   .action-card{grid-template-columns:1fr;padding:22px}
   .action-num{font-size:32px;padding-top:0}
-  .tab-btn{padding:14px 12px;font-size:12px}
-  .tab-time{display:none}
-  .header-icon-btn .kbd-hint,.header-icon-btn span:not(.kbd-hint){display:none}
   .fab-actions{right:16px;bottom:16px;padding:11px 16px;font-size:12px}
-  .three-things{padding:18px 18px 18px 20px}
   .footer-inner{flex-direction:column;align-items:flex-start}
   .footer{padding:24px 16px}
+}
+/* ============ MOBILE NAV (<=640px): progress segments, bottom bar, section sheet ============ */
+.mobile-progress,.mobile-bar,.sheet-scrim,.section-sheet{display:none}
+@media (max-width: 640px){
+  html{scroll-padding-top:88px}
+  .nav-spacer{height:72px}
+  .chapter-bar{display:none}
+  .nav-unit.is-compact .site-header{height:58px;opacity:1;visibility:visible}
+  .mobile-progress{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;padding:0 16px 10px}
+  .mobile-seg{display:block;height:3px;border-radius:2px;background:rgba(127,201,154,.22);overflow:hidden}
+  .mobile-seg-fill{display:block;height:100%;width:0;background:#7FC99A;border-radius:2px;transition:width .2s ease}
+
+  .mobile-bar{position:fixed;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:180;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:12px 14px;border:none;border-radius:14px;background:#16241C;color:#F4F0E8;text-align:left;cursor:pointer;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+  [data-theme="dark"] .mobile-bar{background:#20352A;border:1px solid rgba(127,201,154,.35)}
+  .mobile-bar:focus-visible{outline:2px solid #7FC99A;outline-offset:2px}
+  .mobile-bar-num{font-family:'Bebas Neue','Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:20px;font-weight:400;line-height:1;color:#7FC99A}
+  .mobile-bar-title{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:14px;line-height:1.3;color:#F4F0E8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mobile-bar-pos{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.3;color:rgba(244,240,232,.7);white-space:nowrap}
+
+  .sheet-scrim{display:block;position:fixed;inset:0;z-index:380;background:rgba(22,36,28,.45);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s linear .3s}
+  .sheet-scrim.open{opacity:1;visibility:visible;transition:opacity .3s ease,visibility 0s linear 0s}
+  .section-sheet{display:block;position:fixed;left:0;right:0;bottom:0;z-index:390;max-height:85vh;overflow-y:auto;background:var(--bg);border-radius:22px 22px 0 0;padding:10px 16px calc(22px + env(safe-area-inset-bottom));transform:translateY(100%);visibility:hidden;transition:transform .3s ease,visibility 0s linear .3s}
+  .section-sheet.open{transform:translateY(0);visibility:visible;transition:transform .3s ease,visibility 0s linear 0s}
+  .sheet-grab{position:sticky;top:-10px;z-index:1;margin:-10px -16px 0;padding:10px 16px 0;background:var(--bg);touch-action:none;-webkit-user-select:none;user-select:none;cursor:grab}
+  .sheet-grab:active{cursor:grabbing}
+  .sheet-handle{width:38px;height:4px;border-radius:2px;background:var(--border);margin:0 auto 14px}
+  .sheet-head{display:flex;align-items:center;justify-content:space-between;padding:0 12px;margin-bottom:6px;font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:12px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase}
+  .sheet-head-label{color:var(--teal)}
+  .sheet-head-time{color:var(--text3)}
+  .sheet-list{display:flex;flex-direction:column;gap:2px}
+  .sheet-row{display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:12px;width:100%;padding:10px 12px;border:none;border-radius:12px;background:transparent;text-align:left;cursor:pointer;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--text)}
+  .sheet-row.active{background:#E9EEE3}
+  [data-theme="dark"] .sheet-row.active{background:rgba(127,201,154,.08)}
+  .sheet-row:focus-visible{outline:2px solid var(--teal);outline-offset:-2px}
+  .sheet-num{font-family:'Bebas Neue','Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:22px;font-weight:400;line-height:1;color:var(--text3)}
+  .sheet-row.active .sheet-num{color:var(--teal)}
+  .sheet-main{display:block;min-width:0}
+  .sheet-title{display:block;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:14px;line-height:1.3;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sheet-track{display:block;height:3px;margin-top:6px;border-radius:2px;background:var(--teal-mid);overflow:hidden}
+  .sheet-fill{display:block;height:100%;width:0;background:var(--teal);border-radius:2px}
+  .sheet-meta{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.3;color:var(--text3);white-space:nowrap}
+  .sheet-row.done .sheet-meta{color:var(--teal)}
+
+  /* keep the last content, toasts and the FAB clear of the bottom bar */
+  .footer{padding-bottom:calc(100px + env(safe-area-inset-bottom))}
+  .footer-prev{margin-left:0}
+  .toast{bottom:calc(84px + env(safe-area-inset-bottom))}
+  .fab-actions{bottom:calc(84px + env(safe-area-inset-bottom))}
+}
+/* ============ MOBILE CONTENT (<=640px): one layer, not three ============ */
+@media (max-width: 640px){
+  .panels-wrapper{padding:0 16px}
+  .new-trend-card,.action-card,.insight-row,.insight-row:nth-child(odd),.insight-row:nth-child(even),.source-card,.hero-stat-card,.chart-card,.reveal-card,.presenter-card,.topics-card{padding:16px;border-radius:14px;box-shadow:none}
+  .new-trend-card:hover,.action-card:hover,.insight-row:hover,.source-card:hover,.hero-stat-card:hover{transform:none;box-shadow:none}
+  .action-card:hover,.source-card:hover{border-color:var(--border)}
+  /* nested panels lose their box so text runs the full card width */
+  .action-split-col,[data-theme="dark"] .action-split-col{background:none;border:none;border-radius:0;padding:0}
+  .action-split{gap:16px}
+  /* type */
+  body{font-size:14px;line-height:1.55}
+  .new-trend-card-intro,.new-trend-narrative,.insight-body,.action-split-body,.source-desc,.presenter-bio,.topics-list li{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;line-height:1.55}
+  .section-header{margin-bottom:0}
+  .section-header h2,.briefing-heading{font-size:30px;line-height:1.02}
+  .section-header p{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;margin-bottom:18px}
+  .new-trend-card-header h4,.insight-headline,.chart-title{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:17px;font-weight:600}
+  .action-headline,.source-title,.reveal-title{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:16.5px;font-weight:600}
+}
+/* ============ MOBILE BRIEFING (<=640px) ============ */
+.cover-more{display:none}
+@media (max-width: 640px){
+  .cover .hero-label{display:none}
+  /* month tag, title, video, dek, meta line */
+  .cover-inner{gap:0}
+  .cover-text{display:contents}
+  .cover-month{order:1;justify-self:start;margin-bottom:14px}
+  .cover h1{order:2;font-size:44px;margin-bottom:20px}
+  .cover-video{order:3;margin-bottom:18px}
+  .cover .hero-sub{order:4;margin-bottom:4px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+  .cover .hero-sub.is-expanded{display:block;-webkit-line-clamp:unset;line-clamp:none;overflow:visible;margin-bottom:12px}
+  .cover-more{order:5;display:block;justify-self:start;margin-bottom:12px;padding:0;border:none;background:none;cursor:pointer;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:14px;line-height:1.5;color:#7FC99A}
+  .cover-more:focus-visible{outline:2px solid #7FC99A;outline-offset:2px}
+  .cover-more[hidden]{display:none}
+  .cover-stats{order:6}
+  /* "What the data reveals" as a plain list */
+  .reveal-grid{gap:0}
+  .reveal-grid .reveal-card{background:none;border:0;border-radius:0;padding:14px 0;border-bottom:1px solid var(--border)}
+  .reveal-grid .reveal-card:last-child{border-bottom:0}
+  .reveal-grid .reveal-title{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;font-weight:600;margin-bottom:4px}
+  .reveal-grid .reveal-body{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13.5px;line-height:1.55;color:var(--text2)}
+}
+/* ============ MOBILE KEY TRENDS (<=640px): collapsible trend cards ============ */
+.trend-eyebrow,.trend-key,.trend-toggle{display:none}
+@media (max-width: 640px){
+  .new-trend-card-header{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:6px;margin-bottom:10px}
+  .trend-eyebrow{display:block;grid-column:1;grid-row:1;font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:500;font-size:11px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+  .new-trend-card-header .tag{grid-column:2;grid-row:1}
+  .new-trend-card-header h4{grid-column:1 / -1;grid-row:2}
+  .trend-key{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:10px;row-gap:4px;margin:0 0 12px}
+  .trend-key-value{flex:0 1 auto;min-width:0;font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:40px;line-height:1;color:#1A4D2E}
+  [data-theme="dark"] .trend-key-value{color:#7FC99A}
+  .trend-key-label{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.35;color:var(--text2)}
+  .new-trend-card-intro{margin-bottom:14px}
+  .trend-more{overflow:hidden;transition:height .25s ease,opacity .25s ease,visibility 0s linear 0s}
+  .new-trend-card.is-collapsed .trend-more{height:0;opacity:0;visibility:hidden;transition:height .25s ease,opacity .25s ease,visibility 0s linear .25s}
+  .trend-toggle{display:flex;align-items:center;gap:6px;width:100%;padding:4px 0 0;border:none;background:none;cursor:pointer;text-align:left;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:13.5px;line-height:1.5;color:var(--teal)}
+  .trend-toggle:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:4px}
+  .trend-toggle-chev{width:14px;height:14px;flex:none;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s ease}
+  .new-trend-card:not(.is-collapsed) .trend-toggle-chev{transform:rotate(180deg)}
+}
+/* ============ MOBILE STATS (<=640px): stat rows with expandable notes ============ */
+@media (max-width: 640px){
+  .hero-stats-grid{grid-template-columns:1fr;gap:0}
+  .hero-stats-grid .hero-stat-card{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:baseline;text-align:left;padding:14px 0 14px 16px;background:none;border:0;border-radius:0;border-bottom:1px solid var(--border);box-shadow:none;overflow:visible;cursor:pointer}
+  .hero-stats-grid .hero-stat-card:last-child{border-bottom:0}
+  .hero-stats-grid .hero-stat-card:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:4px}
+  .hero-stats-grid .hero-stat-card::after{top:14px;bottom:14px;left:0;right:auto;width:4px;height:auto;border-radius:2px}
+  .hero-stats-grid .hero-stat-num{grid-column:1;grid-row:1;font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:38px;line-height:1;letter-spacing:0;margin:0}
+  .hero-stats-grid .hero-stat-source{grid-column:2;grid-row:1;justify-self:end;display:flex;align-items:center;gap:7px;margin:0;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:11.5px;line-height:1.3;color:var(--text3);white-space:nowrap}
+  .hero-stats-grid .hero-stat-source::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s ease}
+  .hero-stats-grid .hero-stat-card:not(.is-collapsed) .hero-stat-source::after{transform:translateY(1px) rotate(-135deg)}
+  .hero-stats-grid .hero-stat-label{grid-column:1 / -1;grid-row:2;margin:6px 0 0;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.35}
+  .hero-stats-grid .hero-stat-note{grid-column:1 / -1;grid-row:3;margin:6px 0 0;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13.5px;line-height:1.55;color:var(--text2)}
+  .hero-stats-grid .hero-stat-card.is-collapsed .hero-stat-note{display:none}
+}
+/* ============ MOBILE ACTIONS (<=640px): header row + evidence / your week toggle ============ */
+.action-seg{display:none}
+@media (max-width: 640px){
+  .action-card{grid-template-columns:auto minmax(0,1fr);column-gap:10px;row-gap:0;align-items:start}
+  .action-body{display:contents}
+  .action-num{grid-column:1;grid-row:1;align-self:center;padding:0;font-family:'Bebas Neue','Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:28px;font-weight:400;line-height:1;color:var(--teal);opacity:1}
+  .action-top{grid-column:2;grid-row:1;align-items:center;margin-bottom:0}
+  .action-seg{grid-column:1 / -1;display:flex;gap:2px;margin:14px 0;padding:3px;border-radius:10px;background:#E9EEE3}
+  [data-theme="dark"] .action-seg{background:rgba(127,201,154,.08)}
+  .action-seg-btn{flex:1;min-width:0;padding:7px 10px;border:none;border-radius:8px;background:transparent;cursor:pointer;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:12.5px;line-height:1.3;color:var(--text2)}
+  .action-seg-btn[aria-selected="true"]{background:var(--card);color:var(--text);box-shadow:0 1px 3px rgba(22,36,28,.14),0 1px 1px rgba(22,36,28,.06)}
+  [data-theme="dark"] .action-seg-btn{color:rgba(244,240,232,.65)}
+  [data-theme="dark"] .action-seg-btn[aria-selected="true"]{background:rgba(244,240,232,.12);color:#F4F0E8;box-shadow:0 1px 3px rgba(0,0,0,.35)}
+  .action-seg-btn:focus-visible{outline:2px solid var(--teal);outline-offset:1px}
+  .action-split{grid-column:1 / -1;grid-template-columns:1fr;margin-bottom:14px}
+  .action-tags{grid-column:1 / -1}
+  .action-split-label{display:none}
+  .action-card[data-pane="evidence"] .action-split-col.change,.action-card[data-pane="change"] .action-split-col.evidence{display:none}
+  .action-split-col:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:4px}
+  .action-split-col.change strong{display:block;margin-top:10px;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:12px;line-height:1.4;letter-spacing:.04em;color:var(--teal)}
+  .action-split-col.change .action-split-body strong:first-child{margin-top:0}
+  /* insights: share button top-right, as on the action cards */
+  .insight-row .share-btn{position:absolute;top:16px;right:16px}
+  .insight-row .insight-stat{padding-right:40px}
 }
 </style>
 </head>
@@ -447,72 +629,101 @@ button{font-family:inherit}
 <!-- Reading progress bar -->
 <div class="reading-progress" aria-hidden="true"><div class="reading-progress-fill" id="readProgress"></div></div>
 
-<!-- HEADER -->
-<header class="site-header">
-  <a href="#" class="header-logo" onclick="scrollToTop(event)">
-    <img src="elearningu icon.png" alt="eLearningU" style="height:36px;width:auto;filter:var(--logo-filter)">eLearningU
-  </a>
-  <div class="header-center">
-    <span class="header-badge">Tourism Industry Scan</span>
-    <span class="header-month">November 2026</span>
-    <a class="header-archive" href="../october-2026/index.html" title="October 2026 Tourism Industry Scan">
-      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>October 2026
-    </a>
-  </div>
-  <div class="header-right">
-    <button class="header-icon-btn has-new-pulse" id="searchBtn" onclick="openSearch()" aria-label="Search this report">
-      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-      <span>Search</span>
-      <span class="kbd-hint">⌘K</span>
-    </button>
-    <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" aria-label="Toggle dark mode">
-      <svg id="themeIcon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-      <span id="themeLabel">Dark mode</span>
-    </button>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <p class="hero-label">Monthly Intelligence Report for Canadian DMO Leaders</p>
-    <h1>Tourism Industry Scan<span class="accent">November 2026</span></h1>
-    <p class="hero-sub">Primary research from Q3 OTA earnings, consulting firms, and industry associations synthesized into the trends, insights, stats, and actions Canadian DMO leaders need. This month's focus: the price-value paradox as travel costs surge while AI reshapes discovery.</p>
-
-    <div class="three-things">
-      <div class="three-things-label">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        What the data reveals
+<!-- NAV UNIT: header row + chapter nav in one fixed forest bar -->
+<div class="nav-unit" id="navUnit">
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="#" class="header-logo" onclick="scrollToTop(event)">
+        <img src="elearningu icon.png" alt="eLearningU">eLearningU
+      </a>
+      <p class="header-title">Tourism Industry Scan · <span>Nov 2026</span></p>
+      <div class="header-right">
+        <a class="header-archive" href="../october-2026/index.html" title="October 2026 Tourism Industry Scan">‹ October 2026</a>
+        <button class="nav-icon-btn has-new-pulse js-search-btn" id="searchBtn" onclick="openSearch()" aria-label="Search this report" title="Search (⌘K)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <span class="visually-hidden">Search</span>
+          <span class="kbd-hint visually-hidden">⌘K</span>
+        </button>
+        <button class="nav-icon-btn js-theme-toggle" onclick="toggleTheme()" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="js-theme-icon" id="themeIcon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span class="visually-hidden js-theme-label" id="themeLabel">Dark mode</span>
+        </button>
       </div>
-      <ul>
-        <li><span><strong>Travel costs running at 2x inflation</strong> – The Travel Price Index is up 8.7% YoY vs 3.4% for overall CPI. Airfares alone are up 25.5%. Higher costs are changing how travelers book, not whether they travel.</span></li>
-        <li><span><strong>Affluent travelers carrying the industry</strong> – Revenue growth outpacing volume 2:1. OTA Q3 earnings show room nights +7% but gross bookings +10-12%. The market is bifurcating.</span></li>
-        <li><span><strong>AI adoption hit an inflection point</strong> – 56% of U.S. leisure travelers used AI for trips in 2026, up from 43% nine months prior. Booking Holdings reports AI users convert at 2x the rate of non-users.</span></li>
-      </ul>
     </div>
-
-    <div class="hero-pills">
-      <div class="hero-pill"><span class="hero-pill-num" data-count="30">30+</span><span class="hero-pill-label">Primary Sources</span></div>
-      <div class="hero-pill"><span class="hero-pill-num" data-count="6">6</span><span class="hero-pill-label">Key Trends</span></div>
-      <div class="hero-pill"><span class="hero-pill-num" data-count="6">6</span><span class="hero-pill-label">Recommended Actions</span></div>
-      <div class="hero-pill"><span class="hero-pill-num" data-count="12" data-suffix=" min">~12 min</span><span class="hero-pill-label">Read Time</span></div>
-    </div>
+  </header>
+  <div class="mobile-progress" aria-hidden="true">
+    <span class="mobile-seg" data-tab="briefing"><span class="mobile-seg-fill"></span></span>
+    <span class="mobile-seg" data-tab="trends"><span class="mobile-seg-fill"></span></span>
+    <span class="mobile-seg" data-tab="insights"><span class="mobile-seg-fill"></span></span>
+    <span class="mobile-seg" data-tab="stats"><span class="mobile-seg-fill"></span></span>
+    <span class="mobile-seg" data-tab="actions"><span class="mobile-seg-fill"></span></span>
+    <span class="mobile-seg" data-tab="deeper"><span class="mobile-seg-fill"></span></span>
   </div>
-</section>
+  <nav class="chapter-bar" id="tabBar" aria-label="Sections">
+    <div class="chapter-bar-inner">
+      <span class="nav-slot nav-slot-left" aria-hidden="true">Nov 2026</span>
+      <div class="chapter-grid">
+        <button class="chapter-item active" data-tab="briefing" data-time="4 min" onclick="switchTab('briefing',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">00</span><span class="chapter-label">Briefing</span><span class="chapter-meta">4 min</span></span></button>
+        <button class="chapter-item" data-tab="trends" data-time="3 min" onclick="switchTab('trends',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">01</span><span class="chapter-label">Key Trends</span><span class="chapter-meta">3 min</span></span></button>
+        <button class="chapter-item" data-tab="insights" data-time="2 min" onclick="switchTab('insights',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">02</span><span class="chapter-label">Insights</span><span class="chapter-meta">2 min</span></span></button>
+        <button class="chapter-item" data-tab="stats" data-time="1 min" onclick="switchTab('stats',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">03</span><span class="chapter-label">Stats</span><span class="chapter-meta">1 min</span></span></button>
+        <button class="chapter-item" data-tab="actions" data-time="2 min" onclick="switchTab('actions',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">04</span><span class="chapter-label">Actions</span><span class="chapter-meta">2 min</span></span></button>
+        <button class="chapter-item" data-tab="deeper" data-time="1 min" onclick="switchTab('deeper',this)"><span class="chapter-track"><span class="chapter-fill"></span></span><span class="chapter-row"><span class="chapter-num">05</span><span class="chapter-label">Reading</span><span class="chapter-meta">1 min</span></span></button>
+      </div>
+      <span class="nav-slot nav-slot-right">
+        <button class="nav-icon-btn has-new-pulse js-search-btn" onclick="openSearch()" aria-label="Search this report" title="Search (⌘K)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
+        <button class="nav-icon-btn js-theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode"><svg class="js-theme-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><span class="visually-hidden js-theme-label">Dark mode</span></button>
+      </span>
+    </div>
+  </nav>
+</div>
+<div class="nav-spacer" aria-hidden="true"></div>
 
-<!-- VIDEO -->
-<section class="video-section">
-  <div class="video-inner">
-    <p class="section-eyebrow">Executive Briefing · November 2026</p>
-    <h2>Watch the monthly briefing</h2>
-    <div class="video-grid">
-      <div class="video-container">
-        <div class="video-placeholder">
-          <div class="video-placeholder-icon"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-          <p class="video-placeholder-text">Video coming soon</p>
+<div class="panels-wrapper">
+
+  <!-- PANEL 0: BRIEFING -->
+  <section class="tab-panel active" id="panel-briefing">
+    <div class="cover">
+      <div class="cover-inner">
+        <div class="cover-text">
+          <p class="hero-label">Monthly Intelligence Report for Canadian DMO Leaders</p>
+          <span class="cover-month accent">November 2026</span>
+          <h1>Tourism Industry Scan</h1>
+          <p class="hero-sub" id="heroSub">Primary research from Q3 OTA earnings, consulting firms, and industry associations synthesized into the trends, insights, stats, and actions Canadian DMO leaders need. This month's focus: the price-value paradox as travel costs surge while AI reshapes discovery.</p>
+          <button type="button" class="cover-more" aria-controls="heroSub" aria-expanded="false" onclick="expandHeroSub(this)">More</button>
+          <p class="cover-stats">30+ primary sources · 6 trends · 6 actions · ~12 min</p>
+        </div>
+        <div class="cover-video">
+          <div class="cover-video-head"><span class="cover-video-label">00 · The Briefing</span><span class="cover-video-meta">Coming soon</span></div>
+          <div class="video-container">
+            <div class="video-placeholder">
+              <div class="video-placeholder-icon"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+              <p class="video-placeholder-text">Video coming soon</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="video-sidebar">
+    </div>
+
+    <div class="briefing-body">
+      <div class="three-things">
+        <h2 class="briefing-heading">What the data reveals</h2>
+        <div class="reveal-grid">
+          <div class="reveal-card">
+            <h3 class="reveal-title">Travel costs running at 2x inflation</h3>
+            <p class="reveal-body">The Travel Price Index is up 8.7% YoY vs 3.4% for overall CPI. Airfares alone are up 25.5%. Higher costs are changing how travelers book, not whether they travel.</p>
+          </div>
+          <div class="reveal-card">
+            <h3 class="reveal-title">Affluent travelers carrying the industry</h3>
+            <p class="reveal-body">Revenue growth outpacing volume 2:1. OTA Q3 earnings show room nights +7% but gross bookings +10-12%. The market is bifurcating.</p>
+          </div>
+          <div class="reveal-card">
+            <h3 class="reveal-title">AI adoption hit an inflection point</h3>
+            <p class="reveal-body">56% of U.S. leisure travelers used AI for trips in 2026, up from 43% nine months prior. Booking Holdings reports AI users convert at 2x the rate of non-users.</p>
+          </div>
+        </div>
+      </div>
+      <div class="briefing-cards">
         <div class="presenter-card">
           <p class="presenter-label">Presented by</p>
           <p class="presenter-name">Conner Galway</p>
@@ -530,24 +741,15 @@ button{font-family:inherit}
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- TAB BAR -->
-<nav class="tab-bar" id="tabBar">
-  <div class="tab-bar-inner">
-    <button class="tab-btn active" data-tab="trends" onclick="switchTab('trends',this)"><span class="tab-num">01</span><span>Key Trends</span><span class="tab-time">3 min</span></button>
-    <button class="tab-btn" data-tab="insights" onclick="switchTab('insights',this)"><span class="tab-num">02</span><span>Strategic Insights</span><span class="tab-time">2 min</span></button>
-    <button class="tab-btn" data-tab="stats" onclick="switchTab('stats',this)"><span class="tab-num">03</span><span>Industry Stats</span><span class="tab-time">1 min</span></button>
-    <button class="tab-btn" data-tab="actions" onclick="switchTab('actions',this)"><span class="tab-num">04</span><span>Recommended Actions</span><span class="tab-time">2 min</span></button>
-    <button class="tab-btn" data-tab="deeper" onclick="switchTab('deeper',this)"><span class="tab-num">05</span><span>Recommended Reading</span><span class="tab-time">1 min</span></button>
-  </div>
-</nav>
-
-<div class="panels-wrapper">
+    <button type="button" class="handoff" onclick="handoffNext('briefing')">
+      <span class="handoff-num">01</span>
+      <span class="handoff-text"><span class="handoff-label">Up next · 3 min</span><span class="handoff-title">Key Trends</span><span class="handoff-preview">Rising costs, AI adoption, a split market</span></span>
+      <span class="handoff-cta">Start reading →</span>
+    </button>
+  </section>
 
   <!-- PANEL 1: KEY TRENDS -->
-  <section class="tab-panel active" id="panel-trends">
+  <section class="tab-panel" id="panel-trends">
     <div class="section-header">
       <div class="section-header-top"><span class="section-num">01</span><div class="section-divider" style="background:var(--teal)"></div></div>
       <h2>Key Trends</h2>
@@ -776,6 +978,11 @@ button{font-family:inherit}
 
       </div>
     </div>
+    <button type="button" class="handoff" onclick="handoffNext('trends')">
+      <span class="handoff-num">02</span>
+      <span class="handoff-text"><span class="handoff-label">Up next · 2 min</span><span class="handoff-title">Strategic Insights</span><span class="handoff-preview">Five data points behind the price-value shift</span></span>
+      <span class="handoff-cta">Continue →</span>
+    </button>
   </section>
 
   <!-- PANEL 2: STRATEGIC INSIGHTS -->
@@ -853,6 +1060,11 @@ button{font-family:inherit}
       </div>
 
     </div>
+    <button type="button" class="handoff" onclick="handoffNext('insights')">
+      <span class="handoff-num">03</span>
+      <span class="handoff-text"><span class="handoff-label">Up next · 1 min</span><span class="handoff-title">Industry Stats</span><span class="handoff-preview">The four numbers defining travel this month</span></span>
+      <span class="handoff-cta">Continue →</span>
+    </button>
   </section>
 
   <!-- PANEL 3: INDUSTRY STATS -->
@@ -907,6 +1119,11 @@ button{font-family:inherit}
         <div style="position:relative;height:280px;width:100%"><canvas id="revenueChart"></canvas></div>
       </div>
     </div>
+    <button type="button" class="handoff" onclick="handoffNext('stats')">
+      <span class="handoff-num">04</span>
+      <span class="handoff-text"><span class="handoff-label">Up next · 2 min</span><span class="handoff-title">Recommended Actions</span><span class="handoff-preview">Six moves for DMOs, with budget-sized options</span></span>
+      <span class="handoff-cta">Continue →</span>
+    </button>
   </section>
 
   <!-- PANEL 4: RECOMMENDED ACTIONS -->
@@ -1045,6 +1262,11 @@ button{font-family:inherit}
       </div>
 
     </div>
+    <button type="button" class="handoff" onclick="handoffNext('actions')">
+      <span class="handoff-num">05</span>
+      <span class="handoff-text"><span class="handoff-label">Up next · 1 min</span><span class="handoff-title">Recommended Reading</span><span class="handoff-preview">The primary sources behind this month's scan</span></span>
+      <span class="handoff-cta">Continue →</span>
+    </button>
   </section>
 
   <!-- PANEL 5: RECOMMENDED READING -->
@@ -1125,6 +1347,13 @@ button{font-family:inherit}
         <a class="source-link" href="https://researchhub.wttc.org/" target="_blank" rel="noopener">WTTC Research Hub <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="13 6 19 12 13 18"/></svg></a>
       </div>
 
+    </div>
+    <div class="handoff handoff-end">
+      <span class="handoff-text"><span class="handoff-label">That's the full scan</span><span class="handoff-title">You're all caught up</span><span class="handoff-preview">Back to the briefing, or browse past issues in the archive</span></span>
+      <span class="handoff-actions">
+        <button type="button" class="handoff-cta handoff-link" onclick="handoffNext('deeper')">Back to the briefing →</button>
+        <a class="handoff-cta handoff-link" href="../october-2026/index.html" onclick="setChapterProgress('deeper',100)">Past issues →</a>
+      </span>
     </div>
   </section>
 
@@ -1207,6 +1436,28 @@ button{font-family:inherit}
   </div>
 </div>
 
+<!-- MOBILE NAV: bottom bar + section sheet (<=640px) -->
+<button type="button" class="mobile-bar" id="mobileBar" onclick="openSheet()" aria-haspopup="dialog" aria-controls="sectionSheet" aria-expanded="false" aria-label="Sections in this issue">
+  <span class="mobile-bar-num" id="mobileBarNum">00</span>
+  <span class="mobile-bar-title" id="mobileBarTitle">The Briefing</span>
+  <span class="mobile-bar-pos" id="mobileBarPos">▴</span>
+</button>
+<div class="sheet-scrim" id="sheetScrim" onclick="closeSheet()"></div>
+<div class="section-sheet" id="sectionSheet" role="dialog" aria-modal="true" aria-label="Sections in this issue" aria-hidden="true">
+  <div class="sheet-grab">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head"><span class="sheet-head-label">In this issue</span><span class="sheet-head-time">~12 min</span></div>
+  </div>
+  <div class="sheet-list">
+    <button type="button" class="sheet-row" data-tab="briefing" onclick="pickSheetSection('briefing')"><span class="sheet-num">00</span><span class="sheet-main"><span class="sheet-title">The Briefing</span><span class="sheet-track"><span class="sheet-fill"></span></span></span><span class="sheet-meta">4 min</span></button>
+    <button type="button" class="sheet-row" data-tab="trends" onclick="pickSheetSection('trends')"><span class="sheet-num">01</span><span class="sheet-main"><span class="sheet-title">Key Trends</span><span class="sheet-track"><span class="sheet-fill"></span></span></span><span class="sheet-meta">3 min</span></button>
+    <button type="button" class="sheet-row" data-tab="insights" onclick="pickSheetSection('insights')"><span class="sheet-num">02</span><span class="sheet-main"><span class="sheet-title">Strategic Insights</span><span class="sheet-track"><span class="sheet-fill"></span></span></span><span class="sheet-meta">2 min</span></button>
+    <button type="button" class="sheet-row" data-tab="stats" onclick="pickSheetSection('stats')"><span class="sheet-num">03</span><span class="sheet-main"><span class="sheet-title">Industry Stats</span><span class="sheet-track"><span class="sheet-fill"></span></span></span><span class="sheet-meta">1 min</span></button>
+    <button type="button" class="sheet-row" data-tab="actions" onclick="pickSheetSection('actions')"><span class="sheet-num">04</span><span class="sheet-main"><span class="sheet-title">Recommended Actions</span><span class="sheet-track"><span class="sheet-fill"></span></span></span><span class="sheet-meta">2 min</span></button>
+    <button type="button" class="sheet-row" data-tab="deeper" onclick="pickSheetSection('deeper')"><span class="sheet-num">05</span><span class="sheet-main"><span class="sheet-title">Recommended Reading</span><span class="sheet-track"><span class="sheet-fill"></span></span></span><span class="sheet-meta">1 min</span></button>
+  </div>
+</div>
+
 <!-- Toast -->
 <div class="toast" id="toast">
   <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1217,8 +1468,8 @@ button{font-family:inherit}
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-left">
-      Produced by eLearningU for Canadian DMO Leaders · September 2026 · <a href="https://www.elearningu.com" target="_blank" rel="noopener">elearningu.com</a>
-      <a class="footer-prev" href="../august-2026/index.html"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>August 2026 Scan</a>
+      Produced by eLearningU for Canadian DMO Leaders · November 2026 · <a href="https://www.elearningu.com" target="_blank" rel="noopener">elearningu.com</a>
+      <a class="footer-prev" href="../october-2026/index.html" title="October 2026 Tourism Industry Scan"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>October 2026 Scan</a>
     </div>
     <div class="footer-right"><span class="logo-dot"></span>eLearningU</div>
   </div>
@@ -1238,41 +1489,64 @@ function toggleTheme(){
     requestAnimationFrame(function(){requestAnimationFrame(buildCharts);});
   }
 }
+// The header row and the compact nav both have a theme toggle; keep them in sync
 function updateThemeUI(theme){
-  var icon=document.getElementById('themeIcon');
-  var label=document.getElementById('themeLabel');
-  if(theme==='dark'){
-    icon.innerHTML='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
-    label.textContent='Light mode';
-  }else{
-    icon.innerHTML='<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>';
-    label.textContent='Dark mode';
-  }
+  var dark=theme==='dark';
+  document.querySelectorAll('.js-theme-icon').forEach(function(icon){
+    icon.innerHTML=dark?'<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>':'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>';
+  });
+  document.querySelectorAll('.js-theme-label').forEach(function(label){
+    label.textContent=dark?'Light mode':'Dark mode';
+  });
 }
 
 /* ============ TABS + URL HASH PERSIST ============ */
-var VALID_TABS=['trends','insights','stats','actions','deeper'];
+var VALID_TABS=['briefing','trends','insights','stats','actions','deeper'];
+// Every jump lands in a scrolled page, so offsets use the COMPACT nav unit height
+var NAV_COMPACT_HEIGHT=58; // 12 + 34 + 11 padding/row + 1 border
+var NAV_COMPACT_AT=80;     // compact once scrolled past this
+var NAV_TOP_AT=10;         // back to "top" only within this of the very top
+var NAV_MOBILE_HEIGHT=72;  // <=640px: 58 header row + 3px segments + 10 padding + 1 border, no compact state
+var mobileQuery=window.matchMedia('(max-width: 640px)');
+function stickyOffset(){
+  return mobileQuery.matches?NAV_MOBILE_HEIGHT:NAV_COMPACT_HEIGHT;
+}
+function updateNavState(){
+  var unit=document.getElementById('navUnit');
+  if(!unit)return;
+  if(mobileQuery.matches){unit.classList.remove('is-compact');return;}
+  var compact=unit.classList.contains('is-compact');
+  if(!compact && window.scrollY>NAV_COMPACT_AT)unit.classList.add('is-compact');
+  else if(compact && window.scrollY<=NAV_TOP_AT)unit.classList.remove('is-compact');
+}
 function switchTab(panelId,btn,opts){
   opts=opts||{};
+  accrueActiveTime(); // credit time to the panel we're leaving
   document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
-  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.querySelectorAll('.chapter-item').forEach(function(b){b.classList.remove('active');});
   var panel=document.getElementById('panel-'+panelId);
   if(!panel)return;
   panel.classList.add('active');
   if(btn){btn.classList.add('active');}else{
-    var b=document.querySelector('.tab-btn[data-tab="'+panelId+'"]');
+    var b=document.querySelector('.chapter-item[data-tab="'+panelId+'"]');
     if(b)b.classList.add('active');
   }
   // Update URL hash without jumping
   if(!opts.skipHash){
     history.replaceState(null,'','#'+panelId);
   }
-  // Scroll to tab bar (unless we're initializing on page load)
+  // Scroll to the top of the panel, just under the sticky bars (unless we're initializing on page load)
   if(!opts.skipScroll){
-    var tabBar=document.getElementById('tabBar');
-    var tabTop=tabBar.getBoundingClientRect().top+window.scrollY-64;
-    window.scrollTo({top:tabTop,behavior:'smooth'});
+    // offsetTop, not getBoundingClientRect: the panel's fadeIn starts at translateY(10px)
+    var panelTop=-stickyOffset();
+    for(var el=panel;el;el=el.offsetParent){panelTop+=el.offsetTop;}
+    // A panel top this close to the page top shows in full at 0, under the "top" nav
+    if(panelTop<=NAV_COMPACT_AT)panelTop=0;
+    window.scrollTo({top:Math.max(0,panelTop),behavior:prefersReduced?'auto':'smooth'});
+    progressHold={top:Math.max(0,panelTop),until:Date.now()+1500};
   }
+  accrueActiveTime(); // start the clock for the new panel
+  renderChapterProgress();
   // Animate any visible count-ups in this panel
   animateCountUpsInPanel(panel);
   // Build charts if stats panel
@@ -1284,8 +1558,417 @@ function switchTab(panelId,btn,opts){
 }
 function switchTabById(id){
   if(VALID_TABS.indexOf(id)===-1)return;
-  var btn=document.querySelector('.tab-btn[data-tab="'+id+'"]');
+  var btn=document.querySelector('.chapter-item[data-tab="'+id+'"]');
   switchTab(id,btn);
+}
+
+/* ============ CHAPTER READING PROGRESS ============ */
+// Per-panel progress (0-100) for the chapter bar. Persisted per issue; never goes down.
+// Briefing: completes only via its "Start reading" handoff (or the Vimeo hook below).
+// Other panels: min(furthest scroll fraction, active time / half the panel's read time).
+var PROGRESS_KEY='scan-progress-november-2026';
+var chapterProgress=loadChapterProgress();
+var progressHold=null; // {top,until}: ignore scroll events while switchTab's own scroll is in flight
+var chapterTick=false;
+var maxScrollFraction={}; // furthest scroll fraction per panel, this visit only
+var activeSeconds={};     // time each panel was active with the browser tab visible, this visit only
+var timerTab=null,timerStart=null;
+
+function loadChapterProgress(){
+  var saved={};
+  try{saved=JSON.parse(window.localStorage.getItem(PROGRESS_KEY))||{};}catch(e){}
+  var out={};
+  VALID_TABS.forEach(function(t){
+    var v=Number(saved[t]);
+    out[t]=isFinite(v)?Math.min(100,Math.max(0,v)):0;
+  });
+  return out;
+}
+function saveChapterProgress(){
+  try{window.localStorage.setItem(PROGRESS_KEY,JSON.stringify(chapterProgress));}catch(e){}
+}
+
+// Single entry point for progress, used by scroll today.
+// VIMEO HOOK: once the briefing video is embedded, drive the Briefing from playback
+// as well, e.g. player.on('timeupdate',function(d){setChapterProgress('briefing',d.percent*100);});
+// Because progress only goes up, scroll and playback can both feed it safely.
+function setChapterProgress(tab,pct){
+  if(!(tab in chapterProgress))return;
+  pct=Math.round(Math.min(100,Math.max(0,pct)));
+  if(pct<=chapterProgress[tab])return;
+  chapterProgress[tab]=pct;
+  saveChapterProgress();
+  renderChapterProgress();
+}
+
+function renderChapterProgress(){
+  var activeTab=null;
+  document.querySelectorAll('.chapter-item').forEach(function(item){
+    var tab=item.getAttribute('data-tab');
+    var pct=chapterProgress[tab]||0;
+    var time=item.getAttribute('data-time');
+    var active=item.classList.contains('active');
+    var text;
+    if(pct>=100)text='✓';
+    else if(active&&pct>0)text=Math.max(1,Math.ceil((parseFloat(time)||1)*(1-pct/100)))+' min left';
+    else text=time;
+    if(active)activeTab=tab;
+    item.querySelector('.chapter-fill').style.width=pct+'%';
+    item.querySelector('.chapter-meta').textContent=text;
+    // Mobile progress segment and sheet row mirror the chapter item
+    var seg=document.querySelector('.mobile-seg[data-tab="'+tab+'"] .mobile-seg-fill');
+    if(seg)seg.style.width=pct+'%';
+    var row=document.querySelector('.sheet-row[data-tab="'+tab+'"]');
+    if(row){
+      row.classList.toggle('active',active);
+      row.classList.toggle('done',pct>=100);
+      row.querySelector('.sheet-fill').style.width=pct+'%';
+      row.querySelector('.sheet-meta').textContent=text;
+    }
+  });
+  renderMobileBar(activeTab);
+}
+
+/* ============ MOBILE NAV: bottom bar + section sheet ============ */
+function renderMobileBar(tab){
+  var row=document.querySelector('.sheet-row[data-tab="'+tab+'"]');
+  if(!row)return;
+  var i=VALID_TABS.indexOf(tab);
+  document.getElementById('mobileBarNum').textContent=row.querySelector('.sheet-num').textContent;
+  document.getElementById('mobileBarTitle').textContent=row.querySelector('.sheet-title').textContent;
+  document.getElementById('mobileBarPos').textContent=i>0?i+' / '+(VALID_TABS.length-1)+' ▴':'▴';
+}
+function isSheetOpen(){
+  var sheet=document.getElementById('sectionSheet');
+  return !!sheet && sheet.classList.contains('open');
+}
+function openSheet(){
+  var sheet=document.getElementById('sectionSheet');
+  sheet.classList.add('open');
+  sheet.setAttribute('aria-hidden','false');
+  document.getElementById('sheetScrim').classList.add('open');
+  document.getElementById('mobileBar').setAttribute('aria-expanded','true');
+  document.documentElement.style.overflow='hidden';
+  var row=sheet.querySelector('.sheet-row.active')||sheet.querySelector('.sheet-row');
+  if(row)row.focus({preventScroll:true});
+}
+function closeSheet(){
+  if(!isSheetOpen())return;
+  var sheet=document.getElementById('sectionSheet');
+  sheet.classList.remove('open');
+  sheet.setAttribute('aria-hidden','true');
+  document.getElementById('sheetScrim').classList.remove('open');
+  document.documentElement.style.overflow='';
+  var bar=document.getElementById('mobileBar');
+  bar.setAttribute('aria-expanded','false');
+  bar.focus({preventScroll:true});
+}
+function pickSheetSection(tab){
+  closeSheet();
+  switchTabById(tab);
+}
+
+// Swipe down on the sheet's handle/header to close it: the sheet follows the finger,
+// closes past 80px or on a quick downward flick, otherwise snaps back. Only the grab
+// area listens, so scrolling the list is unaffected.
+function initSheetSwipe(){
+  var sheet=document.getElementById('sectionSheet');
+  var grab=sheet?sheet.querySelector('.sheet-grab'):null;
+  if(!grab)return;
+  var dragging=false,startY=0,dy=0,sampleY=0,sampleT=0,velocity=0;
+  grab.addEventListener('pointerdown',function(e){
+    if(!isSheetOpen())return;
+    dragging=true;startY=sampleY=e.clientY;sampleT=performance.now();dy=0;velocity=0;
+    sheet.style.transition='none';
+    grab.setPointerCapture(e.pointerId);
+  });
+  grab.addEventListener('pointermove',function(e){
+    if(!dragging)return;
+    dy=Math.max(0,e.clientY-startY);
+    sheet.style.transform='translateY('+dy+'px)';
+    var now=performance.now();
+    if(now-sampleT>=16){velocity=(e.clientY-sampleY)/(now-sampleT);sampleY=e.clientY;sampleT=now;} // px per ms
+  });
+  var end=function(cancelled){
+    if(!dragging)return;
+    dragging=false;
+    var close=!cancelled && (dy>80 || (dy>20 && velocity>0.5));
+    sheet.style.transition='';
+    sheet.style.transform='';
+    if(close)closeSheet();
+  };
+  grab.addEventListener('pointerup',function(){end(false);});
+  grab.addEventListener('pointercancel',function(){end(true);});
+}
+
+function docTop(el){
+  var y=0;
+  for(;el;el=el.offsetParent){y+=el.offsetTop;}
+  return y;
+}
+
+// Credit elapsed time to the panel that was active, then restart the clock for the
+// current active panel, but only while the browser tab is visible (Page Visibility API).
+function accrueActiveTime(){
+  var now=Date.now();
+  if(timerTab && timerStart!==null){
+    activeSeconds[timerTab]=(activeSeconds[timerTab]||0)+(now-timerStart)/1000;
+  }
+  var panel=document.querySelector('.tab-panel.active');
+  timerTab=panel?panel.id.replace('panel-',''):null;
+  timerStart=(timerTab && document.visibilityState==='visible')?now:null;
+}
+
+// Scroll fraction: 0 when the panel top sits under the sticky bars, 1 when its bottom
+// reaches the viewport bottom. Time fraction: active seconds / (read time x 60 x 0.5).
+function updateChapterProgress(){
+  accrueActiveTime();
+  var panel=document.querySelector('.tab-panel.active');
+  if(!panel)return;
+  var tab=panel.id.replace('panel-','');
+  if(tab==='briefing')return;
+  if(progressHold){
+    if(Math.abs(window.scrollY-progressHold.top)>2 && Date.now()<progressHold.until)return;
+    progressHold=null;
+  }
+  var top=docTop(panel);
+  var start=top-stickyOffset();
+  var end=top+panel.offsetHeight-window.innerHeight;
+  var scrollFrac=window.scrollY>=end-4?1:Math.min(1,Math.max(0,(window.scrollY-start)/(end-start)));
+  maxScrollFraction[tab]=Math.max(maxScrollFraction[tab]||0,scrollFrac);
+  var item=document.querySelector('.chapter-item[data-tab="'+tab+'"]');
+  var minutes=parseFloat(item?item.getAttribute('data-time'):'')||1;
+  var timeFrac=Math.min(1,(activeSeconds[tab]||0)/(minutes*60*0.5));
+  setChapterProgress(tab,Math.min(maxScrollFraction[tab],timeFrac)*100);
+}
+function onChapterScroll(){
+  if(chapterTick)return;
+  chapterTick=true;
+  requestAnimationFrame(function(){chapterTick=false;updateChapterProgress();});
+}
+
+/* ============ UP NEXT HANDOFF ============ */
+// Mark the current panel done, then open the next one (after Reading, back to the Briefing)
+function handoffNext(tab){
+  setChapterProgress(tab,100);
+  var next=VALID_TABS[VALID_TABS.indexOf(tab)+1]||'briefing';
+  switchTabById(next);
+}
+
+/* ============ MOBILE KEY TRENDS: collapsible trend cards ============ */
+// Built for every width but only styled at <=640px: an eyebrow, a key number from the
+// card's first metric, and a toggle around the callout, narrative, metrics and sources.
+function initTrendCards(){
+  var cards=document.querySelectorAll('.new-trend-card');
+  cards.forEach(function(card,i){
+    var header=card.querySelector('.new-trend-card-header');
+    var intro=card.querySelector('.new-trend-card-intro');
+    if(!header||!intro||card.querySelector('.trend-more'))return;
+    var eyebrow=document.createElement('span');
+    eyebrow.className='trend-eyebrow';
+    eyebrow.textContent='Trend '+(i+1)+' of '+cards.length;
+    header.insertBefore(eyebrow,header.firstChild);
+    var metric=card.querySelector('.new-trend-metric');
+    if(metric){
+      var key=document.createElement('div');
+      key.className='trend-key';
+      key.setAttribute('aria-hidden','true'); // the same metric stays in the full list
+      key.innerHTML='<span class="trend-key-value"></span><span class="trend-key-label"></span>';
+      // "56% (up from 43%)" -> big "56%", label "up from 43% · <metric label>"
+      var value=metric.querySelector('.new-trend-metric-value').textContent.trim();
+      var label=metric.querySelector('.new-trend-metric-label').textContent.trim();
+      var m=value.match(/^([^(]+?)\s*\(([^)]+)\)\s*(.*)$/);
+      if(m){
+        value=m[1];
+        label=[m[2],m[3]].filter(Boolean).join(' ')+' · '+label;
+      }
+      key.querySelector('.trend-key-value').textContent=value;
+      key.querySelector('.trend-key-label').textContent=label;
+      header.parentNode.insertBefore(key,header.nextSibling);
+    }
+    var more=document.createElement('div');
+    more.className='trend-more';
+    more.id=(card.id||'trend-'+(i+1))+'-more';
+    while(intro.nextSibling)more.appendChild(intro.nextSibling);
+    card.appendChild(more);
+    var btn=document.createElement('button');
+    btn.type='button';
+    btn.className='trend-toggle';
+    btn.setAttribute('aria-controls',more.id);
+    btn.innerHTML='<span class="trend-toggle-text"></span><svg class="trend-toggle-chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>';
+    btn.addEventListener('click',function(){toggleTrendCard(card);});
+    card.appendChild(btn);
+    setTrendOpen(card,i===0,{instant:true}); // trend 1 starts open
+  });
+}
+function setTrendOpen(card,open,opts){
+  var more=card.querySelector('.trend-more'),btn=card.querySelector('.trend-toggle');
+  if(!more||!btn)return;
+  btn.setAttribute('aria-expanded',open?'true':'false');
+  btn.querySelector('.trend-toggle-text').textContent=open?'Show less':'Read the full trend';
+  if(open===!card.classList.contains('is-collapsed'))return;
+  clearTimeout(more._heightTimer);
+  var animate=!(opts&&opts.instant) && !prefersReduced && mobileQuery.matches;
+  if(!animate){
+    card.classList.toggle('is-collapsed',!open);
+    more.style.height='';
+    return;
+  }
+  // .25s height/opacity: pin the current height, then animate to the target
+  var from=more.getBoundingClientRect().height;
+  card.classList.toggle('is-collapsed',!open);
+  var to=open?more.scrollHeight:0;
+  more.style.height=from+'px';
+  void more.offsetHeight;
+  more.style.height=to+'px';
+  more._heightTimer=setTimeout(function(){more.style.height='';},260);
+}
+function toggleTrendCard(card){
+  var open=card.classList.contains('is-collapsed');
+  setTrendOpen(card,open);
+  // Collapsing with the card top above the viewport: bring the reader back to it
+  if(!open){
+    var rect=card.getBoundingClientRect();
+    if(rect.top<stickyOffset()){
+      window.scrollTo({top:rect.top+window.scrollY-stickyOffset(),behavior:prefersReduced?'auto':'smooth'});
+    }
+  }
+}
+
+/* ============ MOBILE STATS: tap a stat row to show its note ============ */
+function initStatRows(){
+  document.querySelectorAll('#panel-stats .hero-stat-card').forEach(function(card,i){
+    if(!card.id)card.id='stat-'+(i+1);
+    var note=card.querySelector('.hero-stat-note');
+    if(note&&!note.id)note.id=card.id+'-note';
+    card.classList.toggle('is-collapsed',i!==0); // the first row starts open
+    card.addEventListener('click',function(e){
+      if(!mobileQuery.matches||e.target.closest('a'))return;
+      setStatOpen(card,card.classList.contains('is-collapsed'));
+    });
+    card.addEventListener('keydown',function(e){
+      if(!mobileQuery.matches||(e.key!=='Enter'&&e.key!==' '))return;
+      e.preventDefault();
+      setStatOpen(card,card.classList.contains('is-collapsed'));
+    });
+  });
+  applyStatSemantics();
+}
+function setStatOpen(card,open){
+  card.classList.toggle('is-collapsed',!open);
+  if(mobileQuery.matches)card.setAttribute('aria-expanded',open?'true':'false');
+}
+// Button semantics only where the rows are actually toggles (<=640px)
+function applyStatSemantics(){
+  var mobile=mobileQuery.matches;
+  document.querySelectorAll('#panel-stats .hero-stat-card').forEach(function(card){
+    var note=card.querySelector('.hero-stat-note');
+    if(mobile){
+      card.setAttribute('role','button');
+      card.setAttribute('tabindex','0');
+      card.setAttribute('aria-expanded',card.classList.contains('is-collapsed')?'false':'true');
+      if(note)card.setAttribute('aria-controls',note.id);
+    }else{
+      ['role','tabindex','aria-expanded','aria-controls'].forEach(function(a){card.removeAttribute(a);});
+    }
+  });
+}
+
+/* ============ MOBILE ACTIONS: evidence / your week segmented control ============ */
+function initActionPanes(){
+  document.querySelectorAll('.action-card').forEach(function(card,i){
+    var split=card.querySelector('.action-split');
+    var ev=card.querySelector('.action-split-col.evidence'),ch=card.querySelector('.action-split-col.change');
+    if(!split||!ev||!ch||card.querySelector('.action-seg'))return;
+    var base=card.id||('action-'+(i+1));
+    ev.id=base+'-evidence';ch.id=base+'-change';
+    var seg=document.createElement('div');
+    seg.className='action-seg';
+    seg.setAttribute('role','tablist');
+    seg.setAttribute('aria-label','Action detail');
+    [['evidence','The evidence'],['change','Your week']].forEach(function(t){
+      var b=document.createElement('button');
+      b.type='button';
+      b.className='action-seg-btn';
+      b.id=base+'-tab-'+t[0];
+      b.setAttribute('role','tab');
+      b.setAttribute('aria-controls',base+'-'+t[0]);
+      b.setAttribute('data-pane',t[0]);
+      b.textContent=t[1];
+      b.addEventListener('click',function(){setActionPane(card,t[0]);});
+      seg.appendChild(b);
+    });
+    // Arrow keys / Home / End move between the two tabs
+    seg.addEventListener('keydown',function(e){
+      var keys={ArrowLeft:-1,ArrowRight:1,Home:'first',End:'last'};
+      if(!(e.key in keys))return;
+      e.preventDefault();
+      var tabs=Array.prototype.slice.call(seg.querySelectorAll('[role="tab"]'));
+      var cur=tabs.indexOf(document.activeElement);
+      var k=keys[e.key];
+      var next=k==='first'?0:k==='last'?tabs.length-1:(cur+k+tabs.length)%tabs.length;
+      setActionPane(card,tabs[next].getAttribute('data-pane'));
+      tabs[next].focus();
+    });
+    split.parentNode.insertBefore(seg,split);
+    setActionPane(card,'evidence');
+  });
+  applyActionSemantics();
+}
+function setActionPane(card,pane){
+  card.setAttribute('data-pane',pane);
+  card.querySelectorAll('.action-seg-btn').forEach(function(b){
+    var on=b.getAttribute('data-pane')===pane;
+    b.setAttribute('aria-selected',on?'true':'false');
+    b.setAttribute('tabindex',on?'0':'-1');
+  });
+}
+// Tab panel semantics only where the control is shown (<=640px)
+function applyActionSemantics(){
+  var mobile=mobileQuery.matches;
+  document.querySelectorAll('.action-card').forEach(function(card){
+    card.querySelectorAll('.action-split-col').forEach(function(col){
+      var pane=col.classList.contains('change')?'change':'evidence';
+      var tab=card.querySelector('.action-seg-btn[data-pane="'+pane+'"]');
+      if(mobile&&tab){
+        col.setAttribute('role','tabpanel');
+        col.setAttribute('aria-labelledby',tab.id);
+        col.setAttribute('tabindex','0');
+      }else{
+        ['role','aria-labelledby','tabindex'].forEach(function(a){col.removeAttribute(a);});
+      }
+    });
+  });
+}
+
+/* ============ SEARCH + HASH: open collapsed content before jumping to it ============ */
+function revealForSearch(target,q){
+  if(!target||!target.closest)return;
+  var card=target.closest('.new-trend-card');
+  if(card)setTrendOpen(card,true,{instant:true});
+  var stat=target.closest('.hero-stat-card');
+  if(stat)setStatOpen(stat,true);
+  // Action: show the pane that matches more of the search terms (evidence on a tie)
+  var action=target.closest('.action-card');
+  if(action&&action.querySelector('.action-seg')){
+    var terms=(q||'').toLowerCase().split(/\s+/).filter(Boolean);
+    var hits=function(sel){
+      var el=action.querySelector(sel);
+      var text=el?el.textContent.toLowerCase():'';
+      return terms.filter(function(t){return text.indexOf(t)!==-1;}).length;
+    };
+    setActionPane(action,hits('.action-split-col.change')>hits('.action-split-col.evidence')?'change':'evidence');
+  }
+}
+
+/* ============ MOBILE CONTENT INIT ============ */
+function initMobileContent(){
+  initTrendCards();
+  initStatRows();
+  initActionPanes();
+  var onChange=function(){applyStatSemantics();applyActionSemantics();};
+  if(mobileQuery.addEventListener)mobileQuery.addEventListener('change',onChange);
+  else if(mobileQuery.addListener)mobileQuery.addListener(onChange);
 }
 
 /* ============ TRENDS EXPAND ============ */
@@ -1345,6 +2028,15 @@ function showToast(msg){
   showToast._t=setTimeout(function(){t.classList.remove('show');},2200);
 }
 
+/* ============ MOBILE BRIEFING: expand the clamped dek ============ */
+function expandHeroSub(btn){
+  var sub=document.getElementById('heroSub');
+  if(sub)sub.classList.add('is-expanded');
+  btn.setAttribute('aria-expanded','true');
+  btn.hidden=true;
+  if(sub){sub.setAttribute('tabindex','-1');sub.focus({preventScroll:true});}
+}
+
 function scrollToTop(e){
   e.preventDefault();
   window.scrollTo({top:0,behavior:'smooth'});
@@ -1363,6 +2055,7 @@ function updateReadingProgress(){
 /* ============ FAB VISIBILITY ============ */
 function updateFabVisibility(){
   var fab=document.getElementById('fabActions');
+  if(!fab)return; // no FAB markup on this page
   var actionsActive=document.getElementById('panel-actions').classList.contains('active');
   var scrolledPastHero=window.scrollY>500;
   if(actionsActive){fab.classList.remove('visible');return;}
@@ -1594,6 +2287,13 @@ function buildSearchIndex(){
     var expanded=Array.from(card.querySelectorAll('.trend-expanded-inner p')).map(function(p){return p.textContent.trim();}).join(' ');
     SEARCH_INDEX.push({type:'Trend',tab:'trends',id:id,title:title,body:summary+' '+expanded,snippet:summary});
   });
+  // Key Trends (data cards)
+  document.querySelectorAll('.new-trend-card').forEach(function(card){
+    var title=card.querySelector('h4')?card.querySelector('h4').textContent.trim():'';
+    var intro=card.querySelector('.new-trend-card-intro')?card.querySelector('.new-trend-card-intro').textContent.trim():'';
+    var rest=Array.from(card.querySelectorAll('.new-trend-callout,.new-trend-narrative,.new-trend-metric')).map(function(el){return el.textContent.replace(/\s+/g,' ').trim();}).join(' ');
+    SEARCH_INDEX.push({type:'Trend',tab:'trends',id:card.id,title:title,body:intro+' '+rest,snippet:intro});
+  });
   // Insights
   document.querySelectorAll('.insight-row').forEach(function(row){
     var id=row.id;
@@ -1607,7 +2307,7 @@ function buildSearchIndex(){
     var num=card.querySelector('.hero-stat-num')?card.querySelector('.hero-stat-num').textContent.trim():'';
     var label=card.querySelector('.hero-stat-label')?card.querySelector('.hero-stat-label').textContent.trim():'';
     var note=card.querySelector('.hero-stat-note')?card.querySelector('.hero-stat-note').textContent.trim():'';
-    SEARCH_INDEX.push({type:'Stat',tab:'stats',id:'panel-stats',title:num+' · '+label,body:note,snippet:note});
+    SEARCH_INDEX.push({type:'Stat',tab:'stats',id:card.id||'panel-stats',title:num+' · '+label,body:note,snippet:note});
   });
   // Actions
   document.querySelectorAll('.action-card').forEach(function(card){
@@ -1695,12 +2395,14 @@ function renderSearchResults(q,results){
 }
 function goToResult(e,tab,id){
   if(e)e.preventDefault();
+  var q=document.getElementById('searchInput').value;
   closeSearch();
   switchTabById(tab);
   setTimeout(function(){
     var target=document.getElementById(id);
     if(target){
-      var y=target.getBoundingClientRect().top+window.scrollY-128;
+      revealForSearch(target,q);
+      var y=target.getBoundingClientRect().top+window.scrollY-stickyOffset()-16;
       window.scrollTo({top:y,behavior:'smooth'});
       target.style.transition='box-shadow 0.4s ease';
       target.style.boxShadow='0 0 0 3px var(--teal-mid), var(--shadow-lg)';
@@ -1716,6 +2418,8 @@ document.addEventListener('keydown',function(e){
   if(spotlight && spotlight.classList.contains('show')){
     if(e.key==='Escape'){e.preventDefault();dismissSpotlight();return;}
   }
+  // ESC closes the mobile section sheet
+  if(isSheetOpen() && e.key==='Escape'){e.preventDefault();closeSheet();return;}
   // Cmd/Ctrl + K opens search
   if((e.metaKey||e.ctrlKey) && e.key.toLowerCase()==='k'){
     e.preventDefault();
@@ -1766,8 +2470,7 @@ function dismissSpotlight(){
   sessionStorage.setItem('whatsNew_june2026','1');
   var el=document.getElementById('spotlightOverlay');
   if(el)el.classList.remove('show');
-  var sb=document.getElementById('searchBtn');
-  if(sb)sb.classList.remove('has-new-pulse');
+  document.querySelectorAll('.js-search-btn').forEach(function(sb){sb.classList.remove('has-new-pulse');});
 }
 function handleSpotlightClick(e){
   if(e.target===document.getElementById('spotlightOverlay'))dismissSpotlight();
@@ -1789,14 +2492,30 @@ function initFromHash(){
   else if(hash.indexOf('action-')===0)tab='actions';
   if(tab){
     switchTab(tab,null,{skipScroll:true,skipHash:true});
-    setTimeout(function(){
+    // Late web fonts can reflow the panel after the jump, so jump again once they've
+    // loaded, unless the reader has started scrolling themselves
+    var userScrolled=false;
+    var markUser=function(){userScrolled=true;};
+    ['wheel','touchstart','keydown','mousedown'].forEach(function(ev){
+      window.addEventListener(ev,markUser,{once:true,passive:true});
+    });
+    var jumpToItem=function(){
       var target=document.getElementById(hash);
+      if(!target)return null;
+      revealForSearch(target,'');
+      var y=target.getBoundingClientRect().top+window.scrollY-stickyOffset()-16;
+      window.scrollTo({top:y,behavior:'smooth'});
+      return target;
+    };
+    setTimeout(function(){
+      var target=jumpToItem();
       if(target){
-        var y=target.getBoundingClientRect().top+window.scrollY-128;
-        window.scrollTo({top:y,behavior:'smooth'});
         target.style.transition='box-shadow 0.4s ease';
         target.style.boxShadow='0 0 0 3px var(--teal-mid), var(--shadow-lg)';
         setTimeout(function(){target.style.boxShadow='';},1400);
+      }
+      if(document.fonts && document.fonts.ready){
+        document.fonts.ready.then(function(){if(!userScrolled)jumpToItem();});
       }
     },200);
   }
@@ -1804,6 +2523,8 @@ function initFromHash(){
 
 /* ============ INIT ============ */
 document.addEventListener('DOMContentLoaded',function(){
+  // Mobile content structure (collapsible trends etc.), before the search index is built
+  initMobileContent();
   // Search input handler
   document.getElementById('searchInput').addEventListener('input',function(e){
     runSearch(e.target.value);
@@ -1817,6 +2538,22 @@ document.addEventListener('DOMContentLoaded',function(){
   updateReadingProgress();
   // Hash routing
   initFromHash();
+  // Nav unit: "top" vs "compact"
+  window.addEventListener('scroll',updateNavState,{passive:true});
+  window.addEventListener('resize',updateNavState);
+  initSheetSwipe();
+  // Leaving the mobile layout closes the section sheet
+  var onMobileChange=function(){closeSheet();updateNavState();};
+  if(mobileQuery.addEventListener)mobileQuery.addEventListener('change',onMobileChange);
+  else if(mobileQuery.addListener)mobileQuery.addListener(onMobileChange);
+  updateNavState();
+  // Chapter bar reading progress
+  renderChapterProgress();
+  window.addEventListener('scroll',onChapterScroll,{passive:true});
+  window.addEventListener('resize',onChapterScroll);
+  document.addEventListener('visibilitychange',updateChapterProgress);
+  setInterval(updateChapterProgress,1000); // time-based progress keeps filling without scrolling
+  updateChapterProgress();
   // Ensure theme is light by default (defensive: clear any stale dark attribute)
   if(document.documentElement.getAttribute('data-theme')!=='dark'){
     document.documentElement.setAttribute('data-theme','light');
