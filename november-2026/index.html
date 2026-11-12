@@ -152,8 +152,8 @@ button{font-family:inherit}
 .topics-list li::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;flex-shrink:0;margin-top:6px}
 
 /* ============ CHAPTER NAV (row 2 of the nav unit) ============ */
-.chapter-bar-inner{max-width:1200px;margin:0 auto;padding:0 32px 12px;display:flex;align-items:center;transition:padding .35s ease}
-.nav-unit.is-compact .chapter-bar-inner{padding:12px 32px 11px}
+.chapter-bar-inner{max-width:1200px;margin:0 auto;padding:0 44px 12px;display:flex;align-items:center;transition:padding .35s ease}
+.nav-unit.is-compact .chapter-bar-inner{padding:12px 44px 11px}
 .nav-slot{flex:none;display:flex;align-items:center;gap:8px;max-width:0;max-height:0;opacity:0;visibility:hidden;overflow:hidden;transition:max-width .35s ease,max-height .35s ease,opacity .35s ease,margin .35s ease,visibility 0s linear .35s}
 .nav-unit.is-compact .nav-slot{max-width:120px;max-height:40px;opacity:1;visibility:visible;overflow:visible;transition:max-width .35s ease,max-height .35s ease,opacity .35s ease,margin .35s ease,visibility 0s linear 0s}
 .nav-unit.is-compact .nav-slot-left{margin-right:22px}
@@ -438,6 +438,7 @@ button{font-family:inherit}
 }
 @media (max-width: 960px){
   .site-header-inner{padding:0 32px}
+  .chapter-bar-inner,.nav-unit.is-compact .chapter-bar-inner{padding-left:32px;padding-right:32px}
   .cover-inner{grid-template-columns:1fr;padding:32px;gap:24px}
   .cover h1{font-size:64px}
   .trends-grid{grid-template-columns:1fr}
@@ -1421,7 +1422,7 @@ function renderChapterProgress(){
     var meta=item.querySelector('.chapter-meta');
     item.querySelector('.chapter-fill').style.width=pct+'%';
     if(pct>=100)meta.textContent='✓';
-    else if(item.classList.contains('active')&&pct>0)meta.textContent=(tab==='briefing'?'Watching · ':'Reading · ')+time;
+    else if(item.classList.contains('active')&&pct>0)meta.textContent=Math.max(1,Math.ceil((parseFloat(time)||1)*(1-pct/100)))+' min left';
     else meta.textContent=time;
   });
 }
@@ -1981,14 +1982,29 @@ function initFromHash(){
   else if(hash.indexOf('action-')===0)tab='actions';
   if(tab){
     switchTab(tab,null,{skipScroll:true,skipHash:true});
-    setTimeout(function(){
+    // Late web fonts can reflow the panel after the jump, so jump again once they've
+    // loaded, unless the reader has started scrolling themselves
+    var userScrolled=false;
+    var markUser=function(){userScrolled=true;};
+    ['wheel','touchstart','keydown','mousedown'].forEach(function(ev){
+      window.addEventListener(ev,markUser,{once:true,passive:true});
+    });
+    var jumpToItem=function(){
       var target=document.getElementById(hash);
+      if(!target)return null;
+      var y=target.getBoundingClientRect().top+window.scrollY-stickyOffset()-16;
+      window.scrollTo({top:y,behavior:'smooth'});
+      return target;
+    };
+    setTimeout(function(){
+      var target=jumpToItem();
       if(target){
-        var y=target.getBoundingClientRect().top+window.scrollY-stickyOffset()-16;
-        window.scrollTo({top:y,behavior:'smooth'});
         target.style.transition='box-shadow 0.4s ease';
         target.style.boxShadow='0 0 0 3px var(--teal-mid), var(--shadow-lg)';
         setTimeout(function(){target.style.boxShadow='';},1400);
+      }
+      if(document.fonts && document.fonts.ready){
+        document.fonts.ready.then(function(){if(!userScrolled)jumpToItem();});
       }
     },200);
   }
