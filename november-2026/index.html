@@ -1250,6 +1250,7 @@ function stickyOffset(){
 }
 function switchTab(panelId,btn,opts){
   opts=opts||{};
+  accrueActiveTime(); // credit time to the panel we're leaving
   document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
   document.querySelectorAll('.chapter-item').forEach(function(b){b.classList.remove('active');});
   var panel=document.getElementById('panel-'+panelId);
@@ -1271,6 +1272,7 @@ function switchTab(panelId,btn,opts){
     window.scrollTo({top:Math.max(0,panelTop),behavior:prefersReduced?'auto':'smooth'});
     progressHold={top:Math.max(0,panelTop),until:Date.now()+1500};
   }
+  accrueActiveTime(); // start the clock for the new panel
   renderChapterProgress();
   // Animate any visible count-ups in this panel
   animateCountUpsInPanel(panel);
@@ -1289,10 +1291,15 @@ function switchTabById(id){
 
 /* ============ CHAPTER READING PROGRESS ============ */
 // Per-panel progress (0-100) for the chapter bar. Persisted per issue; never goes down.
+// Briefing: completes only via its "Start reading" handoff (or the Vimeo hook below).
+// Other panels: min(furthest scroll fraction, active time / half the panel's read time).
 var PROGRESS_KEY='scan-progress-november-2026';
 var chapterProgress=loadChapterProgress();
 var progressHold=null; // {top,until}: ignore scroll events while switchTab's own scroll is in flight
 var chapterTick=false;
+var maxScrollFraction={}; // furthest scroll fraction per panel, this visit only
+var activeSeconds={};     // time each panel was active with the browser tab visible, this visit only
+var timerTab=null,timerStart=null;
 
 function loadChapterProgress(){
   var saved={};
@@ -1340,10 +1347,26 @@ function docTop(el){
   return y;
 }
 
-// 0% when the panel top sits under the sticky bars, 100% when its bottom reaches the viewport bottom
+// Credit elapsed time to the panel that was active, then restart the clock for the
+// current active panel, but only while the browser tab is visible (Page Visibility API).
+function accrueActiveTime(){
+  var now=Date.now();
+  if(timerTab && timerStart!==null){
+    activeSeconds[timerTab]=(activeSeconds[timerTab]||0)+(now-timerStart)/1000;
+  }
+  var panel=document.querySelector('.tab-panel.active');
+  timerTab=panel?panel.id.replace('panel-',''):null;
+  timerStart=(timerTab && document.visibilityState==='visible')?now:null;
+}
+
+// Scroll fraction: 0 when the panel top sits under the sticky bars, 1 when its bottom
+// reaches the viewport bottom. Time fraction: active seconds / (read time x 60 x 0.5).
 function updateChapterProgress(){
+  accrueActiveTime();
   var panel=document.querySelector('.tab-panel.active');
   if(!panel)return;
+  var tab=panel.id.replace('panel-','');
+  if(tab==='briefing')return;
   if(progressHold){
     if(Math.abs(window.scrollY-progressHold.top)>2 && Date.now()<progressHold.until)return;
     progressHold=null;
@@ -1351,8 +1374,12 @@ function updateChapterProgress(){
   var top=docTop(panel);
   var start=top-stickyOffset();
   var end=top+panel.offsetHeight-window.innerHeight;
-  var pct=window.scrollY>=end-4?100:(window.scrollY-start)/(end-start)*100;
-  setChapterProgress(panel.id.replace('panel-',''),pct);
+  var scrollFrac=window.scrollY>=end-4?1:Math.min(1,Math.max(0,(window.scrollY-start)/(end-start)));
+  maxScrollFraction[tab]=Math.max(maxScrollFraction[tab]||0,scrollFrac);
+  var item=document.querySelector('.chapter-item[data-tab="'+tab+'"]');
+  var minutes=parseFloat(item?item.getAttribute('data-time'):'')||1;
+  var timeFrac=Math.min(1,(activeSeconds[tab]||0)/(minutes*60*0.5));
+  setChapterProgress(tab,Math.min(maxScrollFraction[tab],timeFrac)*100);
 }
 function onChapterScroll(){
   if(chapterTick)return;
@@ -1894,6 +1921,8 @@ document.addEventListener('DOMContentLoaded',function(){
   renderChapterProgress();
   window.addEventListener('scroll',onChapterScroll,{passive:true});
   window.addEventListener('resize',onChapterScroll);
+  document.addEventListener('visibilitychange',updateChapterProgress);
+  setInterval(updateChapterProgress,1000); // time-based progress keeps filling without scrolling
   updateChapterProgress();
   // Ensure theme is light by default (defensive: clear any stale dark attribute)
   if(document.documentElement.getAttribute('data-theme')!=='dark'){
