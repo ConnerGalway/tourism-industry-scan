@@ -581,6 +581,21 @@ button{font-family:inherit}
   .trend-toggle-chev{width:14px;height:14px;flex:none;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s ease}
   .new-trend-card:not(.is-collapsed) .trend-toggle-chev{transform:rotate(180deg)}
 }
+/* ============ MOBILE STATS (<=640px): stat rows with expandable notes ============ */
+@media (max-width: 640px){
+  .hero-stats-grid{grid-template-columns:1fr;gap:0}
+  .hero-stats-grid .hero-stat-card{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:baseline;text-align:left;padding:14px 0 14px 16px;background:none;border:0;border-radius:0;border-bottom:1px solid var(--border);box-shadow:none;overflow:visible;cursor:pointer}
+  .hero-stats-grid .hero-stat-card:last-child{border-bottom:0}
+  .hero-stats-grid .hero-stat-card:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:4px}
+  .hero-stats-grid .hero-stat-card::after{top:14px;bottom:14px;left:0;right:auto;width:4px;height:auto;border-radius:2px}
+  .hero-stats-grid .hero-stat-num{grid-column:1;grid-row:1;font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:38px;line-height:1;letter-spacing:0;margin:0}
+  .hero-stats-grid .hero-stat-source{grid-column:2;grid-row:1;justify-self:end;display:flex;align-items:center;gap:7px;margin:0;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:11.5px;line-height:1.3;color:var(--text3);white-space:nowrap}
+  .hero-stats-grid .hero-stat-source::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s ease}
+  .hero-stats-grid .hero-stat-card:not(.is-collapsed) .hero-stat-source::after{transform:translateY(1px) rotate(-135deg)}
+  .hero-stats-grid .hero-stat-label{grid-column:1 / -1;grid-row:2;margin:6px 0 0;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.35}
+  .hero-stats-grid .hero-stat-note{grid-column:1 / -1;grid-row:3;margin:6px 0 0;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13.5px;line-height:1.55;color:var(--text2)}
+  .hero-stats-grid .hero-stat-card.is-collapsed .hero-stat-note{display:none}
+}
 </style>
 </head>
 <body>
@@ -1786,16 +1801,61 @@ function toggleTrendCard(card){
   }
 }
 
+/* ============ MOBILE STATS: tap a stat row to show its note ============ */
+function initStatRows(){
+  document.querySelectorAll('#panel-stats .hero-stat-card').forEach(function(card,i){
+    if(!card.id)card.id='stat-'+(i+1);
+    var note=card.querySelector('.hero-stat-note');
+    if(note&&!note.id)note.id=card.id+'-note';
+    card.classList.toggle('is-collapsed',i!==0); // the first row starts open
+    card.addEventListener('click',function(e){
+      if(!mobileQuery.matches||e.target.closest('a'))return;
+      setStatOpen(card,card.classList.contains('is-collapsed'));
+    });
+    card.addEventListener('keydown',function(e){
+      if(!mobileQuery.matches||(e.key!=='Enter'&&e.key!==' '))return;
+      e.preventDefault();
+      setStatOpen(card,card.classList.contains('is-collapsed'));
+    });
+  });
+  applyStatSemantics();
+}
+function setStatOpen(card,open){
+  card.classList.toggle('is-collapsed',!open);
+  if(mobileQuery.matches)card.setAttribute('aria-expanded',open?'true':'false');
+}
+// Button semantics only where the rows are actually toggles (<=640px)
+function applyStatSemantics(){
+  var mobile=mobileQuery.matches;
+  document.querySelectorAll('#panel-stats .hero-stat-card').forEach(function(card){
+    var note=card.querySelector('.hero-stat-note');
+    if(mobile){
+      card.setAttribute('role','button');
+      card.setAttribute('tabindex','0');
+      card.setAttribute('aria-expanded',card.classList.contains('is-collapsed')?'false':'true');
+      if(note)card.setAttribute('aria-controls',note.id);
+    }else{
+      ['role','tabindex','aria-expanded','aria-controls'].forEach(function(a){card.removeAttribute(a);});
+    }
+  });
+}
+
 /* ============ SEARCH + HASH: open collapsed content before jumping to it ============ */
 function revealForSearch(target,q){
   if(!target||!target.closest)return;
   var card=target.closest('.new-trend-card');
   if(card)setTrendOpen(card,true,{instant:true});
+  var stat=target.closest('.hero-stat-card');
+  if(stat)setStatOpen(stat,true);
 }
 
 /* ============ MOBILE CONTENT INIT ============ */
 function initMobileContent(){
   initTrendCards();
+  initStatRows();
+  var onChange=function(){applyStatSemantics();};
+  if(mobileQuery.addEventListener)mobileQuery.addEventListener('change',onChange);
+  else if(mobileQuery.addListener)mobileQuery.addListener(onChange);
 }
 
 /* ============ TRENDS EXPAND ============ */
@@ -2134,7 +2194,7 @@ function buildSearchIndex(){
     var num=card.querySelector('.hero-stat-num')?card.querySelector('.hero-stat-num').textContent.trim():'';
     var label=card.querySelector('.hero-stat-label')?card.querySelector('.hero-stat-label').textContent.trim():'';
     var note=card.querySelector('.hero-stat-note')?card.querySelector('.hero-stat-note').textContent.trim():'';
-    SEARCH_INDEX.push({type:'Stat',tab:'stats',id:'panel-stats',title:num+' · '+label,body:note,snippet:note});
+    SEARCH_INDEX.push({type:'Stat',tab:'stats',id:card.id||'panel-stats',title:num+' · '+label,body:note,snippet:note});
   });
   // Actions
   document.querySelectorAll('.action-card').forEach(function(card){
