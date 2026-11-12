@@ -164,6 +164,21 @@ button{font-family:inherit}
 .chapter-item:hover .chapter-label,.chapter-item.active .chapter-label{color:var(--text)}
 .chapter-item.active .chapter-num{color:var(--teal)}
 
+/* ============ UP NEXT HANDOFF ============ */
+.handoff{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;width:100%;margin-top:40px;padding:16px 20px;border:none;border-radius:14px;background:#E9EEE3;text-align:left;cursor:pointer;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--text);transition:background .18s ease}
+[data-theme="dark"] .handoff{background:rgba(127,201,154,.08)}
+.handoff:hover{background:#DFE9DD}
+[data-theme="dark"] .handoff:hover{background:rgba(127,201,154,.13)}
+.handoff:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.handoff-end{grid-template-columns:1fr auto}
+.handoff-num{font-family:'Bebas Neue','Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:36px;font-weight:400;line-height:1;color:var(--teal)}
+.handoff-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.handoff-label{font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:500;font-size:11.5px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+.handoff-title{font-family:'Oswald','Arial Narrow',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:700;font-size:20px;line-height:1.15;text-transform:uppercase;color:var(--text)}
+.handoff-preview{font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;line-height:1.45;color:var(--text2)}
+.handoff-cta{display:inline-block;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;font-size:14px;color:var(--teal);white-space:nowrap;transition:transform .18s ease}
+.handoff:hover .handoff-cta{transform:translateX(4px)}
+
 /* ============ PANELS ============ */
 .panels-wrapper{max-width:1200px;margin:0 auto;padding:0 32px}
 .tab-panel{display:none;padding-top:48px;padding-bottom:96px;animation:fadeIn 0.35s ease}
@@ -535,6 +550,11 @@ button{font-family:inherit}
         </div>
       </div>
     </div>
+    <button type="button" class="handoff" onclick="handoffNext('briefing')">
+      <span class="handoff-num">01</span>
+      <span class="handoff-text"><span class="handoff-label">Up next · 3 min</span><span class="handoff-title">Key Trends</span><span class="handoff-preview">Price-value paradox, AI adoption, bifurcation</span></span>
+      <span class="handoff-cta">Start reading →</span>
+    </button>
   </section>
 
   <!-- PANEL 1: KEY TRENDS -->
@@ -767,6 +787,11 @@ button{font-family:inherit}
 
       </div>
     </div>
+    <button type="button" class="handoff" onclick="handoffNext('trends')">
+      <span class="handoff-num">02</span>
+      <span class="handoff-text"><span class="handoff-label">Up next · 2 min</span><span class="handoff-title">Strategic Insights</span><span class="handoff-preview">Five data points behind the price-value shift</span></span>
+      <span class="handoff-cta">Continue →</span>
+    </button>
   </section>
 
   <!-- PANEL 2: STRATEGIC INSIGHTS -->
@@ -844,6 +869,11 @@ button{font-family:inherit}
       </div>
 
     </div>
+    <button type="button" class="handoff" onclick="handoffNext('insights')">
+      <span class="handoff-num">03</span>
+      <span class="handoff-text"><span class="handoff-label">Up next · 1 min</span><span class="handoff-title">Industry Stats</span><span class="handoff-preview">The four numbers defining travel this month</span></span>
+      <span class="handoff-cta">Continue →</span>
+    </button>
   </section>
 
   <!-- PANEL 3: INDUSTRY STATS -->
@@ -898,6 +928,11 @@ button{font-family:inherit}
         <div style="position:relative;height:280px;width:100%"><canvas id="revenueChart"></canvas></div>
       </div>
     </div>
+    <button type="button" class="handoff" onclick="handoffNext('stats')">
+      <span class="handoff-num">04</span>
+      <span class="handoff-text"><span class="handoff-label">Up next · 2 min</span><span class="handoff-title">Recommended Actions</span><span class="handoff-preview">Six moves for DMOs, with budget-sized options</span></span>
+      <span class="handoff-cta">Continue →</span>
+    </button>
   </section>
 
   <!-- PANEL 4: RECOMMENDED ACTIONS -->
@@ -1036,6 +1071,11 @@ button{font-family:inherit}
       </div>
 
     </div>
+    <button type="button" class="handoff" onclick="handoffNext('actions')">
+      <span class="handoff-num">05</span>
+      <span class="handoff-text"><span class="handoff-label">Up next · 1 min</span><span class="handoff-title">Recommended Reading</span><span class="handoff-preview">The primary sources behind this month's scan</span></span>
+      <span class="handoff-cta">Continue →</span>
+    </button>
   </section>
 
   <!-- PANEL 5: RECOMMENDED READING -->
@@ -1117,6 +1157,10 @@ button{font-family:inherit}
       </div>
 
     </div>
+    <button type="button" class="handoff handoff-end" onclick="handoffNext('deeper')">
+      <span class="handoff-text"><span class="handoff-label">That's the full scan</span><span class="handoff-title">You're all caught up</span><span class="handoff-preview">Back to the briefing, or browse past issues in the archive</span></span>
+      <span class="handoff-cta">Back to the briefing →</span>
+    </button>
   </section>
 
 </div>
@@ -1385,6 +1429,14 @@ function onChapterScroll(){
   if(chapterTick)return;
   chapterTick=true;
   requestAnimationFrame(function(){chapterTick=false;updateChapterProgress();});
+}
+
+/* ============ UP NEXT HANDOFF ============ */
+// Mark the current panel done, then open the next one (after Reading, back to the Briefing)
+function handoffNext(tab){
+  setChapterProgress(tab,100);
+  var next=VALID_TABS[VALID_TABS.indexOf(tab)+1]||'briefing';
+  switchTabById(next);
 }
 
 /* ============ TRENDS EXPAND ============ */
